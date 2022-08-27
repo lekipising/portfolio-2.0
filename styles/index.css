@@ -43,8 +43,6 @@ body {
     -webkit-tap-highlight-color: transparent;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-}
-
-.global-background {
-    background: #011627;
+    background-color: #011627;
+    color: #E5E9F0;
 }
