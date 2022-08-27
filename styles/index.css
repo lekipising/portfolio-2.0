@@ -1,0 +1,13 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+.hello {
+    background-color: yellow;
+}
+
+.bethere {
+    background-color: red;
+}
