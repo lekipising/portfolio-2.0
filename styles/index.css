@@ -4,10 +4,47 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-.hello {
-    background-color: yellow;
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Bold.otf') format('opentype');
+    font-weight: bold;
 }
 
-.bethere {
-    background-color: red;
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Light.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Medium.otf') format('opentype');
+    font-weight: medium;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: none;
+    font-family: "Fira Code", monospace;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.global-background {
+    background: #011627;
 }

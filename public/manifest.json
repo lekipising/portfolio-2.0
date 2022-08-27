@@ -1,0 +1,25 @@
+{
+  "theme_color": "#011627",
+  "background_color": "#011627",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Liplan",
+  "orientation": "portrait",
+  "short_name": "Liplan",
+  "description": "I craft interactive and beautiful web apps, and I love what I do. View my projects",
+  "icons": [
+    {
+      "src": "/android/android/android-launchericon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android/android-launchericon-192-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
