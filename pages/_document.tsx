@@ -8,6 +8,11 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#011627" />
+          <link
+            rel="preload"
+            href="https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
+            as="image"
+          />
           {/* Meta Description = Search Engines, OG Descriptions = Social media */}
           {/* og meta */}
           <meta property="og:title" content="Liplan Lekipising - Portfolio" />

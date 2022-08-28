@@ -28,7 +28,11 @@ export default function Projects() {
 function OneProject({ project }: { project: Project }) {
   return (
     <div className="group">
-      <h1 className="mb-3 text-[16px] font-bold text-purple-heavy">
+      <h1 className="mb-3
+
+
+
+      text-[16px] font-bold text-purple-heavy">
         {project.title}
       </h1>
       <div className="relative project rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-12 transition-all duration-300 ease-in">
