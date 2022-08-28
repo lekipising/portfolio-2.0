@@ -1,4 +1,5 @@
 import React from "react";
+import AboutMe from "../components/about";
 import MainLayout from "../components/common/layout";
 import FirstScreen from "../components/landing";
 
@@ -9,7 +10,7 @@ export default function Home() {
         <FirstScreen />
       </MainLayout>
       <MainLayout currentPage="_about-me">
-        <h1>Page Two</h1>
+        <AboutMe />
       </MainLayout>
       <MainLayout currentPage="_projects">
         <h1>Page Three</h1>
