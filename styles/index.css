@@ -59,3 +59,15 @@ body {
     scrollbar-width: none;
     /* Firefox */
 }
+
+.bg-blur-one {
+    background: #43D9AD;
+    opacity: 0.4;
+    filter: blur(174px);
+}
+
+.bg-blur-two {
+    background: #4D5BCE;
+    opacity: 0.4;
+    filter: blur(174px);
+}
