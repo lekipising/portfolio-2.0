@@ -11,13 +11,13 @@ export default function Home() {
       <MainLayout currentPage="_hello">
         <FirstScreen />
       </MainLayout>
-      <MainLayout currentPage="_about-me">
+      <MainLayout showFooter currentPage="_about-me">
         <AboutMe />
       </MainLayout>
-      <MainLayout currentPage="_projects">
+      <MainLayout showFooter currentPage="_projects">
         <Projects />
       </MainLayout>
-      <MainLayout currentPage="_contact-me">
+      <MainLayout showFooter currentPage="_contact-me">
         <ContactMe />
       </MainLayout>
     </main>
