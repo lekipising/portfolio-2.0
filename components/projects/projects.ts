@@ -1,6 +1,9 @@
 import { Project } from ".";
 
 import ReactIcon from "../../assets/react.svg";
+import NextIcon from "../../assets/next.svg";
+import StyledcIcon from "../../assets/styledc.svg";
+import TailwindIcon from "../../assets/tailwind.svg";
 
 export const projects: Project[] = [
     {
@@ -10,16 +13,12 @@ export const projects: Project[] = [
         link: "https://karent.vercel.app/welcome",
         technologies: [
             {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: NextIcon,
+                text: "Next JS"
             },
             {
-                svg: ReactIcon,
-                text: "HTML"
-            },
-            {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: StyledcIcon,
+                text: "Styled Components"
             },
         ]
     },
@@ -30,16 +29,12 @@ export const projects: Project[] = [
         link: "https://courierpal.vercel.app/",
         technologies: [
             {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: NextIcon,
+                text: "Next JS"
             },
             {
-                svg: ReactIcon,
-                text: "HTML"
-            },
-            {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: StyledcIcon,
+                text: "Styled Components"
             },
         ]
     },
@@ -51,15 +46,11 @@ export const projects: Project[] = [
         technologies: [
             {
                 svg: ReactIcon,
-                text: "HTML"
+                text: "React"
             },
             {
-                svg: ReactIcon,
-                text: "HTML"
-            },
-            {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: StyledcIcon,
+                text: "Styled Components"
             },
         ]
     },
@@ -70,16 +61,12 @@ export const projects: Project[] = [
         link: "https://lekipising.tech/",
         technologies: [
             {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: NextIcon,
+                text: "Next JS"
             },
             {
-                svg: ReactIcon,
-                text: "HTML"
-            },
-            {
-                svg: ReactIcon,
-                text: "HTML"
+                svg: TailwindIcon,
+                text: "Tailwind CSS"
             },
         ]
     },

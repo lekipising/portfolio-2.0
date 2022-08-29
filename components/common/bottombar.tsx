@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 import Twitter from "../../assets/twitter.svg";
+import LinkedIn from "../../assets/linkedin.svg";
+import Github from "../../assets/github.svg";
 
 export default function BottomBar() {
   return (
@@ -10,7 +12,7 @@ export default function BottomBar() {
       <div className="flex h-full items-center">
         <span className="pr-2">find me in:</span>
         <a
-          href="https://github.com/lekipising"
+          href="https://twitter.com/lekipising"
           className="flex h-full items-center justify-center border-l-[1px] border-l-gray-200 px-4"
         >
           <Image
@@ -22,14 +24,14 @@ export default function BottomBar() {
           />
         </a>
         <a
-          href="https://github.com/lekipising"
+          href="https://www.linkedin.com/in/liplan0lekipising/"
           className="flex h-full items-center justify-center border-x-[1px] border-x-gray-200 px-4"
         >
           <Image
-            src={Twitter}
+            src={LinkedIn}
             height="30"
             width="30"
-            alt="Twitter"
+            alt="LinkedIn"
             className="cursor-pointer"
           />
         </a>
@@ -41,10 +43,10 @@ export default function BottomBar() {
       >
         <span className="cursor-pointer">@lekipising</span>
         <Image
-          src={Twitter}
+          src={Github}
           height="30"
           width="30"
-          alt="Twitter"
+          alt="Github"
           className="cursor-pointer"
         />
       </a>

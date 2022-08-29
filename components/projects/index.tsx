@@ -48,12 +48,12 @@ function OneProject({ project }: { project: Project }) {
         <div className="absolute left-4 bottom-4 flex flex-col gap-4">
           <a
             href={project.link}
-            className="rounded-[8px] bg-dark-100 px-4 py-2"
+            className="rounded-[8px] bg-dark-100 px-4 py-2 w-max"
           >
             View project
           </a>
 
-          <div className="flex gap-1">
+          <div className="flex gap-3">
             {project.technologies.map((tech, i) => (
               <OneTechnology key={i} tech={tech} />
             ))}
