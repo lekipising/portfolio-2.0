@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const scrollIntoId = (id: string) => {
@@ -9,12 +10,12 @@ const scrollIntoId = (id: string) => {
 
 export default function NavBar({ activeLink }: { activeLink: string }) {
   return (
-    <nav className="flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
+    <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
         <div
           role="link"
           onClick={() => scrollIntoId("_hello")}
-          className="transition-all duration-150 ease-in hover:text-yellow cursor-pointer"
+          className="cursor-pointer transition-all duration-150 ease-in hover:text-yellow"
         >
           @lekipising
         </div>
@@ -28,6 +29,20 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
           isActive={activeLink === "_contact-me"}
         />
       </div>
+      {activeLink !== "_hello" && (
+        <div className="absolute right-8 h-[40px] w-[40px] rounded-full">
+          <Image
+            src={
+              "https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
+            }
+            height="100"
+            width="100"
+            layout="responsive"
+            alt="Liplan Lekipising - Portfolio"
+            className="rounded-full"
+          />
+        </div>
+      )}
     </nav>
   );
 }
