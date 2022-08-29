@@ -79,3 +79,28 @@ p, span, h1, h2, h3, h4, h5, h6 {
 .project:hover {
     box-shadow: #4D5BCE 0px 2px 30px -2px, #5565E8 0px 3px 7px -3px;
 }
+
+input, textarea {
+    border: none;
+}
+
+input:focus, textarea:focus {
+    border: none;
+}
+
+input, textarea {
+    outline: 1px solid #1E2D3D;
+    transition: all ease-in 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #607B96;
+}
+
+.error {
+    outline: 1px solid #f40101;
+}
+
+textarea {
+    resize: none;
+}

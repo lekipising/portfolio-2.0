@@ -1,6 +1,7 @@
 import React from "react";
 import AboutMe from "../components/about";
 import MainLayout from "../components/common/layout";
+import ContactMe from "../components/contact";
 import FirstScreen from "../components/landing";
 import Projects from "../components/projects";
 
@@ -17,7 +18,7 @@ export default function Home() {
         <Projects />
       </MainLayout>
       <MainLayout currentPage="_contact-me">
-        <h1>Page Four</h1>
+        <ContactMe />
       </MainLayout>
     </main>
   );

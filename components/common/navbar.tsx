@@ -1,15 +1,23 @@
-import Link from "next/link";
 import React from "react";
+
+const scrollIntoId = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export default function NavBar({ activeLink }: { activeLink: string }) {
   return (
-    <nav className="flex h-[55px] items-center border-b-[1px] border-gray-200 md:pl-8 pl-2 text-gray-100">
+    <nav className="flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
-        <Link href="/">
-          <a className="transition-all duration-150 ease-in hover:text-yellow">
-            @lekipising
-          </a>
-        </Link>
+        <div
+          role="link"
+          onClick={() => scrollIntoId("_hello")}
+          className="transition-all duration-150 ease-in hover:text-yellow cursor-pointer"
+        >
+          @lekipising
+        </div>
       </div>
       <div className="hidden h-full items-center md:flex">
         <OneNavItem text="_hello" isActive={activeLink === "_hello"} />
@@ -25,12 +33,6 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
 }
 
 function OneNavItem({ text, isActive }: { text: string; isActive: boolean }) {
-  const scrollIntoId = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <div
       role="link"
