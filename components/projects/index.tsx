@@ -27,15 +27,11 @@ export default function Projects() {
 
 function OneProject({ project }: { project: Project }) {
   return (
-    <div className="group">
-      <h1 className="mb-3
-
-
-
-      text-[16px] font-bold text-purple-heavy">
+    <div className="group w-[350px]">
+      <h1 className="mb-3 text-[16px] font-bold text-purple-heavy">
         {project.title}
       </h1>
-      <div className="relative project rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-12 transition-all duration-300 ease-in">
+      <div className="project relative rounded-[10px] h-[470px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
         <div className="relative m-auto h-[200px] w-full rounded-t-[15px] transition-all duration-150 ease-in group-hover:rounded-none">
           <Image
             src={project.image}
@@ -48,17 +44,20 @@ function OneProject({ project }: { project: Project }) {
         </div>
         <div className="p-8 px-4">
           <p className="mb-5">{project.description}</p>
+        </div>
+        <div className="absolute left-4 bottom-4 flex flex-col gap-4">
           <a
             href={project.link}
             className="rounded-[8px] bg-dark-100 px-4 py-2"
           >
             View project
           </a>
-        </div>
-        <div className="absolute left-4 bottom-4 flex gap-1">
-          {project.technologies.map((tech, i) => (
-            <OneTechnology key={i} tech={tech} />
-          ))}
+
+          <div className="flex gap-1">
+            {project.technologies.map((tech, i) => (
+              <OneTechnology key={i} tech={tech} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
