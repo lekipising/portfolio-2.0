@@ -63,7 +63,7 @@ export default function ContactForm({
       />
       <button
         onClick={(e) => submitForm(e)}
-        className="w-max rounded-[8px] bg-dark-100 px-4 py-2"
+        className="w-max rounded-[8px] bg-dark-100 m-auto md:m-0 px-4 py-2"
         disabled={!name || !email || !message}
       >
         submit-message
