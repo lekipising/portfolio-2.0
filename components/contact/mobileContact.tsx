@@ -9,7 +9,7 @@ import Github from "../../assets/github.svg";
 
 export default function MobileSocials() {
   return (
-    <div className="absolute bottom-5 flex flex-col gap-2 md:hidden block">
+    <div className="absolute bottom-5 flex flex-col gap-2 md:hidden">
       <a
         href="https://github.com/lekipising"
         className="flex items-center text-center text-[15px] underline"
