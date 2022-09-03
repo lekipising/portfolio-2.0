@@ -14,9 +14,9 @@ export default function MainLayout({
   return (
     <section
       id={currentPage}
-      className="min-w-screen h-screen min-h-screen w-screen snap-start snap-always p-[5px] md:p-[30px]"
+      className="min-w-screen h-max md:min-h-screen w-screen md:snap-start md:snap-always p-[5px] md:p-[30px]"
     >
-      <section className="h-full w-full rounded-[8px] border-[1px] border-gray-200 bg-dark-200 relative">
+      <section className="h-max md:pb-0 pb-16 w-full rounded-[8px] border-[1px] border-gray-200 bg-dark-200 relative">
         {/* nav */}
         <NavBar activeLink={currentPage} />
         {/* main start */}
