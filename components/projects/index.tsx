@@ -17,7 +17,7 @@ export interface Project {
 
 export default function Projects() {
   return (
-    <section className="relative top-1/2 m-auto flex max-w-[80%] -translate-y-2/3 justify-center gap-5 ">
+    <section className="relative top-1/2 m-auto flex max-w-[95%] -translate-y-2/3 justify-center gap-5 ">
       {projects.map((project, i) => (
         <OneProject key={i} project={project} />
       ))}
@@ -31,8 +31,8 @@ function OneProject({ project }: { project: Project }) {
       <h1 className="mb-3 text-[16px] font-bold text-purple-heavy">
         {project.title}
       </h1>
-      <div className="project relative rounded-[10px] h-[470px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
-        <div className="relative m-auto h-[200px] w-full rounded-t-[15px] transition-all duration-150 ease-in group-hover:rounded-none">
+      <div className="project relative rounded-[10px] max-h-[470px] h-[58vh] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
+        <div className="relative m-auto max-h-[215px] h-[20vh] w-full rounded-t-[15px] transition-all duration-150 ease-in group-hover:rounded-none">
           <Image
             src={project.image}
             objectFit="cover"
@@ -43,7 +43,7 @@ function OneProject({ project }: { project: Project }) {
           />
         </div>
         <div className="p-8 px-4">
-          <p className="mb-5">{project.description}</p>
+          <p className="mb-5 text-[15px]">{project.description}</p>
         </div>
         <div className="absolute left-4 bottom-4 flex flex-col gap-4">
           <a

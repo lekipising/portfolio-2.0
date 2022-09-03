@@ -28,7 +28,7 @@ export default function ContactMe() {
           }}
         />
       )}
-      <div className="absolute left-1/2 top-[45%] h-[80vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100" />
+      <div className="absolute left-1/2 top-[40%] h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100" />
       <ShowRealTimeMessage name={name} email={email} message={message} />
     </section>
   );

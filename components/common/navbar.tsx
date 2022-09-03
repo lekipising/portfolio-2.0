@@ -1,7 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import MobileMenu from "./menu";
 
-const scrollIntoId = (id: string) => {
+import CloseIcon from "../../assets/close.svg";
+import OpenIcon from "../../assets/open.svg";
+
+export const scrollIntoId = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -9,6 +13,7 @@ const scrollIntoId = (id: string) => {
 };
 
 export default function NavBar({ activeLink }: { activeLink: string }) {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
@@ -27,6 +32,18 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
         <OneNavItem
           text="_contact-me"
           isActive={activeLink === "_contact-me"}
+        />
+      </div>
+      {openMenu && <MobileMenu setOpenMenu={() => setOpenMenu(false)} />}
+      <div
+        className="absolute right-4 block md:hidden cursor-pointer"
+        onClick={() => setOpenMenu(!openMenu)}
+      >
+        <Image
+          src={openMenu ? OpenIcon : CloseIcon}
+          height="30"
+          width="30"
+          alt="Mobile menu"
         />
       </div>
       {activeLink !== "_hello" && (

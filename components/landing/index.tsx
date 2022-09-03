@@ -32,8 +32,8 @@ export default function FirstScreen() {
         />
       </div>
       {/* background blur */}
-      <div className="bg-blur-one absolute top-[10vh] right-[20vw] h-[20vw] w-[20vw] z-40" />
-      <div className="bg-blur-two absolute right-0 top-[30vh] h-[25vw] w-[25vw] z-40" />
+      <div className="bg-blur-one absolute top-[10vh] right-[20vw] z-40 h-[20vw] w-[20vw]" />
+      <div className="bg-blur-two absolute right-0 top-[30vh] z-40 h-[25vw] w-[25vw]" />
     </section>
   );
 }
