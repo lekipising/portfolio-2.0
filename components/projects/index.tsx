@@ -17,7 +17,7 @@ export interface Project {
 
 export default function Projects() {
   return (
-    <section className="flex max-w-[95%] justify-center gap-5 md:relative md:top-1/2 md:m-auto md:-translate-y-2/3 ">
+    <section className="flex md:py-0 py-8 md:flex-row flex-col max-w-[95%] justify-center gap-5 md:relative md:top-1/2 m-auto md:-translate-y-2/3 ">
       {projects.map((project, i) => (
         <OneProject key={i} project={project} />
       ))}

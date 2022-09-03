@@ -11,7 +11,7 @@ export default function ContactMe() {
   const [messageReceived, setMessageReceived] = useState(false);
 
   return (
-    <section className="relative m-auto flex h-full w-full max-w-[70vw] items-center justify-between pb-32">
+    <section className="relative m-auto flex md:flex-row flex-col h-full w-full max-w-[70vw] items-center justify-between pb-32">
       {messageReceived ? (
         <SuccessMessage toggleNewForm={() => setMessageReceived(false)} />
       ) : (
@@ -28,7 +28,7 @@ export default function ContactMe() {
           }}
         />
       )}
-      <div className="absolute left-1/2 top-[40%] h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100" />
+      <div className="absolute hidden md:block left-1/2 top-[40%] h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100" />
       <ShowRealTimeMessage name={name} email={email} message={message} />
     </section>
   );

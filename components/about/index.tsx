@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <section className="w-max cursor-default rounded-[30px] bg-dark-100/20 p-16 text-[16px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:top-1/2 md:m-auto md:-translate-y-[60%]">
+    <section className="cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:top-1/2 md:m-auto md:w-max md:-translate-y-[60%] md:rounded-[30px] md:p-16 md:text-[16px]">
       <span>/**</span>
       <p className="transition-all duration-300 ease-in hover:text-white/70">
         * About me
@@ -19,10 +19,8 @@ export default function AboutMe() {
         * I am an open source enthusiast and enjoy playing video games.
       </p>
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        * I am a self-taught developer and I am always looking for new{" "}
-      </p>
-      <p className="transition-all duration-300 ease-in hover:text-white/70">
-        * challenges to solve.
+        * I am a frontend developer and I am always looking for new challenges
+        to solve.
       </p>
       <p>*</p>
       <p className="transition-all duration-300 ease-in hover:text-white/70">

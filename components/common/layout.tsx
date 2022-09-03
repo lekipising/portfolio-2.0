@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BottomBar from "./bottombar";
 import NavBar from "./navbar";
 
@@ -11,19 +11,26 @@ export default function MainLayout({
   children: React.ReactNode;
   currentPage: string;
 }) {
+  const [isMobile, setIsMobile] = useState(null);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  if (isMobile === null) return null;
+
   return (
     <section
       id={currentPage}
-      className="min-w-screen h-max md:min-h-screen w-screen md:snap-start md:snap-always p-[5px] md:p-[30px]"
+      className="min-w-screen h-max w-screen p-[5px] md:h-screen md:min-h-screen md:snap-start md:snap-always md:p-[30px]"
     >
-      <section className="h-max md:pb-0 pb-16 w-full rounded-[8px] border-[1px] border-gray-200 bg-dark-200 relative">
+      <section className="relative h-max w-full rounded-[8px] border-[1px] border-gray-200 bg-dark-200 md:h-full">
         {/* nav */}
-        <NavBar activeLink={currentPage} />
+        {!isMobile && <NavBar activeLink={currentPage} />}
         {/* main start */}
         {children}
         {/* main end */}
         {/* footer */}
-        {showFooter && <BottomBar />}
+        {showFooter && !isMobile && <BottomBar />}
       </section>
     </section>
   );

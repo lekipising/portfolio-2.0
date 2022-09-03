@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ShowRealTimeMessage({ name, email, message }) {
   return (
-    <div className="max-w-[30vw] text-gray-100">
+    <div className="hidden md:block max-w-[30vw] text-gray-100">
       <p className="flex items-center">
         <NumberTxt num={"1"} /> <KeywordText keyword="const" />{" "}
         <VarType vr="button" customStyle="ml-2" />

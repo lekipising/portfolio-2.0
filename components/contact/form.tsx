@@ -26,7 +26,7 @@ export default function ContactForm({
     //
   };
   return (
-    <form className="flex w-[370px] flex-col gap-6">
+    <form className="flex md:w-[370px] w-full md:py-0 py-8 flex-col gap-6">
       <FormGroup
         name="name"
         placeholder="Enter your name"

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function FirstScreen() {
   return (
-    <section className="relative flex h-full flex-col items-center justify-start gap-32 pt-16 md:flex-row md:justify-center md:pt-0">
+    <section className="relative pb-16 md:pb-0 flex h-full flex-col items-center justify-start gap-32 pt-16 md:flex-row md:justify-center md:pt-0">
       <div className="flex w-[90%] flex-col gap-16 md:w-auto">
         <div>
           <p className="text-[18px] font-medium text-white">Hi all. I am</p>
