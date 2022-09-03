@@ -13,6 +13,8 @@ export default function BottomBar() {
         <span className="pr-2">find me in:</span>
         <a
           href="https://twitter.com/lekipising"
+          target="_blank"
+          rel="noreferrer"
           className="flex h-full items-center justify-center border-l-[1px] border-l-gray-200 px-4"
         >
           <Image
@@ -25,6 +27,8 @@ export default function BottomBar() {
         </a>
         <a
           href="https://www.linkedin.com/in/liplan0lekipising/"
+          target="_blank"
+          rel="noreferrer"
           className="flex h-full items-center justify-center border-x-[1px] border-x-gray-200 px-4"
         >
           <Image
@@ -39,6 +43,8 @@ export default function BottomBar() {
 
       <a
         href="https://github.com/lekipising"
+        target="_blank"
+        rel="noreferrer"
         className="flex h-full cursor-pointer items-center gap-2 border-x-[1px] border-x-gray-200 px-4"
       >
         <span className="cursor-pointer">@lekipising</span>

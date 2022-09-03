@@ -108,3 +108,8 @@ input:focus, textarea:focus {
 textarea {
     resize: none;
 }
+
+.asterisk::before {
+    content: "* ";
+    color: #607B96;
+}

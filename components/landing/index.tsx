@@ -3,7 +3,7 @@ import React from "react";
 
 export default function FirstScreen() {
   return (
-    <section className="relative pb-16 md:pb-0 flex h-full flex-col items-center justify-start gap-32 pt-16 md:flex-row md:justify-center md:pt-0">
+    <section className="relative flex h-full flex-col items-center justify-start gap-32 pb-16 pt-16 md:flex-row md:justify-center md:pb-0 md:pt-0">
       <div className="flex w-[90%] flex-col gap-16 md:w-auto">
         <div>
           <p className="text-[18px] font-medium text-white">Hi all. I am</p>
@@ -11,7 +11,7 @@ export default function FirstScreen() {
             Liplan Lekipising
           </h1>
           <h2 className="text-[23px] font-medium text-purple-light md:text-[32px]">
-            &gt; Front-end developer
+            <span className="">&gt;</span> Front-end developer
           </h2>
         </div>
         <div className="flex flex-col gap-2 italic text-gray-100 md:gap-1">
