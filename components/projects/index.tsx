@@ -27,7 +27,7 @@ export default function Projects() {
 
 function OneProject({ project }: { project: Project }) {
   return (
-    <div className="group w-[350px]">
+    <div className="group md:w-[350px] w-full">
       <h1 className="mb-3 text-[16px] font-bold text-purple-heavy">
         {project.title}
       </h1>

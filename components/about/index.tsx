@@ -22,7 +22,7 @@ export default function AboutMe() {
       <p className="text-sm transition-all duration-300 ease-in hover:text-white/70">
         * I build awesome products using:
       </p>
-      <div className="grid w-full grid-cols-2 gap-1 gap-x-5 md:grid-cols-3 pl-4">
+      <div className="grid w-full grid-cols-2 gap-1 gap-x-5 pl-4 md:grid-cols-3">
         <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           TypeScript
         </p>

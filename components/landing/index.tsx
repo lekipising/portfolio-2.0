@@ -11,7 +11,7 @@ export default function FirstScreen() {
             Liplan Lekipising
           </h1>
           <h2 className="text-[23px] font-medium text-purple-light md:text-[32px]">
-            <span className="">&gt;</span> Front-end developer
+            &gt; Front-end developer
           </h2>
         </div>
         <div className="flex flex-col gap-2 italic text-gray-100 md:gap-1">
