@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ShowRealTimeMessage from "./code";
 import ContactForm from "./form";
+import MobileSocials from "./mobileContact";
 import SuccessMessage from "./success";
 
 export default function ContactMe() {
@@ -11,7 +12,7 @@ export default function ContactMe() {
   const [messageReceived, setMessageReceived] = useState(false);
 
   return (
-    <section className="relative m-auto flex md:flex-row flex-col h-full w-full max-w-[70vw] items-center justify-between pb-32">
+    <section className="relative m-auto flex h-full w-full max-w-[70vw] flex-col items-center justify-between md:pb-32 pb-64 md:flex-row">
       {messageReceived ? (
         <SuccessMessage toggleNewForm={() => setMessageReceived(false)} />
       ) : (
@@ -28,8 +29,9 @@ export default function ContactMe() {
           }}
         />
       )}
-      <div className="absolute hidden md:block left-1/2 top-[40%] h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100" />
+      <div className="absolute left-1/2 top-[40%] hidden h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100 md:block" />
       <ShowRealTimeMessage name={name} email={email} message={message} />
+      <MobileSocials />
     </section>
   );
 }
