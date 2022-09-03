@@ -15,24 +15,33 @@ export interface Project {
   image: string;
 }
 
+import { motion } from "framer-motion";
+
 export default function Projects() {
   return (
-    <section className="flex md:py-0 py-8 md:flex-row flex-col max-w-[95%] justify-center gap-5 md:relative md:top-1/2 m-auto md:-translate-y-2/3 ">
+    <section className="m-auto flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:top-1/2 md:-translate-y-2/3 md:flex-row md:py-0 ">
       {projects.map((project, i) => (
-        <OneProject key={i} project={project} />
+        <OneProject key={i} index={i} project={project} />
       ))}
     </section>
   );
 }
 
-function OneProject({ project }: { project: Project }) {
+function OneProject({ project, index }: { project: Project; index: number }) {
   return (
-    <div className="group md:w-[350px] w-full">
+    <motion.div
+      initial={{ y: 50 }}
+      whileInView={{
+        y: 0,
+      }}
+      transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * index }}
+      className="group w-full md:w-[350px]"
+    >
       <h1 className="mb-3 text-[16px] font-bold text-purple-heavy">
         {project.title}
       </h1>
-      <div className="project relative rounded-[10px] max-h-[470px] h-[58vh] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
-        <div className="relative m-auto max-h-[215px] h-[20vh] w-full rounded-t-[15px] transition-all duration-150 ease-in group-hover:rounded-none">
+      <div className="project relative h-[58vh] max-h-[470px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
+        <div className="relative m-auto h-[20vh] max-h-[215px] w-full rounded-t-[15px] transition-all duration-150 ease-in group-hover:rounded-none">
           <Image
             src={project.image}
             objectFit="cover"
@@ -48,7 +57,7 @@ function OneProject({ project }: { project: Project }) {
         <div className="absolute left-4 bottom-4 flex flex-col gap-4">
           <a
             href={project.link}
-            className="rounded-[8px] bg-dark-100 px-4 py-2 w-max"
+            className="w-max rounded-[8px] bg-dark-100 px-4 py-2"
           >
             View project
           </a>
@@ -60,7 +69,7 @@ function OneProject({ project }: { project: Project }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
