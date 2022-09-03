@@ -6,24 +6,28 @@
     font-family: 'Fira Code';
     src: url('/fonts/FiraCode-Bold.otf') format('opentype');
     font-weight: bold;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Fira Code';
     src: url('/fonts/FiraCode-Light.otf') format('opentype');
     font-weight: light;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Fira Code';
     src: url('/fonts/FiraCode-Regular.otf') format('opentype');
     font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Fira Code';
     src: url('/fonts/FiraCode-Medium.otf') format('opentype');
     font-weight: medium;
+    font-display: swap;
 }
 
 *,

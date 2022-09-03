@@ -8,7 +8,7 @@ import Projects from "../components/projects";
 
 export default function Home() {
   return (
-    <main className="md:no-scrollbar min-w-screen h-auto w-screen md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll">
+    <main className="no-scrollbar min-w-screen h-auto w-screen md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll">
       <MainLayout currentPage="_hello">
         <FirstScreen />
       </MainLayout>
