@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="Liplan Lekipising - Portfolio" />
           <meta
             property="og:url"
-            content="https://lekipising-portfolio.vercel.app/"
+            content="https://lekipising.tech/"
           />
           <meta
             property="og:image"
@@ -36,11 +36,11 @@ export default class MyDocument extends Document {
           <meta name="twitter:card" content="summary" />
           <meta
             property="twitter:domain"
-            content="https://lekipising-portfolio.vercel.app/"
+            content="https://lekipising.tech/"
           />
           <meta
             property="twitter:url"
-            content="https://lekipising-portfolio.vercel.app/"
+            content="https://lekipising.tech/"
           />
           <meta name="twitter:creator" content="@lekipising" />
           <meta name="twitter:title" content="Liplan Lekipising - Portfolio" />

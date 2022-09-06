@@ -34,6 +34,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       whileInView={{
         y: 0,
       }}
+      whileHover={{ y: -10, transition: { duration: 0.2 } }}
       transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * index }}
       className="group w-full md:w-[350px]"
     >

@@ -81,7 +81,7 @@ p, span, h1, h2, h3, h4, h5, h6 {
 }
 
 .project:hover {
-    box-shadow: #4D5BCE 0px 2px 30px -2px, #5565E8 0px 3px 7px -3px;
+    box-shadow: #4D5BCE 0px 2px 5px -2px, #5565E8 0px 3px 7px -3px;
 }
 
 input, textarea {
