@@ -25,6 +25,7 @@ export default class MyDocument extends Document {
             content="https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
           />
           <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://lekipising.tech/" />
           <meta
             property="og:description"
             content="I craft interactive and beautiful web apps, and I love what I do. View my projects"
