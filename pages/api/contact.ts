@@ -12,7 +12,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const msg = {
     to: process.env.EMAIL_TO,
-    from: process.env.EMAIL_FROM,
+    from: {
+      email: process.env.EMAIL_FROM,
+      name: `${name} via Portfolio`,
+    },
     replyTo: email,
     subject: `Message from ${name}`,
     name,
