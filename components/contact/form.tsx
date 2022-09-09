@@ -9,11 +9,13 @@ export default function ContactForm({
   receiveEmail,
   receiveMessage,
   submitMessage,
+  loading,
 }: {
   receiveName: (name: string) => void;
   receiveEmail: (email: string) => void;
   receiveMessage: (message: string) => void;
   submitMessage: () => void;
+  loading: boolean;
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +28,7 @@ export default function ContactForm({
     //
   };
   return (
-    <form className="flex md:w-[370px] w-full md:py-0 py-8 flex-col gap-6">
+    <form className="flex w-full flex-col gap-6 py-8 md:w-[370px] md:py-0">
       <FormGroup
         name="name"
         placeholder="Enter your name"
@@ -63,10 +65,10 @@ export default function ContactForm({
       />
       <button
         onClick={(e) => submitForm(e)}
-        className="w-max rounded-[8px] bg-dark-100 m-auto md:m-0 px-4 py-2"
-        disabled={!name || !email || !message}
+        className="m-auto w-max rounded-[8px] bg-dark-100 px-4 py-2 md:m-0"
+        disabled={!name || !email || !message || loading}
       >
-        submit-message
+        {loading ? "Sending..." : "submit-message"}
       </button>
     </form>
   );

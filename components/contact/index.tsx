@@ -9,24 +9,51 @@ export default function ContactMe() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const [messageReceived, setMessageReceived] = useState(false);
+  const [messageReceived, setMessageReceived] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
+  const sendMessage = async () => {
+    setLoading(true);
+    try {
+      const data = {
+        name,
+        email,
+        message,
+      };
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      setLoading(false);
+      // clear form
+      setName("");
+      setEmail("");
+      setMessage("");
+      setMessageReceived(name);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
 
   return (
-    <section className="relative m-auto flex h-full w-full max-w-[70vw] flex-col items-center justify-between md:pb-32 pb-64 md:flex-row">
+    <section className="relative m-auto flex h-full w-full max-w-[70vw] flex-col items-center justify-between pb-64 md:flex-row md:pb-32">
       {messageReceived ? (
-        <SuccessMessage toggleNewForm={() => setMessageReceived(false)} />
+        <SuccessMessage
+          senderName={messageReceived}
+          toggleNewForm={() => setMessageReceived("")}
+        />
       ) : (
         <ContactForm
           receiveName={(val) => setName(val)}
           receiveEmail={(val) => setEmail(val)}
           receiveMessage={(val) => setMessage(val)}
           submitMessage={() => {
-            // clear form
-            setName("");
-            setEmail("");
-            setMessage("");
-            setMessageReceived(true);
+            sendMessage();
           }}
+          loading={loading}
         />
       )}
       <div className="absolute left-1/2 top-[40%] hidden h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100 md:block" />
