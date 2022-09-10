@@ -36,7 +36,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       }}
       whileHover={{ y: -10, transition: { duration: 0.2 } }}
       transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * index }}
-      className="group w-full md:w-[350px] group"
+      className="group w-full md:w-[350px]"
     >
       <h1 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow">
         {project.title}

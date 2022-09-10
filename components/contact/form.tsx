@@ -107,7 +107,6 @@ function FormGroup({
           value={value}
           onChange={(e) => setValue(e.target.value)}
           id={name}
-          autoFocus={name === "name"}
           placeholder={placeholder}
           className={`h-[40px] rounded-[8px] bg-dark-300 px-2 text-[14px] ${customStyle}`}
           required
