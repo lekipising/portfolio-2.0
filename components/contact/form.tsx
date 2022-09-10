@@ -4,6 +4,7 @@ function validateEmail(email: string) {
   var re = /\S+@\S+\.\S+/;
   return re.test(email);
 }
+
 export default function ContactForm({
   receiveName,
   receiveEmail,
@@ -106,6 +107,7 @@ function FormGroup({
           value={value}
           onChange={(e) => setValue(e.target.value)}
           id={name}
+          autoFocus={name === "name"}
           placeholder={placeholder}
           className={`h-[40px] rounded-[8px] bg-dark-300 px-2 text-[14px] ${customStyle}`}
           required
