@@ -36,7 +36,7 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
       </div>
       {openMenu && <MobileMenu setOpenMenu={() => setOpenMenu(false)} />}
       <div
-        className="absolute right-4 block md:hidden cursor-pointer"
+        className="absolute right-4 block cursor-pointer md:hidden"
         onClick={() => setOpenMenu(!openMenu)}
       >
         <Image
