@@ -9,7 +9,7 @@ export default function AboutMe() {
       </p>
 
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        * I am an open-minded Software Engineer with a an interest of creating
+        * I am an experienced Software Engineer with a interest of creating
         elegant tech solutions.
       </p>
 
