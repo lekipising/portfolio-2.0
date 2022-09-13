@@ -13,7 +13,6 @@ export const scrollIntoId = (id: string) => {
 };
 
 export default function NavBar({ activeLink }: { activeLink: string }) {
-  const [openMenu, setOpenMenu] = useState(false);
   return (
     <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
@@ -32,18 +31,6 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
         <OneNavItem
           text="_contact-me"
           isActive={activeLink === "_contact-me"}
-        />
-      </div>
-      {openMenu && <MobileMenu setOpenMenu={() => setOpenMenu(false)} />}
-      <div
-        className="absolute right-4 block cursor-pointer md:hidden"
-        onClick={() => setOpenMenu(!openMenu)}
-      >
-        <Image
-          src={openMenu ? OpenIcon : CloseIcon}
-          height="30"
-          width="30"
-          alt="Mobile menu"
         />
       </div>
       {activeLink !== "_hello" && (

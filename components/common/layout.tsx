@@ -23,7 +23,7 @@ export default function MainLayout({
       id={currentPage}
       className="min-w-screen h-max w-screen p-[5px] md:h-screen md:min-h-screen md:snap-start md:snap-always md:p-[30px]"
     >
-      <section className="relative h-max w-full rounded-[8px] border-[1px] border-gray-200 bg-dark-200 md:h-full">
+      <section className="relative min-h-[50vh] w-full rounded-[8px] border-[1px] border-gray-200 bg-dark-200 md:h-full">
         {/* nav */}
         {!isMobile && <NavBar activeLink={currentPage} />}
         {/* main start */}
