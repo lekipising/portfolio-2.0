@@ -1,11 +1,11 @@
 import React from "react";
 
 import dynamic from "next/dynamic";
+import FirstScreen from "../components/landing";
+import MainLayout from "../components/common/layout";
 
 const AboutMe = dynamic(() => import("../components/about"));
-const MainLayout = dynamic(() => import("../components/common/layout"));
 const ContactMe = dynamic(() => import("../components/contact"));
-const FirstScreen = dynamic(() => import("../components/landing"));
 const Projects = dynamic(() => import("../components/projects"));
 
 export default function Home() {
