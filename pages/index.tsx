@@ -10,7 +10,7 @@ const Projects = dynamic(() => import("../components/projects"));
 
 export default function Home() {
   return (
-    <main className="no-scrollbar min-w-screen h-auto w-screen md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll">
+    <main className="no-scrollbar min-w-screen max-w-screen overflow-x-hidden h-auto w-screen md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll transition-all ease-in duration-300">
       <MainLayout currentPage="_hello">
         <FirstScreen />
       </MainLayout>
