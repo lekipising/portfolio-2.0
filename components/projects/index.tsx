@@ -55,7 +55,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           }
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: true }}
-          className="relative m-auto h-[20vh] max-h-[215px] w-full rounded-t-[15px] transition-all duration-150 ease-in group-hover:rounded-none"
+          className="relative m-auto h-[20vh] max-h-[215px] w-full rounded-t-[10px] transition-all duration-150 ease-in group-hover:rounded-none"
         >
           <Image
             src={project.image}
@@ -68,7 +68,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           />
         </motion.div>
         <div className="p-8 px-4">
-          <p className="mb-5 text-[15px]">{project.description}</p>
+          <p className="mb-5 text-[15px] tracking-tight">{project.description}</p>
         </div>
         <div className="absolute left-4 bottom-4 flex flex-col gap-4">
           <a

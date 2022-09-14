@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { motion } from "framer-motion";
+
 function validateEmail(email: string) {
   var re = /\S+@\S+\.\S+/;
   return re.test(email);
@@ -64,13 +66,15 @@ export default function ContactForm({
           receiveMessage(val);
         }}
       />
-      <button
+      <motion.button
         onClick={(e) => submitForm(e)}
-        className="btn-submit-hover m-auto w-max rounded-[8px] bg-dark-100 px-4 py-2 md:m-0 md:mt-8"
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        whileTap={{ scale: [1.0, 0.9, 1.0], backgroundColor: "#FEA55F" }}
+        className="m-auto w-max rounded-[8px] bg-dark-100 px-4 py-2 md:m-0 md:mt-8"
         disabled={!name || !email || !message || loading}
       >
         {loading ? "Sending..." : "submit-message"}
-      </button>
+      </motion.button>
     </form>
   );
 }

@@ -29,7 +29,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="no-scrollbar min-w-screen max-w-screen md:snap-parent h-auto w-screen overflow-x-hidden transition-all duration-300 ease-in md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll">
+    <main
+      onScroll={(e) => e.preventDefault()}
+      className="no-scrollbar min-w-screen max-w-screen md:snap-parent h-auto w-screen overflow-x-hidden transition-all duration-300 ease-in md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll"
+    >
+      <div
+        id="spotlight"
+        className="bg-blur-two fixed left-0 top-0 z-40 h-[50px] w-[50px] rounded-full"
+      />
       <MainLayout currentPage="_hello">
         <FirstScreen />
       </MainLayout>

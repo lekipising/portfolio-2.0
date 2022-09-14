@@ -7,7 +7,10 @@ export default function FirstScreen() {
       <div className="flex w-[90%] flex-col gap-16 md:w-auto">
         <div>
           <p className="text-[18px] font-medium text-white">Hi. I am</p>
-          <h1 id="title" className="title text-[48px] text-white md:text-[62px]">
+          <h1
+            id="title"
+            className="title text-[48px] text-white md:text-[62px]"
+          >
             Liplan Lekipising
           </h1>
           <h2 className="text-[23px] font-medium text-purple-light md:text-[32px]">
@@ -35,7 +38,6 @@ export default function FirstScreen() {
       </div>
       {/* background blur */}
       <div className="bg-blur-one absolute top-[10vh] right-[20vw] z-40 h-[20vw] w-[20vw]" />
-      <div id="spotlight" className="bg-blur-two fixed left-0 top-0 z-40 h-[50px] w-[50px] rounded-full" />
     </section>
   );
 }

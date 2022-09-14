@@ -12,6 +12,8 @@ export const scrollIntoId = (id: string) => {
   }
 };
 
+import { motion } from "framer-motion";
+
 export default function NavBar({ activeLink }: { activeLink: string }) {
   return (
     <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
@@ -34,10 +36,16 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
         />
       </div>
       {activeLink !== "_hello" && (
-        <div className="absolute right-8 h-[40px] w-[40px] rounded-full">
+        <motion.div
+          key={activeLink}
+          initial={{ scale: 1 }}
+          whileHover={{ scale: 1.2, rotate: 45 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="absolute right-8 h-[40px] w-[40px] rounded-full"
+        >
           <Image
             src={
-              "https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
+              "https://res.cloudinary.com/dpnbddror/image/upload/v1642927639/liplan/IMG_20190524_121443_tm3oo7.webp"
             }
             height="100"
             width="100"
@@ -45,7 +53,7 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
             alt="Liplan Lekipising - Portfolio"
             className="rounded-full"
           />
-        </div>
+        </motion.div>
       )}
     </nav>
   );
