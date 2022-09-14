@@ -66,7 +66,7 @@ export default function ContactForm({
       />
       <button
         onClick={(e) => submitForm(e)}
-        className="m-auto w-max rounded-[8px] bg-dark-100 px-4 py-2 md:m-0"
+        className="btn-submit-hover m-auto w-max rounded-[8px] bg-dark-100 px-4 py-2 md:m-0 md:mt-8"
         disabled={!name || !email || !message || loading}
       >
         {loading ? "Sending..." : "submit-message"}
@@ -108,7 +108,7 @@ function FormGroup({
           onChange={(e) => setValue(e.target.value)}
           id={name}
           placeholder={placeholder}
-          className={`h-[40px] rounded-[8px] bg-dark-300 px-2 text-[14px] ${customStyle}`}
+          className={`input-bx-active h-[40px] rounded-[8px] bg-dark-300 px-2 text-[14px] ${customStyle}`}
           required
         />
       ) : (
@@ -116,7 +116,7 @@ function FormGroup({
           name="message"
           id="message"
           placeholder={placeholder}
-          className="h-[150px] rounded-[8px] bg-dark-300 px-4 py-2"
+          className="input-bx-active h-[150px] rounded-[8px] bg-dark-300 px-4 py-2"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           maxLength={100}
