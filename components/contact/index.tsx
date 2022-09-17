@@ -4,6 +4,8 @@ import ContactForm from "./form";
 import MobileSocials from "./mobileContact";
 import SuccessMessage from "./success";
 
+import { event } from "nextjs-google-analytics";
+
 export default function ContactMe() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +34,11 @@ export default function ContactMe() {
       setEmail("");
       setMessage("");
       setMessageReceived(name);
+      // track event
+      event("contact", {
+        category: "Contact",
+        label: `Contacted by ${name}`,
+      });
     } catch (error) {
       setLoading(false);
       console.log(error);
