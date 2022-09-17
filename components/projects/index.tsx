@@ -93,6 +93,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
         <div className="absolute left-4 bottom-4 flex flex-col gap-4">
           <a
             href={project.link}
+            target="_blank"
             className="w-max rounded-[8px] bg-dark-100 px-4 py-2"
           >
             View project
