@@ -9,6 +9,7 @@ const ContactMe = dynamic(() => import("../components/contact"));
 const Projects = dynamic(() => import("../components/projects"));
 
 export default function Home() {
+  // use for spolight following cursor
   useEffect(() => {
     const spotlightEl = document.querySelector("#spotlight") as HTMLElement;
 
@@ -28,10 +29,47 @@ export default function Home() {
     };
   }, []);
 
+  // used as a hack around chrome's laggy snap scroll
+  useEffect(() => {
+    // listen for mouse wheel up or down and disable scroll
+    document.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        const masterSlider = document.querySelector(
+          "#master-slide"
+        ) as HTMLElement;
+        if (e?.wheelDelta > 0) {
+          // scroll up
+          console.log("scroll up");
+          // scroll up to next section - full page scroll
+
+          if (masterSlider) {
+            masterSlider.scrollBy({
+              top: -window.innerHeight,
+              behavior: "smooth",
+            });
+          }
+        } else {
+          // scroll down
+          console.log("scroll down");
+          // scroll down to next section - full page scroll
+          if (masterSlider) {
+            masterSlider.scrollBy({
+              top: window.innerHeight,
+              behavior: "smooth",
+            });
+          }
+        }
+      },
+      { passive: false }
+    );
+  }, []);
+
   return (
     <main
-      onScroll={(e) => e.preventDefault()}
-      className="no-scrollbar min-w-screen max-w-screen md:snap-parent h-auto w-screen overflow-x-hidden transition-all duration-300 ease-in md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll"
+      id="master-slide"
+      className="no-scrollbar min-w-screen max-w-screen md:snap-parent h-auto w-screen overflow-x-hidden scroll-smooth transition-all duration-300 ease-in md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll"
     >
       <div
         id="spotlight"

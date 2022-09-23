@@ -36,10 +36,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     margin: 0;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: none;
     font-family: "Fira Code", monospace;
     -webkit-tap-highlight-color: transparent;
