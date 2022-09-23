@@ -39,7 +39,7 @@ export default function Home() {
         const masterSlider = document.querySelector(
           "#master-slide"
         ) as HTMLElement;
-        if (e?.wheelDelta > 0) {
+        if (e?.deltaY < 0) {
           // scroll up
           console.log("scroll up");
           // scroll up to next section - full page scroll
