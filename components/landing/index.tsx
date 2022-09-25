@@ -9,11 +9,11 @@ export default function FirstScreen() {
           <p className="text-[18px] font-medium text-white">Hi. I am</p>
           <h1
             id="title"
-            className="title text-[48px] text-white md:text-[62px]"
+            className="title text-[48px] text-white md:text-[62px] tracking-tight"
           >
             Liplan Lekipising
           </h1>
-          <h2 className="text-[23px] font-medium text-purple-light md:text-[32px]">
+          <h2 className="text-[23px] tracking-tight font-medium text-purple-light md:text-[32px]">
             &gt; Front-end developer
           </h2>
         </div>
