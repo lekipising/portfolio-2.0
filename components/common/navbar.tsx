@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { event } from "nextjs-google-analytics";
 
 export const scrollIntoId = (id: string) => {
   const element = document.getElementById(id);
@@ -8,6 +10,18 @@ export const scrollIntoId = (id: string) => {
 };
 
 export default function NavBar({ activeLink }: { activeLink: string }) {
+  // track project clicks
+  useEffect(() => {
+    // listen for clicks on the project
+    const downloadElement = document.getElementById(`download-resume`);
+    downloadElement?.addEventListener("click", () => {
+      event("download-resume", {
+        category: "Resume",
+        label: "Downloaded Resume",
+      });
+    });
+  }, []);
+
   return (
     <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
@@ -30,7 +44,7 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
       </div>
 
       <a
-        key={activeLink}
+        id="download-resume"
         href="/Lekipising_Resume_Oct.pdf"
         target="_blank"
         rel="noopener noreferrer"
