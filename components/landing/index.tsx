@@ -19,9 +19,10 @@ export default function FirstScreen() {
         </div>
         <div className="flex flex-col gap-2 italic text-gray-100 md:gap-1">
           <p>
-            // I craft interactive and beautiful web apps, and I love what I do.
+            I craft interactive and beautiful web apps, and I love what I do.
           </p>
-          <p>// View some of my personal projects!</p>
+          <p>With every line of code, I strive to make the web a  better place. </p>
+          <p>View some of my personal projects!</p>
         </div>
       </div>
       <div className="relative z-50 hidden h-[25vw] w-[25vw] rounded-full md:block">

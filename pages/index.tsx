@@ -41,7 +41,6 @@ export default function Home() {
         ) as HTMLElement;
         if (e?.deltaY < 0) {
           // scroll up
-          console.log("scroll up");
           // scroll up to next section - full page scroll
 
           if (masterSlider) {
@@ -52,7 +51,6 @@ export default function Home() {
           }
         } else {
           // scroll down
-          console.log("scroll down");
           // scroll down to next section - full page scroll
           if (masterSlider) {
             masterSlider.scrollBy({

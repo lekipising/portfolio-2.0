@@ -9,17 +9,17 @@ export default function AboutMe() {
       </p>
 
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        * I am an experienced Software Engineer with a interest of creating
-        elegant tech solutions.
+        * I am a software engineer with 3+ years of experience in web
+        development. <br />* I enjoy building everything from small business
+        sites to rich interactive web apps.
       </p>
-
       <p>*</p>
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        * I am an open source enthusiast and enjoy playing video games.
+        * If you are a business looking for a strong web product, recruiter looking to <br />
+        * hire or a developer looking for mentorship, feel free to contact me.
       </p>
       <p>*</p>
-      <p>*</p>
-      <p className="text-sm transition-all duration-300 ease-in hover:text-white/70">
+      <p className="transition-all duration-300 ease-in hover:text-white/70">
         * I build awesome products using:
       </p>
       <div className="grid w-full grid-cols-2 gap-1 gap-x-5 pl-4 md:grid-cols-3">
