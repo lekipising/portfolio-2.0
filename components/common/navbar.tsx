@@ -1,9 +1,4 @@
-import Image from "next/image";
-import React, { useState } from "react";
-import MobileMenu from "./menu";
-
-import CloseIcon from "../../assets/close.svg";
-import OpenIcon from "../../assets/open.svg";
+import React from "react";
 
 export const scrollIntoId = (id: string) => {
   const element = document.getElementById(id);
@@ -11,8 +6,6 @@ export const scrollIntoId = (id: string) => {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-
-import { motion } from "framer-motion";
 
 export default function NavBar({ activeLink }: { activeLink: string }) {
   return (
@@ -35,26 +28,16 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
           isActive={activeLink === "_contact-me"}
         />
       </div>
-      {activeLink !== "_hello" && (
-        <motion.div
-          key={activeLink}
-          initial={{ scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: 45 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="absolute right-8 h-[40px] w-[40px] rounded-full"
-        >
-          <Image
-            src={
-              "https://res.cloudinary.com/dpnbddror/image/upload/v1642927639/liplan/IMG_20190524_121443_tm3oo7.webp"
-            }
-            height="100"
-            width="100"
-            layout="responsive"
-            alt="Liplan Lekipising - Portfolio"
-            className="rounded-full"
-          />
-        </motion.div>
-      )}
+
+      <a
+        key={activeLink}
+        href="/Lekipising_Resume_Oct.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute right-8 flex w-max items-center justify-center rounded-full bg-purple-heavy py-2 px-4 text-white"
+      >
+        View resume
+      </a>
     </nav>
   );
 }
