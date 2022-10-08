@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import FirstScreen from "../components/landing";
 import MainLayout from "../components/common/layout";
+import NavBar from "../components/common/navbar";
 
 const AboutMe = dynamic(() => import("../components/about"));
 const ContactMe = dynamic(() => import("../components/contact"));
@@ -29,62 +30,20 @@ export default function Home() {
     };
   }, []);
 
-  // used as a hack around chrome's laggy snap scroll
-  useEffect(() => {
-    // listen for mouse wheel up or down and disable scroll
-    document.addEventListener(
-      "wheel",
-      (e) => {
-        e.preventDefault();
-        const masterSlider = document.querySelector(
-          "#master-slide"
-        ) as HTMLElement;
-        if (e?.deltaY < 0) {
-          // scroll up
-          // scroll up to next section - full page scroll
-
-          if (masterSlider) {
-            masterSlider.scrollBy({
-              top: -window.innerHeight,
-              behavior: "smooth",
-            });
-          }
-        } else {
-          // scroll down
-          // scroll down to next section - full page scroll
-          if (masterSlider) {
-            masterSlider.scrollBy({
-              top: window.innerHeight,
-              behavior: "smooth",
-            });
-          }
-        }
-      },
-      { passive: false }
-    );
-  }, []);
-
   return (
-    <main
-      id="master-slide"
-      className="no-scrollbar min-w-screen max-w-screen md:snap-parent h-auto w-screen overflow-x-hidden scroll-smooth transition-all duration-300 ease-in md:h-screen md:snap-y md:snap-mandatory md:overflow-y-scroll"
-    >
+    <main className="no-scrollbar m-auto mt-[5vh] h-[90vh] w-[90vw] overflow-y-scroll rounded-[8px] border-[1px] border-gray-200 bg-dark-200 transition-all duration-300 ease-in">
       <div
         id="spotlight"
         className="bg-blur-two fixed left-0 top-0 z-40 h-[50px] w-[50px] rounded-full"
       />
-      <MainLayout currentPage="_hello">
-        <FirstScreen />
-      </MainLayout>
-      <MainLayout showFooter currentPage="_about-me">
-        <AboutMe />
-      </MainLayout>
-      <MainLayout showFooter currentPage="_projects">
-        <Projects />
-      </MainLayout>
-      <MainLayout showFooter currentPage="_contact-me">
-        <ContactMe />
-      </MainLayout>
+      <div className="fixed inset-x-0 z-[100] hidden px-[5vw] md:block">
+        <NavBar activeLink={"_hello"} />
+      </div>
+      <FirstScreen />
+      <AboutMe />
+      <Projects />
+      <ContactMe />
+      {/* <MainLayout currentPage="_hello"></MainLayout> */}
     </main>
   );
 }

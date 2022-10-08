@@ -5,7 +5,7 @@ import { event } from "nextjs-google-analytics";
 export const scrollIntoId = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 };
 
@@ -23,7 +23,7 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
   }, []);
 
   return (
-    <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
+    <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
         <div
           role="link"
@@ -61,9 +61,7 @@ function OneNavItem({ text, isActive }: { text: string; isActive: boolean }) {
     <div
       role="link"
       onClick={() => scrollIntoId(text)}
-      className={`flex h-full cursor-pointer items-center justify-center border-[0.5px]  border-gray-200  px-4 transition-all duration-150 ease-in hover:text-yellow ${
-        isActive && "border-b-[2px] border-b-yellow"
-      }`}
+      className={`flex h-full cursor-pointer items-center justify-center  border-[0.5px]  border-gray-200 px-4 transition-all duration-150 ease-in hover:text-yellow`}
     >
       {text}
     </div>

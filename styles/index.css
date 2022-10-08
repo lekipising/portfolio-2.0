@@ -117,15 +117,6 @@ textarea {
     color: #607B96;
 }
 
-.snap-parent {
-    scroll-snap-type: mandatory;
-    /* for older browsers */
-    scroll-snap-points-y: repeat(100vh);
-    /* for older browsers */
-    scroll-snap-type: y mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
 .input-bx-active:active, .input-bx-active:focus {
     box-shadow: rgba(254, 165, 95, 1) 0px 2px 30px -15px;
 }
@@ -134,5 +125,3 @@ textarea {
     transition: all ease-in 0.3s;
     box-shadow: rgba(254, 165, 95, 0.5) 0px 0px 5px
 }
-
-#title {}

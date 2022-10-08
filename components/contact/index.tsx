@@ -46,7 +46,7 @@ export default function ContactMe() {
   };
 
   return (
-    <section className="relative m-auto flex h-full w-full max-w-[70vw] flex-col items-center justify-between pb-64 md:flex-row md:pb-32">
+    <section id="_contact-me" className="relative m-auto flex h-full w-full max-w-[70vw] flex-col items-center justify-between pb-64 md:flex-row md:pb-32">
       {messageReceived ? (
         <SuccessMessage
           senderName={messageReceived}

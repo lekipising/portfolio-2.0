@@ -24,7 +24,7 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 export default function Projects() {
   return (
-    <section className="m-auto flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:top-1/2 md:-translate-y-2/3 md:flex-row md:py-0 ">
+    <section id="_projects" className="m-auto flex max-w-[95%] mt-32 flex-col justify-center gap-5 py-8 md:relative  md:flex-row md:py-0 ">
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
       ))}

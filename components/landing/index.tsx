@@ -3,17 +3,17 @@ import React from "react";
 
 export default function FirstScreen() {
   return (
-    <section className="relative flex h-full flex-col items-center justify-start gap-32 pb-16 pt-16 md:flex-row md:justify-center md:pb-0 md:pt-0">
+    <section id="_hello" className="relative flex h-full flex-col items-center justify-start gap-32 pb-16 pt-16 md:flex-row md:justify-center md:pb-0 md:pt-0 ">
       <div className="flex w-[90%] flex-col gap-16 md:w-auto">
         <div>
           <p className="text-[18px] font-medium text-white">Hi. I am</p>
           <h1
             id="title"
-            className="title text-[48px] text-white md:text-[62px] tracking-tight"
+            className="title text-[48px] tracking-tight text-white md:text-[62px]"
           >
             Liplan Lekipising
           </h1>
-          <h2 className="text-[23px] tracking-tight font-medium text-purple-light md:text-[32px]">
+          <h2 className="text-[23px] font-medium tracking-tight text-purple-light md:text-[32px]">
             &gt; Front-end developer
           </h2>
         </div>
@@ -21,7 +21,9 @@ export default function FirstScreen() {
           <p>
             I craft interactive and beautiful web apps, and I love what I do.
           </p>
-          <p>With every line of code, I strive to make the web a  better place. </p>
+          <p>
+            With every line of code, I strive to make the web a better place.{" "}
+          </p>
           <p>View some of my personal projects!</p>
         </div>
       </div>
