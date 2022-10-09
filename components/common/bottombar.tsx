@@ -8,7 +8,7 @@ import Github from "../../assets/github.svg";
 
 export default function BottomBar() {
   return (
-    <footer className="absolute inset-x-0 bottom-0 flex h-[55px] items-center justify-between border-t-[1px] border-gray-200 px-8 pl-2 text-gray-100 md:pl-8">
+    <footer className="hidden h-[55px] items-center justify-between border-t-[1px] border-gray-200 px-8 pl-2 text-gray-100 md:flex  md:pl-8">
       <div className="flex h-full items-center">
         <span className="pr-2">find me in:</span>
         <a

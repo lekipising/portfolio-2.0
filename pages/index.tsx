@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import FirstScreen from "../components/landing";
 import MainLayout from "../components/common/layout";
 import NavBar from "../components/common/navbar";
+import BottomBar from "../components/common/bottombar";
 
 const AboutMe = dynamic(() => import("../components/about"));
 const ContactMe = dynamic(() => import("../components/contact"));
@@ -43,6 +44,7 @@ export default function Home() {
       <AboutMe />
       <Projects />
       <ContactMe />
+      <BottomBar />
       {/* <MainLayout currentPage="_hello"></MainLayout> */}
     </main>
   );
