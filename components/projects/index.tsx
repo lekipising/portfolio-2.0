@@ -24,7 +24,10 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 export default function Projects() {
   return (
-    <section id="_projects" className="m-auto flex max-w-[95%] mt-32 flex-col justify-center gap-5 py-8 md:relative  md:flex-row md:py-0 ">
+    <section
+      id="_projects"
+      className="m-auto mt-32 flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative  md:flex-row md:py-0 "
+    >
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
       ))}
@@ -55,6 +58,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       whileInView={{
         y: 0,
       }}
+      viewport={{ amount: 0.5 }}
       whileHover={{ y: -10, transition: { duration: 0.2 } }}
       transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * index }}
       className="group w-full md:w-[350px]"
@@ -72,7 +76,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
               : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
           }
           transition={{ duration: 1, delay: 0.3 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5 }}
           className="relative m-auto h-[20vh] max-h-[215px] w-full rounded-t-[10px] transition-all duration-150 ease-in group-hover:rounded-none"
         >
           <Image

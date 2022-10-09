@@ -23,7 +23,7 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
   }, []);
 
   return (
-    <nav className="relative flex h-[55px] items-center border-b-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">
+    <nav className="relative m-auto flex h-[55px] w-full items-center rounded-[8px] border-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
         <div
           role="link"
