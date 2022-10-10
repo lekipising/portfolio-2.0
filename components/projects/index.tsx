@@ -75,8 +75,8 @@ function OneProject({ project, index }: { project: Project; index: number }) {
               ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
               : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
           }
-          transition={{ duration: 1, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.8 }}
           className="relative m-auto h-[20vh] max-h-[215px] w-full rounded-t-[10px] transition-all duration-150 ease-in group-hover:rounded-none"
         >
           <Image
