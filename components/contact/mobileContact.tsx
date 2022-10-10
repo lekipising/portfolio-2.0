@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-import Link from "next/link";
-
 import Twitter from "../../assets/twitter.svg";
 import LinkedIn from "../../assets/linkedin.svg";
-import Github from "../../assets/github.svg";
+
+import { motion } from "framer-motion";
 
 export default function MobileSocials() {
   return (
@@ -19,9 +18,13 @@ export default function MobileSocials() {
         Check out more of my projects on GitHub
       </a>
 
-      <p className="mt-16 w-full text-center underline">Connect with me on:</p>
+      <p className="mt-16 w-full text-center text-purple-heavy">
+        Connect with me on:
+      </p>
       <div className="flex w-full justify-center">
-        <a
+        <motion.a
+          whileTap={{ scale: 1.1 }}
+          transition={{ ease: "easeIn", duration: 0.2 }}
           target="_blank"
           rel="noreferrer"
           href="https://twitter.com/lekipising"
@@ -34,8 +37,10 @@ export default function MobileSocials() {
             alt="Twitter"
             className="cursor-pointer"
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileTap={{ scale: 1.1 }}
+          transition={{ ease: "easeIn", duration: 0.2 }}
           target="_blank"
           rel="noreferrer"
           href="https://www.linkedin.com/in/liplan0lekipising/"
@@ -48,7 +53,7 @@ export default function MobileSocials() {
             alt="LinkedIn"
             className="cursor-pointer"
           />
-        </a>
+        </motion.a>
       </div>
     </div>
   );

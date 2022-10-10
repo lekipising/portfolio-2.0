@@ -5,10 +5,6 @@ import { motion } from "framer-motion";
 export default function AboutMe() {
   return (
     <motion.section
-      initial={{ opacity: 0.5, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ amount: 0.3 }}
-      transition={{ duration: 0.3, ease: "easeIn" }}
       id="_about-me"
       className="cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative  md:m-auto md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
     >

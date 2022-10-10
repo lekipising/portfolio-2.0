@@ -26,7 +26,7 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="m-auto mt-32 flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative  md:flex-row md:py-0 "
+      className="m-auto mt-8 flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:mt-32  md:flex-row md:py-0 "
     >
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
