@@ -27,6 +27,7 @@ export default function FirstScreen() {
           <p>
             With every line of code, I strive to make the web a better place.{" "}
           </p>
+          <br />
           <p>View some of my personal projects!</p>
         </div>
       </div>
