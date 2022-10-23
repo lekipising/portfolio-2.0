@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import FirstScreen from "../components/landing";
 import NavBar from "../components/common/navbar";
-import BottomBar from "../components/common/bottombar";
 
 const AboutMe = dynamic(() => import("../components/about"));
 const ContactMe = dynamic(() => import("../components/contact"));
 const Projects = dynamic(() => import("../components/projects"));
+const BottomBar = dynamic(() => import("../components/common/bottombar"));
 
 import { useScroll, useTransform } from "framer-motion";
 
@@ -80,7 +80,7 @@ export default function Home() {
         <BottomBar />
         <div
           style={{ height: currentPrecent - 10 + "%" }}
-          className={`fixed inset-y-[5vh] right-[5vw] z-[100] m-auto h-1 min-h-[5px] w-[5px] rounded-lg bg-yellow/60`}
+          className={`fixed inset-y-[5vh] right-[5vw] z-[100] m-auto hidden h-1 min-h-[5px] w-[5px] rounded-lg bg-yellow/60 md:block`}
         />
       </main>
     </>
