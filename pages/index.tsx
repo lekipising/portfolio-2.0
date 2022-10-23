@@ -43,6 +43,7 @@ export default function Home() {
   useEffect(
     () =>
       yRange.onChange((v) => {
+        // @ts-ignore
         setCurrentPercent(Math.trunc(yRange.current));
       }),
     [yRange]

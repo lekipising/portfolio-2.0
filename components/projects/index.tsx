@@ -26,7 +26,7 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="m-auto my-8 flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:my-32  md:flex-row "
+      className="m-auto flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:flex-row  md:py-32 "
     >
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
@@ -98,7 +98,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           <a
             href={project.link}
             target="_blank"
-            className="w-max rounded-[8px] text-sm bg-dark-100 px-4 py-2"
+            className="w-max rounded-[8px] bg-dark-100 px-4 py-2 text-sm"
           >
             View project
           </a>

@@ -46,7 +46,10 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="_contact-me" className="relative m-auto flex h-full w-full max-w-[70vw] flex-col items-center justify-between pb-64 md:flex-row md:pb-32">
+    <section
+      id="_contact-me"
+      className="relative m-auto my-16 flex h-max w-full max-w-[70vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:flex-row md:pb-32"
+    >
       {messageReceived ? (
         <SuccessMessage
           senderName={messageReceived}
@@ -63,7 +66,7 @@ export default function ContactMe() {
           loading={loading}
         />
       )}
-      <div className="absolute left-1/2 top-[40%] hidden h-[50vh] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100 md:block" />
+      <div className="absolute left-1/2 top-[40%] hidden h-[50%] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100 md:block" />
       <ShowRealTimeMessage name={name} email={email} message={message} />
       <MobileSocials />
     </section>
