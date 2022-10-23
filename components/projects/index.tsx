@@ -26,7 +26,7 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="m-auto mt-8 flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:mt-32  md:flex-row md:py-0 "
+      className="m-auto my-8 flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:my-32  md:flex-row "
     >
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
@@ -67,7 +67,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       <h1 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow">
         {project.title}
       </h1>
-      <div className="project relative h-[58vh] max-h-[470px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
+      <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
         <motion.div
           initial={false}
           animate={
@@ -90,7 +90,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           />
         </motion.div>
         <div className="p-8 px-4">
-          <p className="mb-5 text-[15px] tracking-tight">
+          <p className="mb-5 text-[15px] tracking-tight xl:text-[13px]">
             {project.description}
           </p>
         </div>
@@ -98,7 +98,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           <a
             href={project.link}
             target="_blank"
-            className="w-max rounded-[8px] bg-dark-100 px-4 py-2"
+            className="w-max rounded-[8px] text-sm bg-dark-100 px-4 py-2"
           >
             View project
           </a>
@@ -124,7 +124,7 @@ function OneTechnology({ tech }: { tech: Technology }) {
         quality={100}
         alt={tech.text}
       />
-      <span className="text-[13px] text-white">{tech.text}</span>
+      <span className="text-[13px] text-white xl:text-[10px]">{tech.text}</span>
     </div>
   );
 }
