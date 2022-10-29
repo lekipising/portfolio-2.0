@@ -98,7 +98,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           <a
             href={project.link}
             target="_blank"
-            className="w-max rounded-[8px] bg-dark-100 px-4 py-2 text-sm"
+            className="w-max rounded-[8px] border hover:border hover:border-yellow bg-dark-100 px-4 py-2 text-sm"
           >
             View project
           </a>

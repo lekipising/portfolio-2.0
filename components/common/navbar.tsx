@@ -25,13 +25,13 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
   return (
     <nav className="relative m-auto flex h-[55px] w-full items-center rounded-[8px] border-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">
       <div className="md:w-[10vw]">
-        <div
+        <span
           role="link"
           onClick={() => scrollIntoId("_hello")}
-          className="cursor-pointer transition-all duration-150 ease-in hover:text-yellow"
+          className="cursor-pointer tracking-wider transition-all leading-[120.4%] font-semibold duration-150 ease-in hover:text-yellow"
         >
           @lekipising
-        </div>
+        </span>
       </div>
       <div className="hidden h-full items-center md:flex">
         <OneNavItem text="_hello" isActive={activeLink === "_hello"} />
