@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { scrollIntoId } from "../common/navbar";
 
 export default function FirstScreen() {
   return (
@@ -28,13 +27,6 @@ export default function FirstScreen() {
           <p>
             With every line of code, I strive to make the web a better place.{" "}
           </p>
-          <br />
-          <button
-            onClick={() => scrollIntoId("_projects")}
-            className="mx-auto mt-4 w-max cursor-pointer rounded-[8px] bg-purple-light py-2 px-8 font-semibold not-italic leading-[120.4%] tracking-tight text-white hover:bg-purple-light/80"
-          >
-            View projects
-          </button>
         </div>
       </div>
       <div className="relative z-50 hidden h-[25vw] w-[25vw] rounded-full md:block">
