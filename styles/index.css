@@ -228,3 +228,7 @@ li:nth-child(9) {
         border-radius: 50%;
     }
 }
+
+.pic-shadow {
+    box-shadow: rgba(67, 217, 173, 0.1) 0px 4px 16px, rgba(67, 217, 173, 0.0.5) 0px 8px 32px;
+}

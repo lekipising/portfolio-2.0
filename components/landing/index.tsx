@@ -16,7 +16,7 @@ export default function FirstScreen() {
           >
             Liplan Lekipising
           </h1>
-          <h2 className="text-[23px] font-medium tracking-tight text-purple-heavy md:text-[32px]">
+          <h2 className="text-[23px] font-medium tracking-tight text-green md:text-[32px]">
             &gt; Front-end developer
           </h2>
         </div>
@@ -29,7 +29,7 @@ export default function FirstScreen() {
           </p>
         </div>
       </div>
-      <div className="relative z-50 hidden h-[25vw] w-[25vw] rounded-full md:block">
+    <div className="relative z-50 hidden h-[25vw] w-[25vw] rounded-full md:block outline outline-green pic-shadow">
         <Image
           src={
             "https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
