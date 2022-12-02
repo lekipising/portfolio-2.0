@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/legacy/image";
 import React from "react";
 
 import Twitter from "../../assets/twitter.svg";
