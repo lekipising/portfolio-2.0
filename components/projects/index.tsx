@@ -88,8 +88,9 @@ function OneProject({ project, index }: { project: Project; index: number }) {
             sizes="100vw"
             style={{
               objectFit: "cover",
-              objectPosition: "center"
-            }} />
+              objectPosition: "center",
+            }}
+          />
         </motion.div>
         <div className="p-8 px-4">
           <p className="mb-5 text-[15px] tracking-tight xl:text-[13px]">
@@ -100,7 +101,8 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           <a
             href={project.link}
             target="_blank"
-            className="w-max rounded-[8px] border hover:border hover:border-yellow bg-dark-100 px-4 py-2 text-sm"
+            className="w-max rounded-[8px] border bg-dark-100 px-4 py-2 text-sm hover:border hover:border-yellow"
+            rel="noreferrer"
           >
             View project
           </a>
@@ -127,8 +129,9 @@ function OneTechnology({ tech }: { tech: Technology }) {
         alt={tech.text}
         style={{
           maxWidth: "100%",
-          height: "auto"
-        }} />
+          height: "auto",
+        }}
+      />
       <span className="text-[13px] text-white xl:text-[10px]">{tech.text}</span>
     </div>
   );

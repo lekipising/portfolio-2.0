@@ -8,7 +8,7 @@ export default function AboutMe() {
       id="_about-me"
       className="cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative  md:m-auto md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
     >
-      <span>/**</span>
+      <span>{"/**"}</span>
       <p className="text-yellow transition-all duration-300 ease-in">
         * About me
       </p>

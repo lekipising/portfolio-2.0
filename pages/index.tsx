@@ -36,14 +36,13 @@ export default function Home() {
 
   const { scrollYProgress } = useScroll({ container: carouselRef });
 
-  const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const yRange: any = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   const [currentPrecent, setCurrentPercent] = useState(null);
 
   useEffect(
     () =>
-      yRange.onChange((v) => {
-        // @ts-ignore
+      yRange.onChange(() => {
         setCurrentPercent(Math.trunc(yRange.current));
       }),
     [yRange]
@@ -71,7 +70,7 @@ export default function Home() {
           className="bg-blur-two fixed left-0 top-0 z-40 h-[50px] w-[50px] rounded-full"
         />
         <div className="fixed inset-x-0 z-[100] hidden px-[5vw] md:block">
-          <NavBar activeLink={"_hello"} />
+          <NavBar />
         </div>
         <FirstScreen />
         <AboutMe />
@@ -85,4 +84,11 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+// make static with getStaticProps
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }

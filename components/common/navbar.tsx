@@ -9,7 +9,7 @@ export const scrollIntoId = (id: string) => {
   }
 };
 
-export default function NavBar({ activeLink }: { activeLink: string }) {
+export default function NavBar() {
   // track project clicks
   useEffect(() => {
     // listen for clicks on the project
@@ -28,19 +28,16 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
         <span
           role="link"
           onClick={() => scrollIntoId("_hello")}
-          className="cursor-pointer tracking-wider transition-all leading-[120.4%] font-semibold duration-150 ease-in hover:text-yellow"
+          className="cursor-pointer font-semibold leading-[120.4%] tracking-wider transition-all duration-150 ease-in hover:text-yellow"
         >
           @lekipising
         </span>
       </div>
       <div className="hidden h-full items-center md:flex">
-        <OneNavItem text="_hello" isActive={activeLink === "_hello"} />
-        <OneNavItem text="_about-me" isActive={activeLink === "_about-me"} />
-        <OneNavItem text="_projects" isActive={activeLink === "_projects"} />
-        <OneNavItem
-          text="_contact-me"
-          isActive={activeLink === "_contact-me"}
-        />
+        <OneNavItem text="_hello" />
+        <OneNavItem text="_about-me" />
+        <OneNavItem text="_projects" />
+        <OneNavItem text="_contact-me" />
       </div>
 
       <a
@@ -56,7 +53,7 @@ export default function NavBar({ activeLink }: { activeLink: string }) {
   );
 }
 
-function OneNavItem({ text, isActive }: { text: string; isActive: boolean }) {
+function OneNavItem({ text }: { text: string }) {
   return (
     <div
       role="link"
