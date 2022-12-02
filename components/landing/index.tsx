@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 
 export default function FirstScreen() {
@@ -36,10 +36,13 @@ export default function FirstScreen() {
           }
           height="300"
           width="300"
-          layout="responsive"
           alt="Liplan Lekipising - Portfolio"
           className="rounded-full"
-        />
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
       </div>
       {/* background blur */}
       <div className="bg-blur-one absolute top-[10vh] right-[20vw] z-40 h-[20vw] w-[20vw]" />

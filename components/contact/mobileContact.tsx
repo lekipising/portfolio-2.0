@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 
 import Twitter from "../../assets/twitter.svg";
@@ -36,7 +36,10 @@ export default function MobileSocials() {
             width="30"
             alt="Twitter"
             className="cursor-pointer"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </motion.a>
         <motion.a
           whileTap={{ scale: 1.1 }}
@@ -52,7 +55,10 @@ export default function MobileSocials() {
             width="30"
             alt="LinkedIn"
             className="cursor-pointer"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </motion.a>
       </div>
     </div>

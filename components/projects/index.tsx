@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { projects } from "./projects";
 
@@ -81,13 +81,15 @@ function OneProject({ project, index }: { project: Project; index: number }) {
         >
           <Image
             src={project.image}
-            objectFit="cover"
-            objectPosition="center"
             className="rounded-t-[10px]"
-            layout="fill"
             alt={project.title}
             onLoadingComplete={() => setImageLoaded(true)}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center"
+            }} />
         </motion.div>
         <div className="p-8 px-4">
           <p className="mb-5 text-[15px] tracking-tight xl:text-[13px]">
@@ -123,7 +125,10 @@ function OneTechnology({ tech }: { tech: Technology }) {
         width="20"
         quality={100}
         alt={tech.text}
-      />
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
       <span className="text-[13px] text-white xl:text-[10px]">{tech.text}</span>
     </div>
   );

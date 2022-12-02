@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 
 import Twitter from "../../assets/twitter.svg";
@@ -22,7 +22,10 @@ export default function BottomBar() {
             width="30"
             alt="Twitter"
             className="cursor-pointer"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </a>
         <a
           href="https://www.linkedin.com/in/liplan0lekipising/"
@@ -36,7 +39,10 @@ export default function BottomBar() {
             width="30"
             alt="LinkedIn"
             className="cursor-pointer"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </a>
       </div>
 
@@ -53,7 +59,10 @@ export default function BottomBar() {
           width="30"
           alt="Github"
           className="cursor-pointer"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </a>
     </footer>
   );
