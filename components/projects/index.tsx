@@ -55,7 +55,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
       initial={{ y: 50 }}
-      whileInView={{
+      animate={{
         y: 0,
       }}
       viewport={{ amount: 0.5 }}

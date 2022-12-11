@@ -29,20 +29,23 @@ export default function FirstScreen() {
           </p>
         </div>
       </div>
-    <div className="relative z-50 hidden h-[25vw] w-[25vw] rounded-full md:block outline outline-green pic-shadow">
+      <div className="pic-shadow relative z-50 hidden h-[25vw] w-[25vw] overflow-hidden rounded-full outline outline-green md:block">
         <Image
           src={
             "https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
           }
           height="300"
           width="300"
+          quality={100}
+          priority={true}
           alt="Liplan Lekipising - Portfolio"
-          className="rounded-full"
+          className="rounded-full transition-all duration-300 ease-in hover:scale-[1.025]"
           sizes="100vw"
           style={{
             width: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
       </div>
       {/* background blur */}
       <div className="bg-blur-one absolute top-[10vh] right-[20vw] z-40 h-[20vw] w-[20vw]" />

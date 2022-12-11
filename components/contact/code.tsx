@@ -10,7 +10,7 @@ export default function ShowRealTimeMessage({
   message: string;
 }) {
   return (
-    <div className="hidden max-w-[30vw] text-gray-100 md:block">
+    <div className="monospace hidden max-w-[30vw] text-gray-100 md:block">
       <p className="flex items-center">
         <NumberTxt num={"1"} /> <KeywordText keyword="const" />{" "}
         <VarType vr="button" customStyle="ml-2" />

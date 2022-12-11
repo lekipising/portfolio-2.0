@@ -48,7 +48,7 @@ export default function ContactMe() {
   return (
     <section
       id="_contact-me"
-      className="relative m-auto my-16 flex h-max w-full max-w-[70vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:flex-row md:pb-32"
+      className="relative m-auto my-16 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:max-w-[70vw] md:flex-row md:pb-32"
     >
       {messageReceived ? (
         <SuccessMessage
