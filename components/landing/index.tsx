@@ -12,7 +12,7 @@ export default function FirstScreen() {
           <p className="text-[18px] font-medium text-white">Hi. I am</p>
           <h1
             id="title"
-            className="title text-[48px] tracking-tight text-white md:text-[62px]"
+            className="title text-[48px] tracking-tighter text-white md:text-[62px]"
           >
             Liplan Lekipising
           </h1>

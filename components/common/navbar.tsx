@@ -28,7 +28,7 @@ export default function NavBar() {
         <span
           role="link"
           onClick={() => scrollIntoId("_hello")}
-          className="cursor-pointer font-semibold leading-[120.4%] tracking-wider transition-all duration-150 ease-in hover:text-yellow"
+          className="cursor-pointer font-bold leading-[120.4%] tracking-wider transition-all duration-150 ease-in hover:text-yellow"
         >
           @lekipising
         </span>
@@ -58,7 +58,7 @@ function OneNavItem({ text }: { text: string }) {
     <div
       role="link"
       onClick={() => scrollIntoId(text)}
-      className={`flex h-full cursor-pointer items-center justify-center  border-[0.5px]  border-gray-200 px-4 transition-all duration-150 ease-in hover:text-yellow`}
+      className={`flex h-full cursor-pointer items-center font-medium justify-center  border-[0.5px]  border-gray-200 px-4 transition-all duration-150 ease-in hover:text-yellow`}
     >
       {text}
     </div>

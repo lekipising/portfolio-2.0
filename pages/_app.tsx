@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Liplan Lekipising - Software Engineer</title>
+        <title>Liplan Lekipising - Frontend Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GoogleAnalytics trackPageViews />
