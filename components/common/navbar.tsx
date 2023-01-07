@@ -23,8 +23,8 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="relative m-auto flex h-[55px] w-full items-center rounded-[8px] border-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">
-      <div className="md:w-[10vw]">
+    <header className="relative m-auto flex h-[55px] w-full items-center rounded-[8px] border-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">
+      <nav className="md:w-[10vw]">
         <span
           role="link"
           onClick={() => scrollIntoId("_hello")}
@@ -32,7 +32,7 @@ export default function NavBar() {
         >
           @lekipising
         </span>
-      </div>
+      </nav>
       <div className="hidden h-full items-center md:flex">
         <OneNavItem text="_hello" />
         <OneNavItem text="_about-me" />
@@ -42,25 +42,25 @@ export default function NavBar() {
 
       <a
         id="download-resume"
-        href="/Lekipising_Resume_Dec.pdf"
+        href="/Lekipising_Liplan_Resume_Jan.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="absolute right-8 flex w-max items-center justify-center rounded-full border-[2px] border-white py-2 px-4 font-medium text-white transition-all duration-150 ease-in hover:border-yellow hover:text-yellow"
       >
         View resume
       </a>
-    </nav>
+    </header>
   );
 }
 
 function OneNavItem({ text }: { text: string }) {
   return (
-    <div
+    <nav
       role="link"
       onClick={() => scrollIntoId(text)}
-      className={`flex h-full cursor-pointer items-center font-medium justify-center  border-[0.5px]  border-gray-200 px-4 transition-all duration-150 ease-in hover:text-yellow`}
+      className={`flex h-full cursor-pointer items-center justify-center border-[0.5px]  border-gray-200  px-4 font-medium transition-all duration-150 ease-in hover:text-yellow`}
     >
       {text}
-    </div>
+    </nav>
   );
 }
