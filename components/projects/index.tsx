@@ -26,8 +26,20 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="m-auto flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:flex-row  md:py-32 "
+      className="relative m-auto flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:flex-row  md:py-32 "
     >
+      <div className="absolute top-12">
+        <motion.h2 className="text-lg font-semibold text-green">
+          Personal Projects
+        </motion.h2>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 0.5, ease: "easeIn" }}
+          className="h-[1px] bg-green"
+        />
+      </div>
+
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
       ))}
@@ -64,9 +76,9 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       className="group w-full md:w-[350px]"
       id={`project-${project.title.toLowerCase().replace(" ", "-")}`}
     >
-      <h2 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow">
+      <h3 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow">
         {project.title}
-      </h2>
+      </h3>
       <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
         <motion.div
           initial={false}

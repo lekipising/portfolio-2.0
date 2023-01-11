@@ -6,17 +6,28 @@ export default function AboutMe() {
   return (
     <motion.section
       id="_about-me"
-      className="cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto  md:mb-32 md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
+      className="relative cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
     >
-      <h2 className="text-yellow transition-all duration-300 ease-in">
-        About me
-      </h2>
+      <div className="absolute w-[90px] left-1/2 -translate-x-1/2 -top-12">
+        <motion.h2 className="text-lg font-semibold text-green">
+          About me
+        </motion.h2>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 0.5, ease: "easeIn" }}
+          className="h-[1px] bg-green"
+        />
+      </div>
       <br />
 
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        As an experienced and creative frontend developer, I bring websites to <br />
-        life with my expertise in the latest web technologies and a keen eye for <br />
-        design. I can unlock the full potential of your digital presence, creating an <br />
+        As an experienced and creative frontend developer, I bring websites to{" "}
+        <br />
+        life with my expertise in the latest web technologies and a keen eye for{" "}
+        <br />
+        design. I can unlock the full potential of your digital presence,
+        creating an <br />
         outstanding user experience that will take your business to the next
         level.
       </p>

@@ -4,6 +4,7 @@ import ContactForm from "./form";
 import MobileSocials from "./mobileContact";
 import SuccessMessage from "./success";
 
+import { motion } from "framer-motion";
 import { event } from "nextjs-google-analytics";
 
 export default function ContactMe() {
@@ -50,6 +51,17 @@ export default function ContactMe() {
       id="_contact-me"
       className="relative m-auto my-16 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:max-w-[70vw] md:flex-row md:pb-32"
     >
+      <div className="absolute left-1/2 -top-12 w-[185px] -translate-x-1/2">
+        <motion.h2 className="text-lg font-semibold text-green">
+          Send me a message
+        </motion.h2>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 0.5, ease: "easeIn" }}
+          className="h-[1px] bg-green"
+        />
+      </div>
       {messageReceived ? (
         <SuccessMessage
           senderName={messageReceived}
