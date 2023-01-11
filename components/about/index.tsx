@@ -9,14 +9,14 @@ export default function AboutMe() {
       className="relative cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:w-max md:mt-0 mt-8  md:rounded-[30px] md:p-16 md:text-[16px]"
     >
       <div className="absolute w-[90px] left-1/2 -translate-x-1/2 -top-12">
-        <motion.h2 className="text-lg font-semibold text-green">
+        <motion.h2 className="text-lg font-semibold text-white">
           About me
         </motion.h2>
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           transition={{ duration: 0.5, ease: "easeIn" }}
-          className="h-[1px] bg-green"
+          className="h-[1px] bg-white"
         />
       </div>
       <br />

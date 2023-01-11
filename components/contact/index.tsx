@@ -52,14 +52,14 @@ export default function ContactMe() {
       className="relative m-auto my-20 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:my-16 md:max-w-[70vw] md:flex-row md:pb-32"
     >
       <div className="absolute left-1/2 -top-16 w-[185px] -translate-x-1/2 md:-top-12">
-        <motion.h2 className="text-lg font-semibold text-green">
+        <motion.h2 className="text-lg font-semibold text-white">
           Send me a message
         </motion.h2>
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           transition={{ duration: 0.5, ease: "easeIn" }}
-          className="h-[1px] bg-green"
+          className="h-[1px] bg-white"
         />
       </div>
       {messageReceived ? (

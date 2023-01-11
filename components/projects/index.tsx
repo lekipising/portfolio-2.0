@@ -29,14 +29,14 @@ export default function Projects() {
       className="relative m-auto mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 "
     >
       <div className="absolute -top-8 left-1/2 w-[185px] -translate-x-1/2 md:top-12">
-        <motion.h2 className="text-lg font-semibold text-green">
+        <motion.h2 className="text-lg font-semibold text-white">
           Personal Projects
         </motion.h2>
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           transition={{ duration: 0.5, ease: "easeIn" }}
-          className="h-[1px] bg-green"
+          className="h-[1px] bg-white"
         />
       </div>
 
