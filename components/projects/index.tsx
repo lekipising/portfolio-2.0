@@ -26,9 +26,9 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="relative m-auto flex max-w-[95%] flex-col justify-center gap-5 py-8 md:relative md:flex-row  md:py-32 "
+      className="relative m-auto mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 "
     >
-      <div className="absolute top-12">
+      <div className="absolute -top-8 left-1/2 w-[185px] -translate-x-1/2 md:top-12">
         <motion.h2 className="text-lg font-semibold text-green">
           Personal Projects
         </motion.h2>

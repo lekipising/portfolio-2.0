@@ -63,7 +63,7 @@ export default function Home() {
       </ul>
       <main
         ref={carouselRef}
-        className="no-scrollbar relative z-20 m-auto mt-[5vh] h-[90vh] w-[90vw] overflow-y-scroll rounded-[8px] border-[1px] border-gray-200 bg-dark-200 transition-all duration-300 ease-in"
+        className="no-scrollbar relative z-20 m-auto md:mt-[5vh] mt-[2vh] md:h-[90vh] md:w-[90vw] h-[95vh] w-[95vw] overflow-y-scroll rounded-[8px] border-[1px] border-gray-200 bg-dark-200 transition-all duration-300 ease-in"
       >
         <div
           id="spotlight"
