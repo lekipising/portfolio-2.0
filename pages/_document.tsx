@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
           {/* og meta */}
           <meta
             property="og:title"
-            content="Liplan Lekipising - Frontend Developer"
+            content="Liplan Lekipising - Software Engineer"
           />
           <meta property="og:url" content="https://lekipising.tech" />
           <meta
@@ -50,7 +50,7 @@ export default class MyDocument extends Document {
           <meta name="twitter:creator" content="@lekipising" />
           <meta
             name="twitter:title"
-            content="Liplan Lekipising - Frontend Developer"
+            content="Liplan Lekipising - Software Engineer"
           />
           <meta
             name="twitter:description"
@@ -68,7 +68,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="apple-mobile-web-app-title"
-            content="Liplan Lekipising - Frontend Developer"
+            content="Liplan Lekipising - Software Engineer"
           />
           <meta
             name="description"
@@ -77,7 +77,7 @@ export default class MyDocument extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
             name="application-name"
-            content="Liplan Lekipising - Frontend Developer"
+            content="Liplan Lekipising - Software Engineer"
           />
           <meta name="format-detection" content="telephone=no" />
           <meta name="msapplication-TileColor" content="#011627" />
