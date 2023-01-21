@@ -42,7 +42,7 @@ export default function NavBar() {
 
       <a
         id="download-resume"
-        href="/Lekipising_Liplan_Resume_Jan.pdf"
+        href="/Lekipising-Liplan-Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="absolute right-8 flex w-max items-center justify-center rounded-full border-[2px] border-white py-2 px-4 font-medium text-white transition-all duration-150 ease-in hover:border-yellow hover:text-yellow"

@@ -6,9 +6,9 @@ export default function AboutMe() {
   return (
     <motion.section
       id="_about-me"
-      className="relative cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:w-max md:mt-0 mt-8  md:rounded-[30px] md:p-16 md:text-[16px]"
+      className="relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:mt-0 md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
     >
-      <div className="absolute w-[90px] left-1/2 -translate-x-1/2 -top-12">
+      <div className="absolute left-1/2 -top-12 w-[90px] -translate-x-1/2">
         <motion.h2 className="text-lg font-semibold text-white">
           About me
         </motion.h2>
@@ -60,6 +60,18 @@ export default function AboutMe() {
         </p>
         <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           GraphQL
+        </p>
+      </div>
+      <div className="mt-6 flex items-center gap-4">
+        <span className="text-xs">Others:</span>
+        <p className="flex gap-1 text-xs text-gray-100">
+          <span className="text-yellow">Git</span>
+          &#x2022;
+          <span className="text-yellow">Redux Toolkit</span>
+          &#x2022;
+          <span className="text-yellow">Java</span>
+          &#x2022;
+          <span className="text-yellow">Python</span>
         </p>
       </div>
     </motion.section>
