@@ -5,7 +5,6 @@ import MobileSocials from "./mobileContact";
 import SuccessMessage from "./success";
 
 import { motion } from "framer-motion";
-import { event } from "nextjs-google-analytics";
 
 export default function ContactMe() {
   const [name, setName] = useState("");
@@ -35,11 +34,6 @@ export default function ContactMe() {
       setEmail("");
       setMessage("");
       setMessageReceived(name);
-      // track event
-      event("contact", {
-        category: "Contact",
-        label: `Contacted by ${name}`,
-      });
     } catch (error) {
       setLoading(false);
       console.log(error);
