@@ -4,8 +4,7 @@ import { AppProps } from "next/app";
 import "../styles/index.css";
 import Head from "next/head";
 
-// pages/_app.js
-import { GoogleAnalytics } from "nextjs-google-analytics";
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,8 +13,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Liplan Lekipising - Software Engineer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <GoogleAnalytics trackPageViews />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }

@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-
-import { event } from "nextjs-google-analytics";
+import React from "react";
 
 export const scrollIntoId = (id: string) => {
   const element = document.getElementById(id);
@@ -10,17 +8,6 @@ export const scrollIntoId = (id: string) => {
 };
 
 export default function NavBar() {
-  // track project clicks
-  useEffect(() => {
-    // listen for clicks on the project
-    const downloadElement = document.getElementById(`download-resume`);
-    downloadElement?.addEventListener("click", () => {
-      event("download-resume", {
-        category: "Resume",
-        label: "Downloaded Resume",
-      });
-    });
-  }, []);
 
   return (
     <header className="relative m-auto flex h-[55px] w-full items-center rounded-[8px] border-[1px] border-gray-200 bg-dark-300 pl-2 text-gray-100 md:pl-8">

@@ -1,8 +1,6 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { projects } from "./projects";
-
-import { event } from "nextjs-google-analytics";
 
 export interface Technology {
   svg: string;
@@ -49,20 +47,6 @@ export default function Projects() {
 
 function OneProject({ project, index }: { project: Project; index: number }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  // track project clicks
-  useEffect(() => {
-    // listen for clicks on the project
-    const projectElement = document.getElementById(
-      `project-${project.title.toLowerCase().replace(" ", "-")}`
-    );
-    projectElement?.addEventListener("click", () => {
-      event("click-project", {
-        category: "Project",
-        label: project.title,
-      });
-    });
-  }, []);
 
   return (
     <motion.div
