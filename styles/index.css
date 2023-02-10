@@ -205,3 +205,14 @@ li:nth-child(9) {
 .pic-shadow {
     box-shadow: rgba(67, 217, 173, 0.1) 0px 4px 16px, rgba(67, 217, 173, 0.0.5) 0px 8px 32px;
 }
+
+.heading-gradient {
+    background: linear-gradient(84deg, rgba(67, 217, 173, 1) 5%, rgba(254, 165, 95, 1) 89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heading-gradient-underline {
+    background: linear-gradient(84deg, rgba(67, 217, 173, 1) 5%, rgba(254, 165, 95, 1) 89%);
+}
