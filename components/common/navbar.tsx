@@ -15,7 +15,7 @@ export default function NavBar() {
         <span
           role="link"
           onClick={() => scrollIntoId("_hello")}
-          className="cursor-pointer font-bold leading-[120.4%] tracking-wider transition-all duration-150 ease-in hover:text-yellow"
+          className="heading-gradient cursor-pointer font-bold leading-[120.4%] text-lg tracking-wider transition-all duration-150 ease-in"
         >
           @lekipising
         </span>
