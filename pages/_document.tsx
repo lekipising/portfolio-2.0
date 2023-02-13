@@ -70,10 +70,6 @@ export default class MyDocument extends Document {
             name="apple-mobile-web-app-title"
             content="Liplan Lekipising - Software Engineer"
           />
-          <meta
-            name="description"
-            content="Where the world connects with future talent"
-          />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
             name="application-name"
