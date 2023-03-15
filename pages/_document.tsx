@@ -29,6 +29,8 @@ export default class MyDocument extends Document {
             property="og:title"
             content="Liplan Lekipising - Software Engineer"
           />
+          <meta property="og:site_name" content="Liplan Lekipising Portfolio" />
+          <meta property="og:locale" content="en_US" />
           <meta property="og:url" content="https://lekipising.tech" />
           <meta
             property="og:image"
