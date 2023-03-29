@@ -67,7 +67,7 @@ export default function Home() {
       >
         <div
           id="spotlight"
-          className="bg-blur-two fixed left-0 top-0 z-40 h-[50px] w-[50px] rounded-full"
+          className="bg-blur-two fixed left-0 top-0 z-40 h-[40px] w-[40px] rounded-full"
         />
         <div className="fixed inset-x-0 z-[100] hidden px-[5vw] md:block">
           <NavBar />

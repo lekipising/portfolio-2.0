@@ -24,7 +24,7 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="relative m-auto mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 "
+      className="relative m-auto mt-20 mb-32 flex max-w-[95%] flex-col justify-center gap-12 py-8 md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 "
     >
       <div className="absolute -top-8 left-1/2 w-[185px] -translate-x-1/2 md:top-12">
         <motion.h2 className="heading-gradient text-lg font-semibold text-white">
@@ -41,7 +41,48 @@ export default function Projects() {
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
       ))}
+
+      <div className="absolute bottom-0 w-full text-center">
+        <h4 className="font-semibold tracking-tight">
+          Professional Experience
+        </h4>
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <OneExperience link="https://knackapp.com" text="KnackApp" />
+          <OneExperience
+            link="https://staging-tzw.vercel.app"
+            text="Tranzactwith"
+          />
+          <OneExperience link="https://staging.navu360.com" text="Navu360" />
+        </div>
+      </div>
     </section>
+  );
+}
+
+function OneExperience({ link, text }: { link: string; text: string }) {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      className="flex items-center gap-2 text-purple-heavy hover:text-yellow"
+      rel="noopener noreferrer"
+    >
+      <span className="tracking-tight">{text}</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="h-5 w-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        />
+      </svg>
+    </a>
   );
 }
 
@@ -60,7 +101,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       className="group w-full md:w-[350px]"
       id={`project-${project.title.toLowerCase().replace(" ", "-")}`}
     >
-      <h3 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow">
+      <h3 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow/30">
         {project.title}
       </h3>
       <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
