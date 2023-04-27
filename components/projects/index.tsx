@@ -42,7 +42,7 @@ export default function Projects() {
         <OneProject key={i} index={i} project={project} />
       ))}
 
-      <div className="absolute bottom-0 w-full text-center">
+      <div className="bottom-0 w-full text-center md:absolute">
         <h4 className="font-semibold tracking-tight">
           Professional Experience
         </h4>
@@ -101,7 +101,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       className="group w-full md:w-[350px]"
       id={`project-${project.title.toLowerCase().replace(" ", "-")}`}
     >
-      <h3 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow/30">
+      <h3 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow/70">
         {project.title}
       </h3>
       <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">

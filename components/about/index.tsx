@@ -26,8 +26,8 @@ export default function AboutMe() {
         <br />
         life with my expertise in the latest web technologies and a keen eye for{" "}
         <br />
-        design. I can unlock the full potential of your digital presence,
-        creating an <br />
+        design. <br /> <br /> I can unlock the full potential of your digital
+        presence, creating an <br />
         outstanding user experience that will take your business to the next
         level.
       </p>
