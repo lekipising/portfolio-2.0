@@ -43,7 +43,7 @@ export default function ContactMe() {
   return (
     <section
       id="_contact-me"
-      className="relative m-auto my-20 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:my-16 md:max-w-[70vw] md:flex-row md:pb-32"
+      className="relative m-auto my-20 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:my-32 md:max-w-[70vw] md:flex-row md:pb-8"
     >
       <div className="absolute left-1/2 -top-16 w-[185px] -translate-x-1/2 md:-top-12">
         <motion.h2 className="heading-gradient text-lg font-semibold text-white">

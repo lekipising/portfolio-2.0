@@ -24,10 +24,11 @@ export default function Projects() {
   return (
     <section
       id="_projects"
-      className="relative m-auto mt-20 mb-32 flex max-w-[95%] flex-col justify-center gap-12 py-8 md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 "
+      className="relative m-auto mb-32 mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 "
     >
-      <div className="absolute -top-8 left-1/2 w-[185px] -translate-x-1/2 md:top-12">
-        <motion.h2 className="heading-gradient text-lg font-semibold text-white">
+      <div className="md:w-[510px] absolute -top-8 left-1/2 w-full -translate-x-1/2 text-center md:top-12 md:text-left">
+        <motion.h2 className="heading-gradient mx-auto text-lg font-semibold text-white">
+          Adventures in Development: <br className="block md:hidden" /> My
           Personal Projects
         </motion.h2>
         <motion.div
@@ -98,13 +99,13 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       viewport={{ amount: 0.5 }}
       whileHover={{ y: -10, transition: { duration: 0.2 } }}
       transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * index }}
-      className="group w-full md:w-[350px]"
+      className="md:w-[350px] group w-full"
       id={`project-${project.title.toLowerCase().replace(" ", "-")}`}
     >
-      <h3 className="mb-3 text-[16px] font-bold text-purple-heavy group-hover:text-yellow/70">
+      <h3 className="group-hover:text-yellow/70 mb-3 text-[16px] font-bold text-gray-100">
         {project.title}
       </h3>
-      <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pt-0 pb-32 transition-all duration-300 ease-in">
+      <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pb-32 pt-0 transition-all duration-300 ease-in">
         <motion.div
           initial={false}
           animate={
@@ -129,16 +130,16 @@ function OneProject({ project, index }: { project: Project; index: number }) {
             }}
           />
         </motion.div>
-        <div className="p-8 px-4">
-          <p className="mb-5 text-[15px] tracking-tight xl:text-[13px]">
+        <div className="p-8 px-4 pt-4">
+          <p className="xl:text-[14px] mb-5 text-[14px] font-medium tracking-tight">
             {project.description}
           </p>
         </div>
-        <div className="absolute left-4 bottom-4 flex flex-col gap-4">
+        <div className="absolute bottom-4 left-4 flex flex-col gap-4">
           <a
             href={project.link}
             target="_blank"
-            className="w-max rounded-[8px] border bg-dark-100 px-4 py-2 text-sm hover:border hover:border-yellow"
+            className="w-max rounded-[8px] border bg-dark-100 px-4 py-2 text-sm transition-all duration-300 ease-in hover:border hover:border-yellow"
             rel="noreferrer"
           >
             View project
@@ -169,7 +170,7 @@ function OneTechnology({ tech }: { tech: Technology }) {
           height: "auto",
         }}
       />
-      <span className="text-[13px] text-white xl:text-[10px]">{tech.text}</span>
+      <span className="xl:text-[10px] text-[13px] text-white">{tech.text}</span>
     </div>
   );
 }

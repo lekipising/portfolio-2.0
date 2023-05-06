@@ -63,7 +63,7 @@ export default function Home() {
       </ul>
       <main
         ref={carouselRef}
-        className="no-scrollbar relative z-20 m-auto md:mt-[5vh] mt-[2vh] md:h-[90vh] md:w-[90vw] h-[95vh] w-[95vw] overflow-y-scroll rounded-[8px] border-[1px] border-gray-200 bg-dark-200 transition-all duration-300 ease-in"
+        className="no-scrollbar relative z-20 m-auto mt-[2vh] h-[95vh] w-[95vw] overflow-y-scroll rounded-[8px] border-[1px] border-gray-200 bg-dark-200 transition-all duration-300 ease-in md:mt-[5vh] md:h-[90vh] md:w-[90vw]"
       >
         <div
           id="spotlight"
@@ -79,7 +79,7 @@ export default function Home() {
         <BottomBar />
         <div
           style={{ height: currentPrecent - 10 + "%" }}
-          className={`fixed inset-y-[5vh] right-[5vw] z-[100] m-auto hidden h-1 min-h-[5px] w-[5px] rounded-lg bg-yellow/60 md:block`}
+          className={`heading-gradient-underline fixed inset-y-[5vh] right-[5vw] z-[100] m-auto hidden h-1 min-h-[5px] w-[5px] rounded-br-lg rounded-tr-lg md:block`}
         />
       </main>
     </>

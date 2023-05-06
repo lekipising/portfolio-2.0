@@ -12,21 +12,17 @@ export default function FirstScreen() {
           <p className="text-[18px] font-medium text-white">Hi. I am</p>
           <h1
             id="title"
-            className="title text-[48px] tracking-tighter text-white md:text-[62px]"
+            className="title md:text-[62px] text-[48px] tracking-tighter text-white"
           >
             Liplan Lekipising
           </h1>
-          <p className="text-[23px] font-medium tracking-tight text-green md:text-[32px]">
+          <p className="md:text-[32px] text-[23px] font-medium tracking-tight text-green">
             &gt; Software Engineer
           </p>
         </div>
         <div className="flex flex-col gap-2 italic text-gray-100 md:gap-1">
-          <p>
-            I craft interactive and beautiful web apps, and I love what I do.
-          </p>
-          <p>
-            With every line of code, I strive to make the web a better place.{" "}
-          </p>
+          <p>Are you ready to see some web wizardry?</p>
+          <p>Scroll down and let me take you on a tour of my craft!</p>
         </div>
       </div>
       <div className="pic-shadow relative z-50 hidden h-[25vw] w-[25vw] overflow-hidden rounded-full outline outline-green md:block">
@@ -39,7 +35,7 @@ export default function FirstScreen() {
           quality={100}
           priority={true}
           alt="Liplan Lekipising - Portfolio"
-          className="rounded-full transition-all duration-300 ease-in hover:scale-[1.025]"
+          className="hover:scale-[1.025] rounded-full transition-all duration-300 ease-in"
           sizes="100vw"
           style={{
             width: "100%",
@@ -48,7 +44,7 @@ export default function FirstScreen() {
         />
       </div>
       {/* background blur */}
-      <div className="bg-blur-one absolute top-[10vh] right-[20vw] z-40 h-[20vw] w-[20vw]" />
+      <div className="bg-blur-one absolute right-[20vw] top-[10vh] z-40 h-[20vw] w-[20vw]" />
     </section>
   );
 }

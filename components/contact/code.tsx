@@ -15,10 +15,10 @@ export default function ShowRealTimeMessage({
         <NumberTxt num={"1"} /> <KeywordText keyword="const" />{" "}
         <VarType vr="button" customStyle="ml-2" />
         <KeywordText keyword="=" customStyle="px-2" />{" "}
-        <VarType vr="document.querySelector" />
-        {`{`}
+        <VarType vr="document.getElementId" />
+        {`(`}
         <UserdefinedText text="'#sendBtn'" />
-        {`};`}
+        {`);`}
       </p>
       <p>
         <NumberTxt num={"2"} />
