@@ -24,8 +24,8 @@ export const projects: Project[] = [{
 {
     title: "Karent App",
     description: "A modern social media web application designed for university/college students to share ideas and stay connected.",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1646494823/1646494823423_bx1rjr.webp",
-    link: "https://karent.vercel.app/welcome",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1683393622/liplan/abstraction_line_wavy_113046_1280x800_xugyej.jpg",
+    link: "https://karent.app/welcome",
     technologies: [
         {
             svg: NextIcon,
@@ -40,7 +40,7 @@ export const projects: Project[] = [{
 {
     title: "CourierPal App",
     description: "An ordering web app that connects shoppers and travelers who assist each other in getting items across the world",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1646494691/1646494690335_rdm1i1.webp",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1683393573/liplan/paint_water_liquid_85058_1280x800_r9fa2d.jpg",
     link: "https://courierpal.vercel.app/",
     technologies: [
         {
@@ -54,9 +54,9 @@ export const projects: Project[] = [{
     ]
 },
 {
-    title: "Zero Users App",
+    title: "Zero App",
     description: "A simple web app demontrating the power of motion and animation",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1646466474/1646466472624_gwhome.webp",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1683393521/liplan/cat_smile_funny_133926_1280x800_qppov6.jpg",
     link: "https://zerousers.vercel.app/",
     technologies: [
         {
