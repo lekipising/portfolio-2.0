@@ -1,6 +1,5 @@
 import { Project } from ".";
 
-import ReactIcon from "../../assets/react.svg";
 import NextIcon from "../../assets/next.svg";
 import StyledcIcon from "../../assets/styledc.svg";
 import TailwindIcon from "../../assets/tailwind.svg";
@@ -24,7 +23,7 @@ export const projects: Project[] = [{
 {
     title: "Karent App",
     description: "A modern social media web application designed for university/college students to share ideas and stay connected.",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1683393622/liplan/abstraction_line_wavy_113046_1280x800_xugyej.jpg",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1685813549/Screenshot_from_2023-06-03_19-30-42_vswmuk.png",
     link: "https://karent.app/welcome",
     technologies: [
         {
@@ -54,18 +53,18 @@ export const projects: Project[] = [{
     ]
 },
 {
-    title: "Zero App",
-    description: "A simple web app demontrating the power of motion and animation",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1683393521/liplan/cat_smile_funny_133926_1280x800_qppov6.jpg",
-    link: "https://zerousers.vercel.app/",
+    title: "Maskani App",
+    description: "Augmented reality web platform that recreates the life-like experience of walking inside a real-sized house in any location",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1685812969/bg_main_df77us.jpg",
+    link: "https://maskani-app.vercel.app",
     technologies: [
         {
-            svg: ReactIcon,
-            text: "React"
+            svg: NextIcon,
+            text: "Next JS"
         },
         {
-            svg: StyledcIcon,
-            text: "Styled Components"
+            svg: TailwindIcon,
+            text: "Tailwind CSS"
         },
     ]
 }
