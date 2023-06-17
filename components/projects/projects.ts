@@ -8,7 +8,7 @@ export const projects: Project[] = [{
     title: "Navu360",
     description: "Onboarding platform for new talents. The ultimate onboarding platform",
     image: "https://res.cloudinary.com/dpnbddror/image/upload/v1682427741/navu/Group_1_1_s3dduo.png",
-    link: "https://staging.navu360.com/",
+    link: "https://navu360.com",
     technologies: [
         {
             svg: NextIcon,
