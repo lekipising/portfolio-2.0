@@ -216,3 +216,88 @@ li:nth-child(9) {
 .heading-gradient-underline {
     background: linear-gradient(84deg, rgba(67, 217, 173, 1) 5%, rgba(254, 165, 95, 1) 89%);
 }
+
+.custom-btn {
+    padding: 10px 25px;
+    font-weight: 500;
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    color: #FEA55F;
+    cursor: pointer;
+}
+
+.btn-4 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+
+.btn-4 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn-4:before,
+.btn-4:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    background: #FEA55F;
+    transition: all 0.3s ease;
+}
+
+.btn-4:before {
+    height: 50%;
+    width: 2px;
+}
+
+.btn-4:after {
+    width: 20%;
+    height: 2px;
+}
+
+.btn-4:hover:before {
+    height: 100%;
+}
+
+.btn-4:hover:after {
+    width: 100%;
+}
+
+.btn-4 span:before,
+.btn-4 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: #FEA55F;
+    transition: all 0.3s ease;
+}
+
+.btn-4 span:before {
+    width: 2px;
+    height: 50%;
+}
+
+.btn-4 span:after {
+    width: 20%;
+    height: 2px;
+}
+
+.btn-4 span:hover:before {
+    height: 100%;
+}
+
+.btn-4 span:hover:after {
+    width: 100%;
+}
