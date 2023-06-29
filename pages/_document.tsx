@@ -31,13 +31,13 @@ export default class MyDocument extends Document {
           />
           <meta property="og:site_name" content="Liplan Lekipising Portfolio" />
           <meta property="og:locale" content="en_US" />
-          <meta property="og:url" content="https://lekipising.tech" />
+          <meta property="og:url" content="https://lekipising.com" />
           <meta
             property="og:image"
             content="https://res.cloudinary.com/dpnbddror/image/upload/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.webp"
           />
           <meta property="og:type" content="summary" />
-          <link rel="canonical" href="https://lekipising.tech" />
+          <link rel="canonical" href="https://lekipising.com" />
           <meta
             property="og:description"
             content="I craft interactive and beautiful web apps, and I love what I do. With every line of code, I strive to make the web a better place. View my projects"
@@ -47,8 +47,8 @@ export default class MyDocument extends Document {
             content="I craft interactive and beautiful web apps, and I love what I do. With every line of code, I strive to make the web a better place. View my projects"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:domain" content="https://lekipising.tech" />
-          <meta property="twitter:url" content="https://lekipising.tech" />
+          <meta property="twitter:domain" content="https://lekipising.com" />
+          <meta property="twitter:url" content="https://lekipising.com" />
           <meta name="twitter:creator" content="@lekipising" />
           <meta
             name="twitter:title"
