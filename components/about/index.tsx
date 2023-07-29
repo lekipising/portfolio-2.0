@@ -6,7 +6,7 @@ export default function AboutMe() {
   return (
     <motion.section
       id="_about-me"
-      className="hover:bg-dark-100/40 md:rounded-[30px] md:text-[16px] relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in md:relative md:m-auto md:mb-32  md:mt-0 md:w-max md:p-16"
+      className="relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:mt-0 md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
     >
       <div className="absolute -top-12 left-1/2 w-[315px] -translate-x-1/2">
         <motion.h2 className="heading-gradient text-lg font-semibold text-white">
@@ -21,44 +21,41 @@ export default function AboutMe() {
       </div>
       <br />
 
-      <p className="hover:text-white/70 transition-all duration-300 ease-in">
-        I am creative frontend developer with 4 years of experience, I bring
-        websites to <br />
-        life with my expertise in the latest web technologies and a keen eye for{" "}
-        <br />
-        design. <br /> <br /> I can unlock the full potential of your digital
-        presence, creating an <br />
-        outstanding user experience that will take your business to the next
-        level.
+      <p className="transition-all duration-300 ease-in hover:text-white/70">
+        4 years of experience have shaped me into a frontend wizard,{" "}
+        <br className="hidden md:block" />
+        but I&apos;m more than that - I&apos;m a versatile engineer experienced{" "}
+        <br className="hidden md:block" />
+        in backend, DevOps, and cloud computing.
       </p>
       <br />
       <p></p>
-      <p className="hover:text-white/70 transition-all duration-300 ease-in">
-        If you&apos;re interested in discussing your project or learning more{" "}
-        <br />
-        about my experience, please don&apos;t hesitate to get in touch.
+      <p className="transition-all duration-300 ease-in hover:text-white/70">
+        If you seek transformative solutions, consulting, or mentorship,{" "}
+        <br className="hidden md:block" />
+        let&apos;s connect!
       </p>
       <br />
-      <p className="hover:text-white/70 transition-all duration-300 ease-in">
+      <p className="transition-all duration-300 ease-in hover:text-white/70">
         I build awesome products using:
       </p>
       <div className="grid w-full grid-cols-2 gap-1 gap-x-5 pl-4 md:grid-cols-3">
-        <p className="asterisk hover:text-white/70 text-yellow transition-all duration-300 ease-in">
+        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           Next.js
         </p>
-        <p className="asterisk hover:text-white/70 text-yellow transition-all duration-300 ease-in">
+        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           React
         </p>
-        <p className="asterisk hover:text-white/70 text-yellow transition-all duration-300 ease-in">
+        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           TypeScript
         </p>
-        <p className="asterisk hover:text-white/70 text-yellow transition-all duration-300 ease-in">
+        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           Tailwind CSS
         </p>
-        <p className="asterisk hover:text-white/70 text-yellow transition-all duration-300 ease-in">
+        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           AWS
         </p>
-        <p className="asterisk hover:text-white/70 text-yellow transition-all duration-300 ease-in">
+        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
           GraphQL
         </p>
       </div>
