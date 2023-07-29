@@ -1,12 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ShowRealTimeMessage from "./code";
 import ContactForm from "./form";
 import MobileSocials from "./mobileContact";
 import SuccessMessage from "./success";
 
 import { motion } from "framer-motion";
+import useIntersect from "../../utils/useIntersectionObserver";
 
-export default function ContactMe() {
+export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
+
+
+  // Call the useIntersect hook and receive the setNode and entry variables
+  const { entry, setNode } = useIntersect({
+    root: null, // The element used as the viewport for checking visibility, null means the browser viewport
+    rootMargin: "0px", // Margin around the root element (in pixels)
+    threshold: 0.5, // A threshold value between 0 and 1, indicating the percentage of the target element that should be visible before the callback is invoked
+  });
+
+  const observeRef = useRef(null);
+
+  useEffect(() => {
+    setNode(observeRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (!!entry?.isIntersecting) {
+      setIsVisible();
+    }
+  }, [entry?.isIntersecting]);
+
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -42,6 +65,7 @@ export default function ContactMe() {
 
   return (
     <section
+    ref={observeRef}
       id="_contact-me"
       className="relative m-auto my-20 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:my-32 md:max-w-[70vw] md:flex-row md:pb-8"
     >

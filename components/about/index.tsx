@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
+import useIntersect from "../../utils/useIntersectionObserver";
 
-export default function AboutMe() {
+export default function AboutMe({
+  setIsVisible,
+}: {
+  setIsVisible: () => void;
+}) {
+  // Call the useIntersect hook and receive the setNode and entry variables
+  const { entry, setNode } = useIntersect({
+    root: null, // The element used as the viewport for checking visibility, null means the browser viewport
+    rootMargin: "0px", // Margin around the root element (in pixels)
+    threshold: 0.5, // A threshold value between 0 and 1, indicating the percentage of the target element that should be visible before the callback is invoked
+  });
+
+  const observeRef = useRef(null);
+
+  useEffect(() => {
+    setNode(observeRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (!!entry?.isIntersecting) {
+      setIsVisible();
+    }
+  }, [entry?.isIntersecting]);
+
   return (
     <motion.section
       id="_about-me"
+      ref={observeRef}
       className="relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:mt-0 md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
     >
       <div className="absolute -top-12 left-1/2 w-[315px] -translate-x-1/2">

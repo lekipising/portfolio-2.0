@@ -48,6 +48,8 @@ export default function Home() {
     [yRange]
   );
 
+  const [activeSection, setActiveSection] = useState("hello");
+
   return (
     <>
       <ul>
@@ -70,12 +72,12 @@ export default function Home() {
           className="bg-blur-two fixed left-0 top-0 z-40 h-[40px] w-[40px] rounded-full"
         />
         <div className="fixed inset-x-0 z-[100] hidden px-[5vw] md:block">
-          <NavBar />
+          <NavBar activeSection={activeSection} />
         </div>
-        <FirstScreen />
-        <AboutMe />
-        <Projects />
-        <ContactMe />
+        <FirstScreen setIsVisible={() => setActiveSection("_hello")} />
+        <AboutMe setIsVisible={() => setActiveSection("_about-me")} />
+        <Projects setIsVisible={() => setActiveSection("_projects")} />
+        <ContactMe setIsVisible={() => setActiveSection("_contact-me")} />
         <BottomBar />
         <div
           style={{ height: currentPrecent - 10 + "%" }}

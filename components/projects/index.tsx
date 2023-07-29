@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { projects } from "./projects";
 
 export interface Technology {
@@ -16,14 +16,36 @@ export interface Project {
 }
 
 import { motion } from "framer-motion";
+import useIntersect from "../../utils/useIntersectionObserver";
 
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
-export default function Projects() {
+export default function Projects({setIsVisible} : {setIsVisible: () => void}) {
+
+  // Call the useIntersect hook and receive the setNode and entry variables
+  const { entry, setNode } = useIntersect({
+    root: null, // The element used as the viewport for checking visibility, null means the browser viewport
+    rootMargin: "0px", // Margin around the root element (in pixels)
+    threshold: 0.5, // A threshold value between 0 and 1, indicating the percentage of the target element that should be visible before the callback is invoked
+  });
+
+  const observeRef = useRef(null);
+
+  useEffect(() => {
+    setNode(observeRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (!!entry?.isIntersecting) {
+      setIsVisible();
+    }
+  }, [entry?.isIntersecting]);
+
   return (
     <section
       id="_projects"
+      ref={observeRef}
       className="relative m-auto mb-32 mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 pb-[10rem] md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 md:pb-[10rem]"
     >
       <div className="absolute -top-8 left-1/2 w-full -translate-x-1/2 text-center md:top-12 md:w-[510px] md:text-left">

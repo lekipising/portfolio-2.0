@@ -1,10 +1,32 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import useIntersect from "../../utils/useIntersectionObserver";
 
-export default function FirstScreen() {
+export default function FirstScreen({setIsVisible} : {setIsVisible: () => void}) {
+   // Call the useIntersect hook and receive the setNode and entry variables
+  const {entry, setNode} = useIntersect({
+    root: null, // The element used as the viewport for checking visibility, null means the browser viewport
+    rootMargin: '0px', // Margin around the root element (in pixels)
+    threshold: 0.5, // A threshold value between 0 and 1, indicating the percentage of the target element that should be visible before the callback is invoked
+  });
+
+   const observeRef = useRef(null);
+
+  useEffect(() => {
+setNode(observeRef.current)
+  }, [])
+
+useEffect(() => {
+    if (!!entry?.isIntersecting) {
+      setIsVisible();
+    }
+  }, [entry?.isIntersecting]);
+
+
   return (
     <section
       id="_hello"
+      ref={observeRef}
       className="relative flex h-auto flex-col items-center justify-start gap-32 pb-16 pt-16 md:h-full md:flex-row md:justify-center md:pb-0 md:pt-0 "
     >
       <div className="flex w-[90%] flex-col gap-16 md:w-auto">
