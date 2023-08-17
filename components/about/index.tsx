@@ -94,6 +94,8 @@ export default function AboutMe({
           <span className="text-yellow">Java</span>
           &#x2022;
           <span className="text-yellow">Python</span>
+          &#x2022;
+          <span className="text-yellow">Jest</span>
         </p>
       </div>
     </motion.section>
