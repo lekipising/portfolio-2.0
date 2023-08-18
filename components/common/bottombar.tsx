@@ -9,7 +9,7 @@ export default function BottomBar() {
   return (
     <footer className="fixed inset-x-[5vw] bottom-[5vh] hidden h-[55px] items-center justify-between rounded-b-[5px] border-[1px] border-t-[1px] border-gray-200 bg-dark-300 px-8 pl-2 text-gray-100 md:flex  md:pl-8">
       <div className="flex h-full items-center">
-        <span className="pr-2">Lets connect</span>
+        <span className="pr-2">Connect with me</span>
         <a
           href="https://twitter.com/lekipising"
           target="_blank"
