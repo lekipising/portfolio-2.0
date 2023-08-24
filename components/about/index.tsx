@@ -96,6 +96,10 @@ export default function AboutMe({
           <span className="text-yellow">Python</span>
           &#x2022;
           <span className="text-yellow">Jest</span>
+          &#x2022;
+          <span className="text-yellow">CI/CD</span>
+          &#x2022;
+          <span className="text-yellow">Apollo</span>
         </p>
       </div>
     </motion.section>
