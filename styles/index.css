@@ -301,3 +301,7 @@ li:nth-child(9) {
 .btn-4 span:hover:after {
     width: 100%;
 }
+
+.nav-blur {
+    backdrop-filter: blur(15px) brightness(80%) saturate(80%);
+}
