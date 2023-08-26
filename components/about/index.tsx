@@ -99,7 +99,7 @@ export default function AboutMe({
           &#x2022;
           <span className="text-yellow">CI/CD</span>
           &#x2022;
-          <span className="text-yellow">Apollo</span>
+          <span className="text-yellow">Nest JS</span>
         </p>
       </div>
     </motion.section>
