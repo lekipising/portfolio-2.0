@@ -3,6 +3,8 @@ import { Project } from ".";
 import NextIcon from "../../assets/next.svg";
 import StyledcIcon from "../../assets/styledc.svg";
 import TailwindIcon from "../../assets/tailwind.svg";
+import ReduxIcon from "../../assets/redux.svg";
+import NestJsIcon from "../../assets/nest.svg";
 
 export const projects: Project[] = [{
     title: "Navu360",
@@ -17,6 +19,10 @@ export const projects: Project[] = [{
         {
             svg: TailwindIcon,
             text: "Tailwind CSS"
+        },
+        {
+            svg: ReduxIcon,
+            text: "Redux Toolkit"
         },
     ]
 },
@@ -34,6 +40,10 @@ export const projects: Project[] = [{
             svg: StyledcIcon,
             text: "Styled Components"
         },
+        {
+            svg: NestJsIcon,
+            text: "Nest JS"
+        },
     ]
 },
 {
@@ -49,6 +59,10 @@ export const projects: Project[] = [{
         {
             svg: StyledcIcon,
             text: "Styled Components"
+        },
+        {
+            svg: NestJsIcon,
+            text: "Nest JS"
         },
     ]
 },
