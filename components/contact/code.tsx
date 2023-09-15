@@ -17,7 +17,7 @@ export default function ShowRealTimeMessage({
         <KeywordText keyword="=" customStyle="px-2" />{" "}
         <VarType vr="document.getElementId" />
         {`(`}
-        <UserdefinedText text="'#sendBtn'" />
+        <UserdefinedText text="'sendBtn'" />
         {`);`}
       </p>
       <p>
