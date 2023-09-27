@@ -47,11 +47,7 @@ export default function AboutMe({
       <br />
 
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        4 years of experience have shaped me into a frontend wizard,{" "}
-        <br className="hidden md:block" />
-        but I&apos;m more than that - I&apos;m a versatile engineer experienced{" "}
-        <br className="hidden md:block" />
-        in backend, DevOps, and cloud computing.
+        3+ years of frontend mastery have sculpted me into a craftsmanship <br /> who thrives on creating seamless, visually stunning interfaces.<br /><br /> What sets me apart? - My holistic approach as an all-round software engineer<br /> and a seasoned team lead, guiding squads through frontend challenges<br /> and beyond.
       </p>
       <br />
       <p></p>
