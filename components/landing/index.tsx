@@ -50,14 +50,14 @@ useEffect(() => {
       <div className="pic-shadow relative z-50 hidden h-[25vw] w-[25vw] overflow-hidden rounded-full outline outline-green md:block">
         <Image
           src={
-            "https://res.cloudinary.com/dpnbddror/image/upload/v1642927649/liplan/liplan_img_ftb9xn.webp"
+            "https://res.cloudinary.com/dpnbddror/image/upload/v1697208403/liplan/v4_x34zg3.webp"
           }
           height="300"
           width="300"
           quality={100}
           priority={true}
           alt="Liplan Lekipising - Portfolio"
-          className="hover:scale-[1.025] rounded-full transition-all duration-300 ease-in"
+          className="hover:scale-[1.025] object-left bg-left rounded-full transition-all duration-300 ease-in"
           sizes="100vw"
           style={{
             width: "100%",

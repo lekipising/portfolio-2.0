@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="https://res.cloudinary.com/dpnbddror/image/upload/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.webp"
+            href="https://res.cloudinary.com/dpnbddror/image/upload/v1697208403/liplan/v4_x34zg3.webp"
             as="image"
           />
           {/* Meta Description = Search Engines, OG Descriptions = Social media */}
@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://lekipising.com" />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/dpnbddror/image/upload/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.webp"
+            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.png"
           />
           <meta property="og:type" content="summary" />
           <link rel="canonical" href="https://lekipising.com" />
@@ -60,7 +60,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="twitter:image"
-            content="https://res.cloudinary.com/dpnbddror/image/upload/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.webp"
+            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.png"
           />
           {/* pwa tags */}
           <meta name="apple-mobile-web-app-capable" content="yes" />
