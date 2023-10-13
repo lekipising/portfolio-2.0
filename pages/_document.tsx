@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://lekipising.com" />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.png"
+            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1697209158/liplan/Screenshot_from_2023-10-13_17-59-04_vzuiqg.png"
           />
           <meta property="og:type" content="summary" />
           <link rel="canonical" href="https://lekipising.com" />
@@ -60,7 +60,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="twitter:image"
-            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1668437172/liplan/Screenshot_from_2022-11-14_16-45-20_wj2c1a.png"
+            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1697209158/liplan/Screenshot_from_2023-10-13_17-59-04_vzuiqg.png"
           />
           {/* pwa tags */}
           <meta name="apple-mobile-web-app-capable" content="yes" />
