@@ -50,7 +50,7 @@ useEffect(() => {
       <div className="pic-shadow relative z-50 hidden h-[25vw] w-[25vw] overflow-hidden rounded-full outline outline-green md:block">
         <Image
           src={
-            "https://res.cloudinary.com/dpnbddror/image/upload/v1697208403/liplan/v4_x34zg3.webp"
+            "https://res.cloudinary.com/dpnbddror/image/upload/c_scale,f_auto,h_800/v1697208403/liplan/v4_x34zg3.jpg"
           }
           height="300"
           width="300"

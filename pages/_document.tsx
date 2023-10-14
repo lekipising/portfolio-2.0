@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="https://res.cloudinary.com/dpnbddror/image/upload/v1697208403/liplan/v4_x34zg3.webp"
+            href="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,f_auto,h_800/v1697208403/liplan/v4_x34zg3.jpg"
             as="image"
           />
           {/* Meta Description = Search Engines, OG Descriptions = Social media */}
