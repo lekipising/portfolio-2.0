@@ -47,7 +47,7 @@ export default function AboutMe({
       <br />
 
       <p className="transition-all duration-300 !leading-loose ease-in hover:text-white/70">
-        3+ years of frontend mastery have sculpted me into a craftsmanship <br className="md:block hidden" /> who thrives on creating seamless, visually stunning interfaces.<br /><br /> What sets me apart? - My holistic approach as an all-round software engineer<br className="md:block hidden" /> and a seasoned team lead, guiding squads through frontend challenges<br className="md:block hidden" /> and beyond.
+        4+ years of frontend mastery have sculpted me into a craftsmanship <br className="md:block hidden" /> who thrives on creating seamless, visually stunning interfaces.<br /><br /> What sets me apart? - My holistic approach as an all-round software engineer<br className="md:block hidden" /> and a seasoned team lead, guiding squads through frontend challenges<br className="md:block hidden" /> and beyond.
       </p>
       <br />
       <p></p>
