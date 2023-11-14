@@ -8,8 +8,8 @@ import NestJsIcon from "../../assets/nest.svg";
 
 export const projects: Project[] = [{
     title: "Navu360",
-    description: "Onboarding platform for new talents. The ultimate onboarding platform",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1682427741/navu/Group_1_1_s3dduo.png",
+    description: "Built for businesses. Create, manage, and scale custom training programs effortlessly",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1699979124/liplan/Screenshot_from_2023-11-14_19-25-16_znvvkv.png",
     link: "https://navu360.com",
     technologies: [
         {
@@ -29,7 +29,7 @@ export const projects: Project[] = [{
 {
     title: "Karent App",
     description: "A modern social media web application designed for university/college students to share ideas and stay connected.",
-    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1685813549/Screenshot_from_2023-06-03_19-30-42_vswmuk.png",
+    image: "https://res.cloudinary.com/dpnbddror/image/upload/v1699979294/liplan/Screenshot_from_2023-11-14_19-28-02_vkrzfv.png",
     link: "https://karent.app/welcome",
     technologies: [
         {
