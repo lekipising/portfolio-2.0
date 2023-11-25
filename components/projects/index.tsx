@@ -101,7 +101,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
             src={project.image}
             className="rounded-t-[10px]"
             alt={project.title}
-            onLoadingComplete={() => setImageLoaded(true)}
+            onLoad={() => setImageLoaded(true)}
             fill
             sizes="100vw"
             style={{

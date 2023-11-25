@@ -12,8 +12,16 @@ const nextConfig = withPWA({
   swcMinify: true,
   reactStrictMode: true,
   images: {
-    domains: ["res.cloudinary.com", "maskani-app.vercel.app"],
-    formats: ["image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "maskani-app.vercel.app",
+      }
+    ],
   },
 });
 
