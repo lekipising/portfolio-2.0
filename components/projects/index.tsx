@@ -46,7 +46,7 @@ export default function Projects({setIsVisible} : {setIsVisible: () => void}) {
     <section
       id="_projects"
       ref={observeRef}
-      className="relative m-auto mb-32 mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 pb-[10rem] md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 md:pb-[10rem]"
+      className="relative m-auto mb-32 mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 pb-[10rem] md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 md:pb-[0rem]"
     >
       <div className="absolute -top-8 left-1/2 w-full -translate-x-1/2 text-center md:top-12 md:w-[520px] md:text-left">
         <motion.h2 className="heading-gradient mx-auto text-lg font-semibold text-white">
@@ -63,21 +63,6 @@ export default function Projects({setIsVisible} : {setIsVisible: () => void}) {
       {projects.map((project, i) => (
         <OneProject key={i} index={i} project={project} />
       ))}
-
-      <div className="absolute bottom-0 flex w-full flex-col items-center justify-center gap-6">
-        <div className="flex w-full flex-col items-center justify-center gap-3 text-center font-medium">
-          <p>Download my resume to view my professional experience and more</p>
-          <a
-            id="download-resume"
-            href="/Lekipising-Liplan-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="custom-btn btn-4"
-          >
-            <span>Download</span>
-          </a>
-        </div>
-      </div>
     </section>
   );
 }

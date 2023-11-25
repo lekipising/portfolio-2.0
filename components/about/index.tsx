@@ -96,6 +96,12 @@ export default function AboutMe({
           <span className="text-yellow">CI/CD</span>
           &#x2022;
           <span className="text-yellow">Nest JS</span>
+          &#x2022;
+          <span className="text-yellow">Sass</span>
+          &#x2022;
+          <span className="text-yellow">SEO</span>
+          &#x2022;
+          <span className="text-yellow">Web Perf</span>
         </p>
       </div>
     </motion.section>
