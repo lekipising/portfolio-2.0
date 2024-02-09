@@ -96,7 +96,7 @@ export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
           loading={loading}
         />
       )}
-      <div className="absolute left-1/2 top-[40%] hidden h-[50%] w-[1px] -translate-y-1/2 -translate-x-1/2 bg-gray-100 md:block" />
+      <div className="absolute left-1/2 top-[40%] hidden h-[50%] w-[1px] -translate-y-1/2 -translate-x-1/2 heading-gradient-underline md:block" />
       <ShowRealTimeMessage name={name} email={email} message={message} />
       <MobileSocials />
     </section>
