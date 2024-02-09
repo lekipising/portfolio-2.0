@@ -13,6 +13,7 @@ export interface Project {
   technologies: Technology[];
   link: string;
   image: string;
+  status: "Active" | "On Hold" | "Completed";
 }
 
 import { motion } from "framer-motion";
@@ -70,6 +71,19 @@ export default function Projects({setIsVisible} : {setIsVisible: () => void}) {
 function OneProject({ project, index }: { project: Project; index: number }) {
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const getStatusColors = () => {
+    switch (project.status) {
+      case "Active":
+        return {bgColor: "bg-green/30", iconColor: "bg-green", textColor: "text-green"};
+      case "On Hold":
+        return {bgColor: "bg-yellow/30", iconColor: "bg-yellow", textColor: "text-yellow"};
+      case "Completed":
+        return {bgColor: "bg-white/30", iconColor: "bg-white", textColor: "text-white"};
+      default:
+        break;
+    }
+  }
+
   return (
     <motion.div
       initial={{ y: 50 }}
@@ -85,7 +99,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
       <h3 className="mb-3 text-[16px] font-bold text-gray-100 group-hover:text-yellow/70">
         {project.title}
       </h3>
-      <div className="project relative h-[58vh] max-h-[430px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pb-32 pt-0 transition-all duration-300 ease-in">
+      <div className="project relative h-[58vh] max-h-[470px] rounded-[10px] border-[1px] border-gray-200 bg-dark-300 pb-32 pt-0 transition-all duration-300 ease-in">
         <motion.div
           initial={false}
           animate={
@@ -115,8 +129,12 @@ function OneProject({ project, index }: { project: Project; index: number }) {
             {project.description}
           </p>
         </div>
-        <div className="absolute bottom-4 left-4 flex flex-col gap-4">
-          <a
+
+
+
+        <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-4">
+
+          <div className="w-full flex justify-between items-center"><a
             href={project.link}
             target="_blank"
             className="w-max rounded-[8px] border bg-dark-100 px-4 py-2 text-sm transition-all duration-300 ease-in hover:border hover:border-yellow"
@@ -124,6 +142,12 @@ function OneProject({ project, index }: { project: Project; index: number }) {
           >
             View project
           </a>
+          <div className={`${getStatusColors().bgColor} w-max h-max rounded-full flex items-center px-2 py-1 gap-3`}>
+          <div className={`h-3 w-3 rounded-full ${getStatusColors().iconColor}`} />
+          <span className={`${getStatusColors().textColor} text-xs`}>{project.status}</span>
+        </div>
+</div>
+
 
           <div className="flex gap-3">
             {project.technologies.map((tech, i) => (

@@ -24,7 +24,8 @@ export const projects: Project[] = [{
             svg: ReduxIcon,
             text: "Redux Toolkit"
         },
-    ]
+    ],
+    status: "Active"
 },
 {
     title: "Karent App",
@@ -44,7 +45,8 @@ export const projects: Project[] = [{
             svg: NestJsIcon,
             text: "Nest JS"
         },
-    ]
+    ],
+    status: "On Hold"
 },
 {
     title: "CourierPal App",
@@ -64,7 +66,8 @@ export const projects: Project[] = [{
             svg: NestJsIcon,
             text: "Nest JS"
         },
-    ]
+    ],
+    status: "Completed"
 },
 {
     title: "Maskani App",
@@ -80,6 +83,7 @@ export const projects: Project[] = [{
             svg: TailwindIcon,
             text: "Tailwind CSS"
         },
-    ]
+    ],
+    status: "Completed"
 }
 ]
