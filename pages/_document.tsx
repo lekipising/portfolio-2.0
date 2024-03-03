@@ -80,7 +80,7 @@ export default class MyDocument extends Document {
           <meta name="format-detection" content="telephone=no" />
           <meta name="msapplication-TileColor" content="#011627" />
           <meta name="msapplication-tap-highlight" content="no" />
-          <link rel="apple-touch-icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link rel="manifest" href="/manifest.json" />
           {
             // TODO: add iOS splash screens
