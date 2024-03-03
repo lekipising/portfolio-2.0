@@ -1,9 +1,5 @@
 {
   "private": true,
-  "engines": {
-    "node": "18.x",
-    "npm": ">=8.x"
-  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -12,26 +8,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.7.0",
-    "@vercel/analytics": "^1.1.1",
-    "framer-motion": "^10.16.5",
+    "@sendgrid/mail": "^8.1.1",
+    "@vercel/analytics": "^1.2.2",
+    "framer-motion": "^11.0.8",
     "install": "^0.13.0",
-    "next": "^14.0.3",
+    "next": "^14.1.1",
     "next-pwa": "^5.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
-    "@types/react": "^18.2.38",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "eslint": "8.54.0",
-    "eslint-config-next": "^14.0.3",
-    "postcss-preset-env": "^9.3.0",
-    "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "tailwindcss": "^3.3.5",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "eslint": "8.57.0",
+    "eslint-config-next": "^14.1.1",
+    "postcss-preset-env": "^9.4.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.4.1",
     "typescript": "5.3"
   }
 }
