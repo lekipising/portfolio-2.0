@@ -1,6 +1,6 @@
 # Liplan Lekipising - Portfolio
 
-Welcome to my portfolio project 👋
+Hi, welcome to my portfolio project 👋
 
 This project was built using *Next JS*, *Tailwind CSS*, *TypeScript* and *Framer motion*.
 
