@@ -14,7 +14,7 @@ const Experience = () => {
                     transition={{ duration: 0.5, ease: "easeIn" }}
                     className="heading-gradient-underline h-[1px]"
                 />
-            </div><span className="text-xs text-gray-500 bg-dark-100 !leading-none flex justify-center items-center px-2 pt-1.5 py-1 rounded-lg">04 Years</span></div>
+            </div><span className="text-xs text-gray-300 bg-dark-100 !leading-none flex justify-center items-center px-2 pt-1.5 py-1 rounded-lg">04 Years</span></div>
 
 
             <div className="mt-8 flex flex-col gap-0">
