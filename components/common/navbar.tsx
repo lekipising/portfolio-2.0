@@ -21,12 +21,12 @@ export default function NavBar({activeSection} : {activeSection: string}) {
           @lekipising
         </span>
       </nav>
-      <div className="hidden h-full items-center gap-2 md:flex">
+      <nav className="hidden h-full items-center gap-2 md:flex">
         <OneNavItem text="_hello" delay={1} isActive={activeSection === "_hello"} />
         <OneNavItem text="_about-me" delay={2} isActive={activeSection === "_about-me"} />
         <OneNavItem text="_projects" delay={3} isActive={activeSection === "_projects"} />
         <OneNavItem text="_contact-me" delay={4} isActive={activeSection === "_contact-me"} />
-      </div>
+      </nav>
 
       <a
         id="download-resume"
@@ -47,7 +47,6 @@ function OneNavItem({ text, delay, isActive }: { text: string; delay?: number; i
       initial={{ x: 20 }}
       whileInView={{ x: 0 }}
       transition={{ duration: 0.3, ease: "easeIn", delay: delay * 0.1 }}
-      role="link"
       onClick={() => scrollIntoId(text)}
       className={`flex h-[90%] cursor-pointer items-center justify-center rounded border-[0.5px]  px-4 font-medium transition-all duration-150 ease-in hover:border-yellow hover:text-yellow ${isActive ? "border-yellow text-yellow" : "border-gray-200 text-gray-100"}`}
     >
