@@ -4,11 +4,11 @@ import dynamic from "next/dynamic";
 import FirstScreen from "../components/landing";
 import NavBar from "../components/common/navbar";
 
-const AboutMe = dynamic(() => import("../components/about"));
-const ContactMe = dynamic(() => import("../components/contact"));
-const Projects = dynamic(() => import("../components/projects"));
-const BottomBar = dynamic(() => import("../components/common/bottombar"));
-const Experience = dynamic(() => import("../components/projects/experience"));
+import AboutMe from "../components/about";
+import ContactMe from "../components/contact";
+import Projects from "../components/projects";
+import BottomBar from "../components/common/bottombar";
+import Experience from "../components/projects/experience";
 
 import { useScroll, useTransform } from "framer-motion";
 
