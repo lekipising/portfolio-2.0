@@ -18,6 +18,7 @@ export interface Project {
 }
 
 import { motion } from "framer-motion";
+import { inView } from "framer-motion";
 import useIntersect from "../../utils/useIntersectionObserver";
 
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
@@ -51,7 +52,7 @@ export default function Projects({
     <section
       id="_projects"
       ref={observeRef}
-      className="relative m-auto mb-32 mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 pb-[10rem] md:relative md:mt-0 md:flex-row md:gap-5  md:py-32 md:pb-[0rem]"
+      className="relative m-auto mb-32 mt-20 flex max-w-[95%] flex-col justify-center gap-12 py-8 pb-[10rem] md:relative md:mt-0 md:flex-row md:gap-5 md:py-32 md:pb-[0rem]"
     >
       <div className="absolute -top-12 left-1/2 w-full -translate-x-1/2 text-center md:top-12 md:w-[520px] md:text-left">
         <motion.h2 className="heading-gradient mx-auto text-lg font-semibold text-white">
@@ -77,6 +78,15 @@ export default function Projects({
 
 function OneProject({ project, index }: { project: Project; index: number }) {
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const box = document.getElementById(
+      `project-${project.title.toLowerCase().replace(" ", "-")}`,
+    );
+    if (box) {
+      inView(box, () => setImageLoaded(true));
+    }
+  }, [project.title]);
 
   return (
     <motion.div
@@ -137,6 +147,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
         </div>
 
         <motion.div
+          id={`project-${project.title.toLowerCase().replace(" ", "-")}`}
           initial={false}
           animate={
             imageLoaded
@@ -151,7 +162,6 @@ function OneProject({ project, index }: { project: Project; index: number }) {
             src={project.image}
             className="rounded-[10px]"
             alt={project.title}
-            onLoad={() => setImageLoaded(true)}
             fill
             sizes="100vw"
             style={{
