@@ -144,7 +144,7 @@ function OneProject({ project, index }: { project: Project; index: number }) {
               : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
           }
           transition={{ duration: 1, delay: 0.5 }}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           className="relative my-auto h-[calc(100%_-_8px)] w-full rounded-[10px] transition-all duration-150 ease-in group-hover:rounded-none lg:w-1/2"
         >
           <Image
