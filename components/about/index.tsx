@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
 import useIntersect from "../../utils/useIntersectionObserver";
+import { scrollIntoId } from "../common/navbar";
 
 export default function AboutMe({
   setIsVisible,
@@ -31,7 +32,7 @@ export default function AboutMe({
     <motion.section
       id="_about-me"
       ref={observeRef}
-      className="relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:mt-0 md:w-max  md:rounded-[30px] md:p-16 md:text-[16px]"
+      className="relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:mt-0 md:w-max md:rounded-[30px] md:p-16 md:text-[16px]"
     >
       <div className="absolute -top-12 left-1/2 w-[315px] -translate-x-1/2">
         <motion.h2 className="heading-gradient text-lg font-semibold text-white">
@@ -46,15 +47,29 @@ export default function AboutMe({
       </div>
       <br />
 
-      <p className="transition-all duration-300 !leading-loose ease-in hover:text-white/70">
-        4+ years of frontend mastery have sculpted me into a craftsmanship <br className="md:block hidden" /> who thrives on creating seamless, visually stunning interfaces.<br /><br /> What sets me apart? - My holistic approach as an all-round software engineer<br className="md:block hidden" /> and a seasoned team lead, guiding squads through frontend challenges<br className="md:block hidden" /> and beyond.
+      <p className="!leading-loose transition-all duration-300 ease-in hover:text-white/70">
+        4+ years of frontend mastery have sculpted me into a craftsmanship{" "}
+        <br className="hidden md:block" /> who thrives on creating seamless,
+        visually stunning interfaces.
+        <br />
+        <br /> What sets me apart? - My holistic approach as an all-round
+        software engineer
+        <br className="hidden md:block" /> and a seasoned team lead, guiding
+        squads through frontend challenges
+        <br className="hidden md:block" /> and beyond.
       </p>
       <br />
       <p></p>
       <p className="transition-all duration-300 ease-in hover:text-white/70">
         If you seek transformative solutions, consulting, or mentorship,{" "}
         <br className="hidden md:block" />
-        let&apos;s connect!
+        let&apos;s{" "}
+        <button
+          className="underline"
+          onClick={() => scrollIntoId("_contact-me")}
+        >
+          connect!
+        </button>
       </p>
       <br />
       <p className="transition-all duration-300 ease-in hover:text-white/70">
@@ -74,10 +89,10 @@ export default function AboutMe({
           Tailwind CSS
         </p>
         <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          AWS
+          Cloudinary
         </p>
         <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          GraphQL
+          Prisma ORM
         </p>
       </div>
       <div className="mt-6 flex items-center gap-4">
