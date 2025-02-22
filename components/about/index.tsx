@@ -48,7 +48,7 @@ export default function AboutMe({
       <br />
 
       <p className="!leading-loose transition-all duration-300 ease-in hover:text-white/70">
-        4+ years of frontend mastery have sculpted me into a craftsmanship{" "}
+        5+ years of frontend mastery have sculpted me into a craftsmanship{" "}
         <br className="hidden md:block" /> who thrives on creating seamless,
         visually stunning interfaces.
         <br />

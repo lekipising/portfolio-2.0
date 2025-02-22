@@ -17,7 +17,7 @@ const Experience = () => {
           />
         </div>
         <span className="flex items-center justify-center rounded-lg bg-dark-100 px-2 py-1 pt-1.5 text-xs !leading-none text-gray-300">
-          04 Years
+          05 Years
         </span>
       </div>
 
