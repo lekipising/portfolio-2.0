@@ -47,7 +47,7 @@ export default function AboutMe({
       <br />
 
       <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
-        For over five years, I've been dedicated to the craft of software
+        For over five years, I&apos;ve been dedicated to the craft of software
         engineering, moving beyond just writing code to architecting robust,
         user-centric solutions. My passion lies in the frontend, where I
         leverage technologies like React, Next.js, and TypeScript to build
@@ -60,7 +60,7 @@ export default function AboutMe({
         intersection of technology, product, and people. As a team lead, I excel
         in translating business requirements into technical strategy,
         collaborating closely with product managers, designers, and customers to
-        ensure we're not just building features, but creating value.
+        ensure we&apos;re not just building features, but creating value.
       </p>
       <br />
       <p></p>
@@ -73,33 +73,66 @@ export default function AboutMe({
       <p className="transition-all duration-300 ease-in hover:text-white/70">
         Tech Stack:
       </p>
-      <div className="space-y-6 mt-2">
+      <div className="mt-2 space-y-6">
         <div>
           <h3 className="mb-0 text-sm font-medium text-white/70">Frontend:</h3>
           <div className="flex flex-wrap gap-x-1 gap-y-2">
-            {['Next.js', 'React', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'Redux Toolkit', 'Sass'].map((skill, index, array) => (
-              <span key={skill} className="text-yellow text-sm transition-all duration-300 ease-in hover:text-white/70">
-                {skill}{index !== array.length - 1 && ','}
+            {[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "JavaScript (ES6+)",
+              "Tailwind CSS",
+              "Redux Toolkit",
+              "Sass",
+            ].map((skill, index, array) => (
+              <span
+                key={skill}
+                className="text-sm text-yellow transition-all duration-300 ease-in hover:text-white/70"
+              >
+                {skill}
+                {index !== array.length - 1 && ","}
               </span>
             ))}
           </div>
         </div>
         <div>
-          <h3 className="mb-0 text-sm font-medium text-white/70">Backend & Database:</h3>
+          <h3 className="mb-0 text-sm font-medium text-white/70">
+            Backend & Database:
+          </h3>
           <div className="flex flex-wrap gap-x-1 gap-y-2">
-            {['Node.js', 'Nest.js', 'Prisma ORM', 'PostgreSQL', 'MongoDB'].map((skill, index, array) => (
-              <span key={skill} className="text-yellow text-sm transition-all duration-300 ease-in hover:text-white/70">
-                {skill}{index !== array.length - 1 && ','}
-              </span>
-            ))}
+            {["Node.js", "Nest.js", "Prisma ORM", "PostgreSQL", "MongoDB"].map(
+              (skill, index, array) => (
+                <span
+                  key={skill}
+                  className="text-sm text-yellow transition-all duration-300 ease-in hover:text-white/70"
+                >
+                  {skill}
+                  {index !== array.length - 1 && ","}
+                </span>
+              ),
+            )}
           </div>
         </div>
         <div>
-          <h3 className="mb-0 text-sm font-medium text-white/70">Tools & Methodologies:</h3>
+          <h3 className="mb-0 text-sm font-medium text-white/70">
+            Tools & Methodologies:
+          </h3>
           <div className="flex flex-wrap gap-x-1 gap-y-2">
-            {['Git', 'CI/CD', 'Jest', 'SEO', 'Web Performance', 'Agile/Scrum'].map((skill, index, array) => (
-              <span key={skill} className="text-yellow text-sm transition-all duration-300 ease-in hover:text-white/70">
-                {skill}{index !== array.length - 1 && ','}
+            {[
+              "Git",
+              "CI/CD",
+              "Jest",
+              "SEO",
+              "Web Performance",
+              "Agile/Scrum",
+            ].map((skill, index, array) => (
+              <span
+                key={skill}
+                className="text-sm text-yellow transition-all duration-300 ease-in hover:text-white/70"
+              >
+                {skill}
+                {index !== array.length - 1 && ","}
               </span>
             ))}
           </div>
