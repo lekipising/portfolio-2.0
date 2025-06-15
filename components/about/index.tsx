@@ -34,9 +34,9 @@ export default function AboutMe({
       ref={observeRef}
       className="relative mt-8 cursor-default bg-dark-100/20 p-6 text-[13px] font-medium leading-[150%] text-gray-100 shadow-lg transition-all duration-300 ease-in hover:bg-dark-100/40 md:relative md:m-auto md:mb-32 md:mt-0 md:w-max md:rounded-[30px] md:p-16 md:text-[16px]"
     >
-      <div className="absolute -top-12 left-1/2 w-[315px] -translate-x-1/2">
+      <div className="absolute -top-12 left-1/2 w-[90px] -translate-x-1/2">
         <motion.h2 className="heading-gradient text-lg font-semibold text-white">
-          From Code to Coffee: About Me
+          About Me
         </motion.h2>
         <motion.div
           initial={{ width: 0 }}
@@ -47,29 +47,28 @@ export default function AboutMe({
       </div>
       <br />
 
-      <p className="!leading-loose transition-all duration-300 ease-in hover:text-white/70">
-        5+ years of frontend mastery have sculpted me into a craftsmanship{" "}
-        <br className="hidden md:block" /> who thrives on creating seamless,
-        visually stunning interfaces.
-        <br />
-        <br /> What sets me apart? - My holistic approach as an all-round
-        software engineer
-        <br className="hidden md:block" /> and a seasoned team lead, guiding
-        squads through frontend challenges
-        <br className="hidden md:block" /> and beyond.
+      <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
+        For over five years, I've been dedicated to the craft of software
+        engineering, moving beyond just writing code to architecting robust,
+        user-centric solutions. My passion lies in the frontend, where I
+        leverage technologies like React, Next.js, and TypeScript to build
+        seamless interfaces that solve real business problems.
       </p>
       <br />
       <p></p>
-      <p className="transition-all duration-300 ease-in hover:text-white/70">
-        If you seek transformative solutions, consulting, or mentorship,{" "}
-        <br className="hidden md:block" />
-        let&apos;s{" "}
-        <button
-          className="underline"
-          onClick={() => scrollIntoId("_contact-me")}
-        >
-          connect!
-        </button>
+      <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
+        What truly drives me is my holistic approach. I thrive at the
+        intersection of technology, product, and people. As a team lead, I excel
+        in translating business requirements into technical strategy,
+        collaborating closely with product managers, designers, and customers to
+        ensure we're not just building features, but creating value.
+      </p>
+      <br />
+      <p></p>
+      <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
+        My leadership philosophy is centered on mentorship and empowerment. I am
+        dedicated to guiding teams, fostering a culture of ownership, and
+        elevating the skills of junior developers.
       </p>
       <br />
       <p className="transition-all duration-300 ease-in hover:text-white/70">
