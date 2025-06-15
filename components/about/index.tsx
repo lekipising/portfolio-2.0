@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
 import useIntersect from "../../utils/useIntersectionObserver";
-import { scrollIntoId } from "../common/navbar";
 
 export default function AboutMe({
   setIsVisible,
