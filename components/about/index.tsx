@@ -72,51 +72,39 @@ export default function AboutMe({
       </p>
       <br />
       <p className="transition-all duration-300 ease-in hover:text-white/70">
-        I build awesome products using:
+        Tech Stack:
       </p>
-      <div className="grid w-full grid-cols-2 gap-1 gap-x-5 pl-4 md:grid-cols-3">
-        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          Next.js
-        </p>
-        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          React
-        </p>
-        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          TypeScript
-        </p>
-        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          Tailwind CSS
-        </p>
-        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          Cloudinary
-        </p>
-        <p className="asterisk text-yellow transition-all duration-300 ease-in hover:text-white/70">
-          Prisma ORM
-        </p>
-      </div>
-      <div className="mt-6 flex items-center gap-4">
-        <span className="text-xs">Others:</span>
-        <p className="flex gap-1 text-xs text-gray-100">
-          <span className="text-yellow">Git</span>
-          &#x2022;
-          <span className="text-yellow">Redux Toolkit</span>
-          &#x2022;
-          <span className="text-yellow">Java</span>
-          &#x2022;
-          <span className="text-yellow">Python</span>
-          &#x2022;
-          <span className="text-yellow">Jest</span>
-          &#x2022;
-          <span className="text-yellow">CI/CD</span>
-          &#x2022;
-          <span className="text-yellow">Nest JS</span>
-          &#x2022;
-          <span className="text-yellow">Sass</span>
-          &#x2022;
-          <span className="text-yellow">SEO</span>
-          &#x2022;
-          <span className="text-yellow">Web Perf</span>
-        </p>
+      <div className="space-y-6 mt-2">
+        <div>
+          <h3 className="mb-0 text-sm font-medium text-white/70">Frontend:</h3>
+          <div className="flex flex-wrap gap-x-1 gap-y-2">
+            {['Next.js', 'React', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'Redux Toolkit', 'Sass'].map((skill, index, array) => (
+              <span key={skill} className="text-yellow text-sm transition-all duration-300 ease-in hover:text-white/70">
+                {skill}{index !== array.length - 1 && ','}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="mb-0 text-sm font-medium text-white/70">Backend & Database:</h3>
+          <div className="flex flex-wrap gap-x-1 gap-y-2">
+            {['Node.js', 'Nest.js', 'Prisma ORM', 'PostgreSQL', 'MongoDB'].map((skill, index, array) => (
+              <span key={skill} className="text-yellow text-sm transition-all duration-300 ease-in hover:text-white/70">
+                {skill}{index !== array.length - 1 && ','}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="mb-0 text-sm font-medium text-white/70">Tools & Methodologies:</h3>
+          <div className="flex flex-wrap gap-x-1 gap-y-2">
+            {['Git', 'CI/CD', 'Jest', 'SEO', 'Web Performance', 'Agile/Scrum'].map((skill, index, array) => (
+              <span key={skill} className="text-yellow text-sm transition-all duration-300 ease-in hover:text-white/70">
+                {skill}{index !== array.length - 1 && ','}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </motion.section>
   );
