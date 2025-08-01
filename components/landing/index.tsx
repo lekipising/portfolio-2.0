@@ -53,7 +53,7 @@ export default function FirstScreen({
             that users love and teams are proud of.
           </p>
           {/* some quick action buttons/links here - view my work - takes to projects, Get in touch - takes to contact, Download Resume - takes to resume */}
-          <div className="mt-10 flex gap-4">
+          <div className="mt-10 flex gap-4 flex-col lg:flex-row">
             <button
               onClick={() => scrollIntoId("_projects")}
               className={`flex cursor-pointer items-center justify-center rounded-br-xl rounded-tl-xl border-[0.5px] border-gray-200 px-4 py-2 font-medium text-gray-100 shadow transition-all duration-150 ease-in hover:border-green/10 hover:text-green/70`}
