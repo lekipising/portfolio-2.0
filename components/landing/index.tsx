@@ -38,22 +38,24 @@ export default function FirstScreen({
           <p className="text-[18px] font-medium text-white">Hi. I am</p>
           <h1
             id="title"
-            className="title text-[48px] tracking-tighter text-white md:text-[62px]"
+            className="title text-[48px] leading-tight tracking-tighter text-white md:text-[62px]"
           >
             Liplan Lekipising
           </h1>
-          <p className="text-[23px] font-medium tracking-tight text-green md:text-[32px]">
+          <p className="text-[21px] mt-2 md:mt-0 font-medium tracking-tight text-green md:text-[32px]">
             &gt; Senior Software Engineer
           </p>
         </div>
         <div className="flex flex-col gap-2 text-gray-100 md:gap-1">
           <p>
-            Crafting exceptional user experiences from concept to deployment. <br /> I
-            specialize in the Next.js and React ecosystem, building products <br />
+            Crafting exceptional user experiences from concept to deployment.{" "}
+            <br />
+            <br className="md:hidden" /> I specialize in the Next.js and React ecosystem, building
+            products <br />
             that users love and teams are proud of.
           </p>
           {/* some quick action buttons/links here - view my work - takes to projects, Get in touch - takes to contact, Download Resume - takes to resume */}
-          <div className="mt-10 flex gap-4 flex-col lg:flex-row">
+          <div className="mt-10 flex flex-col gap-4 lg:flex-row">
             <button
               onClick={() => scrollIntoId("_projects")}
               className={`flex cursor-pointer items-center justify-center rounded-br-xl rounded-tl-xl border-[0.5px] border-gray-200 px-4 py-2 font-medium text-gray-100 shadow transition-all duration-150 ease-in hover:border-green/10 hover:text-green/70`}
