@@ -1,7 +1,7 @@
-import sgMail from "@sendgrid/mail";
+import { Resend } from "resend";
 import { NextApiRequest, NextApiResponse } from "next";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, message, name } = req.body;
@@ -10,22 +10,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).send("Missing one or more fields");
   }
 
-  const msg = {
-    to: process.env.EMAIL_TO,
-    from: {
-      email: process.env.EMAIL_FROM,
-      name: `${name} via Portfolio`,
-    },
-    replyTo: email,
-    subject: `Message from ${name}`,
-    name,
-    text: `From: ${email} Message: ${message}`,
-  };
-
   try {
-    await sgMail.send(msg);
+    await resend.emails.send({
+      from: `${name} via Portfolio <${process.env.EMAIL_FROM}>`,
+      to: process.env.EMAIL_TO,
+      subject: `Message from ${name}`,
+      text: `From: ${email}\n\nMessage: ${message}`,
+    });
     res.json({ message: `Email has been sent` });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Error sending email" });
   }
 };
