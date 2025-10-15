@@ -47,27 +47,24 @@ export default function AboutMe({
       <br />
 
       <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
-        For over five years, I&apos;ve been dedicated to the craft of software
-        engineering, moving beyond just writing code to architecting robust,
-        user-centric solutions. My passion lies in the frontend, where I
-        leverage technologies like React, Next.js, and TypeScript to build
-        seamless interfaces that solve real business problems.
+        I&apos;ve spent the last five years building software that people actually use.
+        Started with code, evolved into architecture. I work mostly on the
+        frontend with Next.js, TypeScript, Prisma, Tailwind. It&apos;s all about turning complex problems into interfaces
+        that just make sense.
       </p>
       <br />
-      <p></p>
       <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
-        What truly drives me is my holistic approach. I thrive at the
-        intersection of technology, product, and people. As a team lead, I excel
-        in translating business requirements into technical strategy,
-        collaborating closely with product managers, designers, and customers to
-        ensure we&apos;re not just building features, but creating value.
+        I work closely with product, design, and customers because good software isn&apos;t
+        built in isolation. It&apos;s about understanding what needs to exist and why,
+        then figuring out how to build it right.
       </p>
       <br />
-      <p></p>
       <p className="max-w-3xl !leading-loose transition-all duration-300 ease-in hover:text-white/70">
-        My leadership philosophy is centered on mentorship and empowerment. I am
-        dedicated to guiding teams, fostering a culture of ownership, and
-        elevating the skills of junior developers.
+        When it comes to leading teams, I&apos;m in the trenches with everyone else.
+        I believe in leading by example: writing code, reviewing PRs, unblocking problems.
+        My goal is simple: help the team perform at their best while actually enjoying
+        the work. That means inspiring when needed, mentoring, and always
+        being present.
       </p>
       <br />
       <p className="transition-all duration-300 ease-in hover:text-white/70">

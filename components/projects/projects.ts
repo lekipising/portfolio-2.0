@@ -36,7 +36,7 @@ export const projects: Project[] = [
         text: "Redux Toolkit",
       },
     ],
-    status: "Active",
+    status: "Completed",
   },
   {
     title: "Karent App",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
         text: "Nest JS",
       },
     ],
-    status: "On Hold",
+    status: "Inactive",
   },
   {
     title: "CourierPal App",

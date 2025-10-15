@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { projects } from "./projects";
 
 export interface Technology {
@@ -13,12 +13,11 @@ export interface Project {
   technologies: Technology[];
   link: string;
   image: string;
-  status: "Active" | "On Hold" | "Completed";
+  status: "Active" | "Inactive" | "Completed";
   features: string[];
 }
 
 import { motion } from "framer-motion";
-import { inView } from "framer-motion";
 import useIntersect from "../../utils/useIntersectionObserver";
 
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
@@ -79,16 +78,6 @@ export default function Projects({
 }
 
 function OneProject({ project, index }: { project: Project; index: number }) {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    const box = document.getElementById(
-      `project-${project.title.toLowerCase().replace(" ", "-")}`,
-    );
-    if (box) {
-      inView(box, () => setImageLoaded(true));
-    }
-  }, [project.title]);
 
   return (
     <motion.div
@@ -137,27 +126,34 @@ function OneProject({ project, index }: { project: Project; index: number }) {
 
             <div className="flex w-full items-center justify-between">
               <a
-                href={project.link}
+                href={project.status !== "Inactive" ? project.link : "#"}
                 target="_blank"
-                className="w-full rounded-[8px] border bg-dark-100 px-4 py-2 text-center text-sm transition-all duration-300 ease-in hover:border hover:border-yellow lg:w-max"
+                className={`w-full rounded-[8px] border bg-dark-100 px-4 py-2 text-center text-sm transition-all duration-300 ease-in hover:border hover:border-yellow lg:w-max ${project.status !== "Inactive" ? "cursor-pointer" : "cursor-not-allowed text-gray-500 hover:border-dark-100"}`}
                 rel="noreferrer"
               >
                 View project
               </a>
+              <p
+                className={`text-[14px] font-medium tracking-tight xl:text-[14px] ${
+                  project.status === "Completed"
+                    ? "text-green"
+                    : project.status === "Active"
+                      ? "text-blue"
+                      : "text-gray-400"
+                }`}
+              >
+                {project.status}
+              </p>
             </div>
           </div>
         </div>
 
         <motion.div
           id={`project-${project.title.toLowerCase().replace(" ", "-")}`}
-          initial={false}
-          animate={
-            imageLoaded
-              ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
-              : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
-          }
-          transition={{ duration: 1, delay: 0.5 }}
-          viewport={{ once: true, amount: 0.5 }}
+          initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
+          whileInView={{ WebkitMaskImage: visibleMask, maskImage: visibleMask }}
+          transition={{ duration: 1, delay: 0.7 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="relative my-auto h-[calc(100%_-_8px)] w-full rounded-[10px] transition-all duration-150 ease-in group-hover:rounded-none lg:w-1/2"
         >
           <Image
