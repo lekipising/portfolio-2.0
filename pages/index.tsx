@@ -212,32 +212,27 @@ export default function Home() {
                   "Hello Tractor",
                   "Lead Software Engineer, Web",
                   "Jul 2024 to Present",
-                  "Leading web engineering across agricultural fintech and operational platforms.",
                 ],
                 [
                   "Knack Inc",
                   "Senior Software Engineer & Team Lead",
                   "Apr 2022 to Apr 2024",
-                  "Product delivery, engineering leadership, and mentoring across a learning ecosystem.",
                 ],
                 [
                   "Savannah Informatics",
                   "Software Engineer",
                   "Jun 2022 to Sep 2022",
-                  "Healthcare product engineering and API integration.",
                 ],
                 [
                   "Fress Inc",
                   "Frontend Developer",
                   "Jul 2021 to Apr 2022",
-                  "Customer-facing interfaces for checkout and inventory workflows.",
                 ],
-              ].map(([name, role, date, detail]) => (
+              ].map(([name, role, date]) => (
                 <div className="experience-row" key={name}>
                   <div>
                     <h3>{name}</h3>
                     <p>{role}</p>
-                    <small>{detail}</small>
                   </div>
                   <span>{date}</span>
                 </div>
