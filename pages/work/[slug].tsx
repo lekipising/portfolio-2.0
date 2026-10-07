@@ -8,7 +8,6 @@ import {
   Footer,
   Arrow,
   ProjectVisual,
-  Reveal,
 } from "../../components/portfolio/shared";
 export default function CaseStudy({
   project,
@@ -98,12 +97,12 @@ export default function CaseStudy({
             <section id="decisions">
               <h2>Key decisions.</h2>
               {project.decisions.map((decision) => (
-                <Reveal className="decision" key={decision.title}>
+                <div className="decision" key={decision.title}>
                   <div>
                     <h3>{decision.title}</h3>
                     <p>{decision.text}</p>
                   </div>
-                </Reveal>
+                </div>
               ))}
             </section>
             <section id="engineering">

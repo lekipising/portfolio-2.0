@@ -7,6 +7,7 @@ export default function Contact() {
   >("idle");
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (status === "sending") return;
     const form = event.currentTarget;
     const data = new FormData(form);
     setStatus("sending");
@@ -51,7 +52,13 @@ export default function Contact() {
         </div>
       </div>
       <div className="contact-form-wrap">
-        <form onSubmit={submit}>
+        <form
+          onSubmit={submit}
+          aria-busy={status === "sending"}
+          onInput={() => {
+            if (status === "success" || status === "error") setStatus("idle");
+          }}
+        >
           <div className="form-row">
             <label>
               Your name
@@ -93,23 +100,43 @@ export default function Contact() {
             </label>
           </div>
           <button
-            className="button button-lime"
+            className={`button button-lime submit-button is-${status}`}
             disabled={status === "sending"}
             type="submit"
           >
-            {status === "sending" ? "Sending…" : "Send a message"}
-            <Arrow />
+            <span className="submit-label" key={status}>
+              {status === "sending"
+                ? "Sending…"
+                : status === "success"
+                  ? "Message sent"
+                  : status === "error"
+                    ? "Try again"
+                    : "Send a message"}
+            </span>
+            <span className="submit-icon" aria-hidden="true">
+              {status === "sending" ? (
+                <span className="sending-spinner" />
+              ) : status === "success" ? (
+                "✓"
+              ) : (
+                <Arrow />
+              )}
+            </span>
           </button>
           <p
             className={`form-status ${status === "error" ? "has-error" : ""}`}
             role="status"
             aria-live="polite"
           >
-            {status === "success"
-              ? "Thanks for reaching out. Your message has been sent."
-              : status === "error"
-                ? "Your message couldn’t be sent. Please try again or email me directly."
-                : "Your details are only used to respond to your message."}
+            <span className="status-copy" key={status}>
+              {status === "success"
+                ? "Thanks for reaching out. Your message has been sent."
+                : status === "error"
+                  ? "Your message couldn’t be sent. Please try again or email me directly."
+                  : status === "sending"
+                    ? "Sending your message…"
+                    : "Your details are only used to respond to your message."}
+            </span>
           </p>
         </form>
       </div>

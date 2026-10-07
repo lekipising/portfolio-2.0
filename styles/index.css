@@ -2023,3 +2023,259 @@ em {
     gap: 16px;
   }
 }
+
+/* A shared rhythm: feedback, state changes, then entrances. */
+:root {
+  --motion-feedback: 160ms;
+  --motion-state: 240ms;
+  --motion-enter: 550ms;
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes enter-content {
+  from {
+    opacity: 0.35;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes settle-art {
+  from {
+    opacity: 0.2;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes change-label {
+  from {
+    opacity: 0.35;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes sending {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hero-copy h1 {
+  animation: enter-content 550ms var(--ease-settle) both;
+}
+.hero-copy > p {
+  animation: enter-content 550ms var(--ease-settle) 70ms both;
+}
+.hero-actions {
+  animation: enter-content 550ms var(--ease-settle) 140ms both;
+}
+.hero-art {
+  animation: settle-art 650ms var(--ease-settle) 100ms both;
+}
+.case-heading h1 {
+  animation: enter-content 500ms var(--ease-settle) both;
+}
+.case-heading-bottom {
+  animation: enter-content 500ms var(--ease-settle) 60ms both;
+}
+.case-visual {
+  animation: enter-content 550ms var(--ease-settle) 100ms both;
+}
+.action-arrow {
+  display: inline-block;
+  transition: transform var(--motion-feedback) var(--ease-settle);
+}
+.button {
+  transition:
+    background var(--motion-feedback),
+    box-shadow var(--motion-state),
+    transform var(--motion-feedback) var(--ease-settle);
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button:active {
+  transform: translateY(0) scale(0.985);
+  box-shadow: none;
+}
+.button:is(:hover, :focus-visible) .action-arrow,
+.text-link:is(:hover, :focus-visible) .action-arrow,
+.nav-contact:is(:hover, :focus-visible) .action-arrow,
+.email-link:is(:hover, :focus-visible) .action-arrow,
+.case-contact a:is(:hover, :focus-visible) .action-arrow,
+.case-next > a:is(:hover, :focus-visible) .action-arrow {
+  transform: translate(2px, -2px);
+}
+.site-header nav a {
+  transition:
+    color var(--motion-feedback),
+    border-color var(--motion-feedback);
+}
+.site-header nav a:is(:hover, :focus-visible) {
+  color: var(--lime);
+}
+.nav-contact:is(:hover, :focus-visible) {
+  border-color: #43d9ad70;
+}
+.project-link .project-visual {
+  transition:
+    border-color var(--motion-feedback),
+    box-shadow var(--motion-state);
+}
+.project-depth {
+  position: relative;
+  border-radius: 16px;
+}
+.project-depth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at var(--light-x, 50%) var(--light-y, 50%),
+    #e5e9f014,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity var(--motion-state);
+}
+.project-link:is(:hover, :focus-visible) .project-depth::after {
+  opacity: 1;
+}
+.project-link:is(:hover, :focus-visible) .project-visual {
+  border-color: #43d9ad70;
+  box-shadow: 0 18px 45px #00000040;
+}
+.project-link .round-arrow {
+  transition:
+    background var(--motion-feedback),
+    color var(--motion-feedback),
+    border-color var(--motion-feedback);
+}
+.project-link:is(:hover, :focus-visible) .round-arrow {
+  transform: none;
+  color: var(--paper);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.project-link:is(:hover, :focus-visible) .action-arrow {
+  transform: translate(2px, -2px);
+}
+.project-link:active .action-arrow {
+  transform: translate(3px, -3px);
+}
+.menu-toggle {
+  align-items: center;
+  gap: 12px;
+}
+.menu-symbol {
+  display: inline-block;
+  transition: transform 220ms var(--ease-settle);
+}
+.menu-toggle[aria-expanded="true"] .menu-symbol {
+  transform: rotate(45deg);
+}
+.submit-button {
+  min-height: 50px;
+}
+.submit-label,
+.status-copy {
+  display: inline-block;
+  animation: change-label 160ms var(--ease-settle) both;
+}
+.submit-icon {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+}
+.sending-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #010c1530;
+  border-top-color: var(--paper);
+  border-radius: 50%;
+  animation: sending 800ms linear infinite;
+}
+.submit-button:disabled {
+  opacity: 1;
+  cursor: progress;
+  transform: none;
+}
+.submit-button.is-success {
+  background: #7be8c6;
+}
+.form-status {
+  min-height: 3.4em;
+}
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+  .site-header nav {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(-8px);
+    transition:
+      opacity 220ms var(--ease-settle),
+      transform 220ms var(--ease-settle),
+      clip-path 220ms var(--ease-settle),
+      visibility 0s 220ms;
+  }
+  .site-header nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    clip-path: inset(0);
+    transform: translateY(0);
+    transition:
+      opacity 220ms var(--ease-settle),
+      transform 220ms var(--ease-settle),
+      clip-path 220ms var(--ease-settle),
+      visibility 0s;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .project-depth::after {
+    display: none;
+  }
+  .button:hover {
+    transform: none;
+  }
+  .button:active {
+    transform: scale(0.985);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy h1,
+  .hero-copy > p,
+  .hero-actions,
+  .hero-art,
+  .case-heading h1,
+  .case-heading-bottom,
+  .case-visual,
+  .submit-label,
+  .status-copy,
+  .sending-spinner {
+    animation: none;
+  }
+  .action-arrow,
+  .button,
+  .menu-symbol {
+    transform: none !important;
+  }
+  .site-header nav,
+  .site-header nav.is-open {
+    transition: none;
+  }
+}

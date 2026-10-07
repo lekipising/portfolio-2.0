@@ -9,10 +9,14 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import type { PointerEvent, ReactNode } from "react";
+import type { PointerEvent as ReactPointerEvent, ReactNode } from "react";
 
 export function Arrow() {
-  return <span aria-hidden="true">↗</span>;
+  return (
+    <span className="action-arrow" aria-hidden="true">
+      ↗
+    </span>
+  );
 }
 export function Reveal({
   children,
@@ -28,11 +32,11 @@ export function Reveal({
     <motion.div
       className={className}
       initial={false}
-      whileInView={reduced ? {} : { y: [28, 0] }}
+      whileInView={reduced ? {} : { y: [16, 0] }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{
         delay: reduced ? 0 : delay,
-        duration: 0.75,
+        duration: 0.55,
         ease: [0.22, 1, 0.36, 1],
       }}
     >
@@ -59,24 +63,38 @@ export function ProjectDepth({ children }: { children: ReactNode }) {
   const y = useMotionValue(0);
   const rotateX = useSpring(x, { stiffness: 180, damping: 24 });
   const rotateY = useSpring(y, { stiffness: 180, damping: 24 });
+  const lightX = useMotionValue("50%");
+  const lightY = useMotionValue("50%");
   const enabled = fine && !reduced;
+  useEffect(() => {
+    if (!enabled) {
+      x.set(0);
+      y.set(0);
+    }
+  }, [enabled, x, y]);
   const reset = () => {
     x.set(0);
     y.set(0);
   };
-  const move = (event: PointerEvent<HTMLDivElement>) => {
+  const move = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (!enabled || event.pointerType === "touch") return;
     const rect = event.currentTarget.getBoundingClientRect();
+    lightX.set(
+      `${Math.max(0, Math.min(100, ((event.clientX - rect.left) / rect.width) * 100))}%`,
+    );
+    lightY.set(
+      `${Math.max(0, Math.min(100, ((event.clientY - rect.top) / rect.height) * 100))}%`,
+    );
     x.set(
       Math.max(
-        -5,
-        Math.min(5, (0.5 - (event.clientY - rect.top) / rect.height) * 10),
+        -3,
+        Math.min(3, (0.5 - (event.clientY - rect.top) / rect.height) * 6),
       ),
     );
     y.set(
       Math.max(
-        -6,
-        Math.min(6, ((event.clientX - rect.left) / rect.width - 0.5) * 12),
+        -3,
+        Math.min(3, ((event.clientX - rect.left) / rect.width - 0.5) * 6),
       ),
     );
   };
@@ -86,7 +104,14 @@ export function ProjectDepth({ children }: { children: ReactNode }) {
       onPointerMove={move}
       onPointerLeave={reset}
       onPointerCancel={reset}
-      style={{ rotateX: enabled ? rotateX : 0, rotateY: enabled ? rotateY : 0 }}
+      style={
+        {
+          rotateX: enabled ? rotateX : 0,
+          rotateY: enabled ? rotateY : 0,
+          "--light-x": lightX,
+          "--light-y": lightY,
+        } as React.ComponentProps<typeof motion.div>["style"]
+      }
     >
       {children}
     </motion.div>
@@ -123,33 +148,83 @@ export function HeroAtmosphere() {
 
 export function Header({ dark = false }: { dark?: boolean }) {
   const [open, setOpen] = useState(false);
+  const [mobile, setMobile] = useState(false);
+  const header = useRef<HTMLElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 700px)");
+    const update = () => {
+      setMobile(query.matches);
+      if (!query.matches) setOpen(false);
+    };
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+    };
+    const outside = (event: PointerEvent) => {
+      if (
+        event.target instanceof Node &&
+        !header.current?.contains(event.target)
+      )
+        setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", outside);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", outside);
+    };
+  }, [open]);
   return (
-    <header className={`site-header ${dark ? "on-dark" : ""}`}>
+    <header ref={header} className={`site-header ${dark ? "on-dark" : ""}`}>
       <Link href="/" className="wordmark" aria-label="Liplan Lekipising home">
         liplan<span className="brand-dot">.</span>
       </Link>
       <button
+        ref={toggle}
         className="menu-toggle"
         aria-expanded={open}
         aria-controls="site-nav"
+        aria-label={open ? "Close navigation" : "Open navigation"}
         onClick={() => setOpen(!open)}
       >
-        {open ? "Close −" : "Menu +"}
+        <span>Menu</span>
+        <span className="menu-symbol" aria-hidden="true">
+          +
+        </span>
       </button>
       <nav
         id="site-nav"
         className={open ? "is-open" : ""}
         aria-label="Main navigation"
+        aria-hidden={mobile && !open ? true : undefined}
       >
-        <Link href="/#work" onClick={() => setOpen(false)}>
+        <Link
+          href="/#work"
+          tabIndex={mobile && !open ? -1 : undefined}
+          onClick={() => setOpen(false)}
+        >
           Selected work
         </Link>
-        <Link href="/#about" onClick={() => setOpen(false)}>
+        <Link
+          href="/#about"
+          tabIndex={mobile && !open ? -1 : undefined}
+          onClick={() => setOpen(false)}
+        >
           About
         </Link>
         <Link
           href="/#contact"
           className="nav-contact"
+          tabIndex={mobile && !open ? -1 : undefined}
           onClick={() => setOpen(false)}
         >
           Let’s talk <Arrow />

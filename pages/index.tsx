@@ -106,7 +106,7 @@ export default function Home() {
               <Reveal
                 key={project.slug}
                 className="work-item"
-                delay={(index % 2) * 0.12}
+                delay={(index % 2) * 0.08}
               >
                 <Link href={`/work/${project.slug}`} className="project-link">
                   <ProjectDepth>
@@ -157,8 +157,8 @@ export default function Home() {
                 "Own what happens next.",
                 "I plan for failed requests, changing integrations, and the work of running a product. I build in SEO foundations and review performance week by week.",
               ],
-            ].map(([n, title, text]) => (
-              <Reveal key={n} className="principle">
+            ].map(([n, title, text], index) => (
+              <Reveal key={n} className="principle" delay={index * 0.06}>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </Reveal>
