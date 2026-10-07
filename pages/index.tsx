@@ -7,6 +7,8 @@ import {
   Footer,
   Header,
   ProjectVisual,
+  ProjectDepth,
+  HeroAtmosphere,
   Reveal,
 } from "../components/portfolio/shared";
 import Contact from "../components/portfolio/contact";
@@ -65,8 +67,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-art">
-              <div className="art-orbit orbit-one" />
-              <div className="art-orbit orbit-two" />
+              <HeroAtmosphere />
               <Sculpture />
             </div>
           </section>
@@ -101,10 +102,16 @@ export default function Home() {
             </div>
           </Reveal>
           <div className="work-grid">
-            {work.map((project) => (
-              <Reveal key={project.slug} className="work-item">
+            {work.map((project, index) => (
+              <Reveal
+                key={project.slug}
+                className="work-item"
+                delay={(index % 2) * 0.08}
+              >
                 <Link href={`/work/${project.slug}`} className="project-link">
-                  <ProjectVisual slug={project.slug} />
+                  <ProjectDepth>
+                    <ProjectVisual slug={project.slug} />
+                  </ProjectDepth>
                   <div className="project-title">
                     <h3>{project.name}</h3>
                     <span className="round-arrow">
@@ -150,8 +157,8 @@ export default function Home() {
                 "Own what happens next.",
                 "I plan for failed requests, changing integrations, and the work of running a product. I build in SEO foundations and review performance week by week.",
               ],
-            ].map(([n, title, text]) => (
-              <Reveal key={n} className="principle">
+            ].map(([n, title, text], index) => (
+              <Reveal key={n} className="principle" delay={index * 0.06}>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </Reveal>
@@ -223,11 +230,7 @@ export default function Home() {
                   "Software Engineer",
                   "Jun 2022 to Sep 2022",
                 ],
-                [
-                  "Fress Inc",
-                  "Frontend Developer",
-                  "Jul 2021 to Apr 2022",
-                ],
+                ["Fress Inc", "Frontend Developer", "Jul 2021 to Apr 2022"],
               ].map(([name, role, date]) => (
                 <div className="experience-row" key={name}>
                   <div>

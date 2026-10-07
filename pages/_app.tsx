@@ -2,9 +2,10 @@ import React from "react";
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { MotionConfig } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/index.css";
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
@@ -28,7 +29,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <title>Liplan Lekipising | Senior Software Engineer</title>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
-      <Component {...pageProps} />
+      <MotionConfig reducedMotion="user">
+        <Component
+          key={`${router.pathname}:${router.query.slug || ""}`}
+          {...pageProps}
+        />
+      </MotionConfig>
       <Analytics />
     </>
   );

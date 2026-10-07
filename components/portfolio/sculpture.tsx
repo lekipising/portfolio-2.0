@@ -32,9 +32,9 @@ export default function Sculpture() {
         const environment = pmrem.fromScene(room);
         scene.environment = environment.texture;
         const material = new THREE.MeshPhysicalMaterial({
-          color: 0xc8d2b5,
+          color: 0xb8eadb,
           metalness: 1,
-          roughness: 0.25,
+          roughness: 0.19,
           clearcoat: 1,
           clearcoatRoughness: 0.18,
         });
@@ -64,20 +64,61 @@ export default function Sculpture() {
         second.position.set(0.75, -0.15, -0.8);
         group.add(first, second);
         scene.add(group);
-        const key = new THREE.DirectionalLight(0xfff4d9, 4);
+        const key = new THREE.DirectionalLight(0xe5e9f0, 4);
         key.position.set(3, 5, 5);
         scene.add(key);
-        const rim = new THREE.DirectionalLight(0xbfff72, 3);
+        const rim = new THREE.DirectionalLight(0x43d9ad, 3);
         rim.position.set(-4, 0, 2);
         scene.add(rim);
-        const fill = new THREE.DirectionalLight(0x8e9bff, 2);
+        const fill = new THREE.DirectionalLight(0x5565e8, 2);
         fill.position.set(0, -4, -2);
         scene.add(fill);
         const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
         let targetX = 0,
           targetY = 0,
           frame = 0,
-          visible = true;
+          visible = false;
+        let contextLost = false;
+        let elapsed = 0,
+          lastTime = 0;
+        group.rotation.set(-0.22, -0.5, -0.12);
+        const draw = () => renderer.render(scene, camera);
+        const stop = () => {
+          cancelAnimationFrame(frame);
+          frame = 0;
+          lastTime = 0;
+        };
+        const render = (time: number) => {
+          frame = 0;
+          if (!visible || document.hidden || motion.matches || contextLost)
+            return;
+          if (lastTime) elapsed += Math.min(time - lastTime, 50);
+          lastTime = time;
+          const t = elapsed * 0.0005;
+          group.rotation.x += (-0.22 + targetX - group.rotation.x) * 0.045;
+          group.rotation.y +=
+            (-0.5 + targetY + Math.sin(t) * 0.24 - group.rotation.y) * 0.045;
+          group.rotation.z = -0.12 + Math.sin(t * 0.7) * 0.045;
+          group.position.y = Math.sin(t * 1.4) * 0.18;
+          draw();
+          frame = requestAnimationFrame(render);
+        };
+        const sync = () => {
+          stop();
+          if (motion.matches || !fine.matches) {
+            targetX = 0;
+            targetY = 0;
+          }
+          if (motion.matches) {
+            group.rotation.set(-0.22, -0.5, -0.12);
+            group.position.y = 0;
+          }
+          if (visible && !document.hidden && !contextLost) {
+            draw();
+            if (!motion.matches) frame = requestAnimationFrame(render);
+          }
+        };
         const resize = new ResizeObserver(() => {
           const w = element.clientWidth,
             h = element.clientHeight;
@@ -85,43 +126,59 @@ export default function Sculpture() {
           renderer.setSize(w, h);
           camera.aspect = w / h;
           camera.updateProjectionMatrix();
+          if (visible && !document.hidden && !contextLost) draw();
         });
         resize.observe(element);
         const onPointer = (event: PointerEvent) => {
-          if (motion.matches || event.pointerType === "touch") return;
+          if (motion.matches || !fine.matches || event.pointerType === "touch")
+            return;
           const rect = element.getBoundingClientRect();
-          targetY = ((event.clientX - rect.left) / rect.width - 0.5) * 0.6;
-          targetX = ((event.clientY - rect.top) / rect.height - 0.5) * 0.3;
+          targetY = Math.max(
+            -0.5,
+            Math.min(0.5, ((event.clientX - rect.left) / rect.width - 0.5) * 1),
+          );
+          targetX = Math.max(
+            -0.3,
+            Math.min(
+              0.3,
+              ((event.clientY - rect.top) / rect.height - 0.5) * 0.6,
+            ),
+          );
         };
         const onLeave = () => {
           targetX = 0;
           targetY = 0;
         };
-        element.addEventListener("pointermove", onPointer);
-        element.addEventListener("pointerleave", onLeave);
+        const onContextLost = (event: Event) => {
+          event.preventDefault();
+          contextLost = true;
+          stop();
+          setReady(false);
+        };
         const observer = new IntersectionObserver(([entry]) => {
           visible = entry.isIntersecting;
+          sync();
         });
         observer.observe(element);
-        const render = (time: number) => {
-          frame = requestAnimationFrame(render);
-          if (!visible || document.hidden) return;
-          const t = motion.matches ? 0 : time * 0.0003;
-          group.rotation.x += (-0.22 + targetX - group.rotation.x) * 0.045;
-          group.rotation.y +=
-            (-0.5 + targetY + Math.sin(t) * 0.16 - group.rotation.y) * 0.045;
-          group.rotation.z = -0.12;
-          group.position.y = Math.sin(t * 1.4) * 0.1;
-          renderer.render(scene, camera);
-        };
-        render(0);
-        setReady(true);
+        element.addEventListener("pointermove", onPointer);
+        element.addEventListener("pointerleave", onLeave);
+        renderer.domElement.addEventListener("webglcontextlost", onContextLost);
+        document.addEventListener("visibilitychange", sync);
+        motion.addEventListener("change", sync);
+        fine.addEventListener("change", sync);
         cleanup = () => {
-          cancelAnimationFrame(frame);
+          stop();
           resize.disconnect();
           observer.disconnect();
           element.removeEventListener("pointermove", onPointer);
           element.removeEventListener("pointerleave", onLeave);
+          renderer.domElement.removeEventListener(
+            "webglcontextlost",
+            onContextLost,
+          );
+          document.removeEventListener("visibilitychange", sync);
+          motion.removeEventListener("change", sync);
+          fine.removeEventListener("change", sync);
           geometry.dispose();
           material.dispose();
           environment.dispose();
@@ -130,7 +187,9 @@ export default function Sculpture() {
           renderer.dispose();
           renderer.domElement.remove();
         };
+        setReady(true);
       } catch {
+        cleanup();
         setReady(false);
       }
     }
