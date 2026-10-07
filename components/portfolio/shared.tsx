@@ -1,8 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import type { PointerEvent, ReactNode } from "react";
 
 export function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -10,23 +17,110 @@ export function Arrow() {
 export function Reveal({
   children,
   className = "",
+  delay = 0,
 }: {
   children: ReactNode;
   className?: string;
+  delay?: number;
 }) {
   const reduced = useReducedMotion();
   return (
     <motion.div
       className={className}
       initial={false}
-      whileInView={reduced ? {} : { y: [18, 0] }}
+      whileInView={reduced ? {} : { y: [28, 0] }}
       viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        delay: reduced ? 0 : delay,
+        duration: 0.75,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
     </motion.div>
   );
 }
+function useFinePointer() {
+  const [fine, setFine] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setFine(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  return fine;
+}
+
+export function ProjectDepth({ children }: { children: ReactNode }) {
+  const reduced = useReducedMotion();
+  const fine = useFinePointer();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(x, { stiffness: 180, damping: 24 });
+  const rotateY = useSpring(y, { stiffness: 180, damping: 24 });
+  const enabled = fine && !reduced;
+  const reset = () => {
+    x.set(0);
+    y.set(0);
+  };
+  const move = (event: PointerEvent<HTMLDivElement>) => {
+    if (!enabled || event.pointerType === "touch") return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    x.set(
+      Math.max(
+        -5,
+        Math.min(5, (0.5 - (event.clientY - rect.top) / rect.height) * 10),
+      ),
+    );
+    y.set(
+      Math.max(
+        -6,
+        Math.min(6, ((event.clientX - rect.left) / rect.width - 0.5) * 12),
+      ),
+    );
+  };
+  return (
+    <motion.div
+      className="project-depth"
+      onPointerMove={move}
+      onPointerLeave={reset}
+      onPointerCancel={reset}
+      style={{ rotateX: enabled ? rotateX : 0, rotateY: enabled ? rotateY : 0 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function HeroAtmosphere() {
+  const host = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+  const fine = useFinePointer();
+  const { scrollYProgress } = useScroll({
+    target: host,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 70]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 18]);
+  return (
+    <motion.div
+      ref={host}
+      className="hero-atmosphere"
+      aria-hidden="true"
+      style={{
+        y: fine && !reduced ? y : 0,
+        rotate: fine && !reduced ? rotate : 0,
+      }}
+    >
+      <div className="hero-glow" />
+      <div className="art-orbit orbit-one" />
+      <div className="art-orbit orbit-two" />
+      <div className="art-orbit orbit-three" />
+    </motion.div>
+  );
+}
+
 export function Header({ dark = false }: { dark?: boolean }) {
   const [open, setOpen] = useState(false);
   return (
