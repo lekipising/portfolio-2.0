@@ -21,13 +21,19 @@ export default class MyDocument extends Document {
           <meta property="og:locale" content="en_KE" />
           <meta
             property="og:image"
-            content="https://lekipising.com/social-card.png"
+            content="https://lekipising.com/social-card-v2.png"
+          />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta
+            property="og:image:alt"
+            content="Liplan Lekipising: Ideas into products people depend on."
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:creator" content="@lekipising" />
           <meta
             name="twitter:image"
-            content="https://lekipising.com/social-card.png"
+            content="https://lekipising.com/social-card-v2.png"
           />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         </Head>
