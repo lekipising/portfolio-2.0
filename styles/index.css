@@ -808,6 +808,21 @@ section[id] {
 .about-section h2 em {
   color: var(--muted);
 }
+.about-portrait {
+  margin: 44px 0 0;
+  max-width: 340px;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 90px -50px rgba(67, 217, 173, 0.35);
+}
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .about-signature {
   font-family: var(--display);
   font-style: normal;
@@ -1479,6 +1494,10 @@ section[id] {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 35px;
+  }
+  .about-portrait {
+    margin-top: 28px;
+    max-width: 100%;
   }
   .about-signature {
     margin-top: 28px;

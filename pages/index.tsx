@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Arrow,
@@ -178,6 +179,15 @@ export default function Home() {
                   by nature.
                 </em>
               </h2>
+              <figure className="about-portrait">
+                <Image
+                  src="/liplan-portrait.jpg"
+                  alt="Liplan Lekipising"
+                  width={960}
+                  height={1200}
+                  sizes="(max-width: 700px) calc(100vw - 48px), 340px"
+                />
+              </figure>
               <div className="about-signature">
                 Liplan Lekipising
                 <span>Based in Kenya. Working across the stack.</span>
