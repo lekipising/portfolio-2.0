@@ -33,22 +33,22 @@ export default function Contact() {
     <section className="contact-section" id="contact">
       <div className="contact-intro">
         <h2>
-          Good things start
+          Have a product to build
           <br />
-          with <em>a hello.</em>
+          or a platform to <em>rebuild?</em>
           <span className="lime-dot">↗</span>
         </h2>
         <p>
-          Tell me about the role, product, or platform you have in mind. I’m
-          interested in work where I can contribute to the decisions as well as
-          the delivery.
+          Tell me about the product or platform you have in mind. I’m interested
+          in work where I can contribute to the decisions as well as the
+          delivery.
         </p>
         <a className="email-link" href="mailto:hi@lekipising.com">
           hi@lekipising.com <Arrow />
         </a>
         <div className="contact-availability">
           <span className="status-dot" />
-          Let’s discuss roles, product builds, and platform rebuilds.
+          Product builds · Platform rebuilds · Technical leadership
         </div>
       </div>
       <div className="contact-form-wrap">

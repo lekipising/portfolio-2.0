@@ -239,7 +239,7 @@ export function Footer() {
       <Link className="wordmark" href="/">
         liplan<span className="brand-dot">.</span>
       </Link>
-      <p>Thoughtfully built. Always evolving.</p>
+      <p>Designed and built in Kenya.</p>
       <div>
         <a
           href="https://github.com/lekipising"
@@ -249,7 +249,7 @@ export function Footer() {
           GitHub <Arrow />
         </a>
         <a
-          href="https://www.linkedin.com/in/liplan0lekipising/"
+          href="https://www.linkedin.com/in/lekipising/"
           target="_blank"
           rel="noopener noreferrer"
         >

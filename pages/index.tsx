@@ -23,12 +23,12 @@ export default function Home() {
         <title>Liplan Lekipising | Senior Software Engineer</title>
         <meta
           name="description"
-          content="Thoughtful products. Deep engineering. Liplan Lekipising builds SaaS and business platforms with product judgment, considered UX, and ownership from idea to production."
+          content="Senior software engineer in Kenya. I design, build and run production platforms for businesses: payments, bookings, WhatsApp sales, and the operations behind them."
         />
         <link rel="canonical" href="https://lekipising.com" />
         <meta
           property="og:title"
-          content="Liplan Lekipising | Thoughtful products. Deep engineering."
+          content="Liplan Lekipising | Ideas into products people depend on."
         />
         <meta
           property="og:description"
@@ -45,17 +45,18 @@ export default function Home() {
           <section className="hero">
             <div className="hero-copy">
               <h1>
-                Thoughtful
+                Ideas into
                 <br />
-                products.
+                products people
                 <br />
-                <span className="hero-outline">Deep</span> engineering
+                <span className="hero-outline">depend</span> on
                 <span className="headline-period">.</span>
               </h1>
               <p>
-                I’m Liplan Lekipising, a senior software engineer based in
-                Kenya. I build products, lead engineering teams, and take
-                ownership from the first decision to production.
+                I’m Liplan Lekipising, a senior software engineer. I design,
+                build and run production platforms for businesses in Kenya:
+                payments, bookings, WhatsApp sales, and the operations behind
+                them.
               </p>
               <div className="hero-actions">
                 <a href="#work" className="button button-lime">
@@ -73,13 +74,13 @@ export default function Home() {
           </section>
         </div>
         <div className="expertise-strip">
-          <span>From first decisions to production.</span>
+          <span>End to end.</span>
           <div>
             <span>Product strategy</span>
             <i>✳</i>
             <span>Full-stack engineering</span>
             <i>✳</i>
-            <span>Thoughtful UX</span>
+            <span>User experience</span>
             <i>✳</i>
             <span>Technical leadership</span>
           </div>
@@ -91,7 +92,7 @@ export default function Home() {
                 <h2>
                   Selected work.
                   <br />
-                  <em>Built from idea to production.</em>
+                  <em>And the decisions behind them.</em>
                 </h2>
               </div>
               <p>
@@ -188,10 +189,11 @@ export default function Home() {
                 this.”
               </p>
               <p>
-                I’m a senior software engineer with experience across SaaS,
-                agricultural fintech, learning platforms, and client products. I
-                build across the stack, work closely with product and design,
-                and help teams turn complex requirements into clear decisions.
+                I’m a senior software engineer. I lead web engineering at Hello
+                Tractor, where my team builds and maintains five-plus platforms,
+                and before that I led a cross-functional team at Knack. I build
+                across the stack, work closely with product and design, and help
+                teams turn complex requirements into clear decisions.
               </p>
               <p>
                 My leadership stays close to the work: writing code, reviewing
@@ -204,44 +206,9 @@ export default function Home() {
                   <br />
                   PostgreSQL · Prisma · Redis · Railway · Cloudflare
                 </p>
-                <span className="toolbox-note">
-                  Railway for hosting and databases. Cloudflare for DNS,
-                  security, and edge performance.
-                </span>
               </div>
             </div>
           </Reveal>
-          <div className="experience-list">
-            <h3 className="experience-title">Experience</h3>
-            <div className="experience-rows">
-              {[
-                [
-                  "Hello Tractor",
-                  "Lead Software Engineer, Web",
-                  "Jul 2024 to Present",
-                ],
-                [
-                  "Knack Inc",
-                  "Senior Software Engineer & Team Lead",
-                  "Apr 2022 to Apr 2024",
-                ],
-                [
-                  "Savannah Informatics",
-                  "Software Engineer",
-                  "Jun 2022 to Sep 2022",
-                ],
-                ["Fress Inc", "Frontend Developer", "Jul 2021 to Apr 2022"],
-              ].map(([name, role, date]) => (
-                <div className="experience-row" key={name}>
-                  <div>
-                    <h3>{name}</h3>
-                    <p>{role}</p>
-                  </div>
-                  <span>{date}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </section>
         <Contact />
       </main>

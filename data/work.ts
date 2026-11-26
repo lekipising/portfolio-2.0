@@ -161,7 +161,7 @@ export const work: Work[] = [
       "Paystack",
     ],
     intro:
-      "I independently built the foundation’s website and operational tooling. The public identity needed to communicate its direction thoughtfully, while the underlying workflows needed to help staff manage enquiries and giving with clear records and controlled access.",
+      "I independently built the foundation’s website and operational tooling. The public identity needed to communicate its direction clearly, while the underlying workflows needed to help staff manage enquiries and giving with clear records and controlled access.",
     decisions: [
       {
         title: "Save the enquiry before sending the email.",
@@ -184,6 +184,6 @@ export const work: Work[] = [
       "Consent, retention tooling, and controlled feature activation",
     ],
     reflection:
-      "Thoughtful delivery includes the quiet details: what happens when an email fails, who can access a record, and when a feature is ready to go live.",
+      "Good delivery includes the quiet details: what happens when an email fails, who can access a record, and when a feature is ready to go live.",
   },
 ];

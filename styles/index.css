@@ -845,60 +845,6 @@ section[id] {
   margin: 14px 0 8px;
   font-size: 12px;
 }
-.toolbox-note {
-  font-size: 10px;
-  color: var(--muted);
-  font-family: var(--display);
-  font-style: normal;
-}
-.experience-list {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 50px;
-  margin-top: 85px;
-  border-top: 1px solid var(--line);
-  padding-top: 35px;
-}
-.experience-label {
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  line-height: 1.8;
-}
-.experience-row {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  padding: 0 0 23px;
-  margin-bottom: 23px;
-  gap: 25px;
-}
-.experience-row:last-child {
-  margin-bottom: 0;
-}
-.experience-row h3 {
-  font-size: 17px;
-  letter-spacing: -0.03em;
-}
-.experience-row p {
-  font-size: 11px;
-  margin-top: 5px;
-  color: var(--muted);
-}
-.experience-row small {
-  font-size: 10px;
-  line-height: 1.7;
-  display: block;
-  color: var(--muted);
-  margin-top: 8px;
-  max-width: 340px;
-}
-.experience-row > span {
-  font-size: 9px;
-  color: var(--muted);
-  white-space: nowrap;
-  padding-top: 5px;
-}
 .contact-section {
   background: var(--dark);
   color: var(--ink);
@@ -1540,27 +1486,6 @@ section[id] {
   .about-copy .large-copy {
     font-size: 23px;
   }
-  .experience-list {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 45px;
-    padding-top: 25px;
-  }
-  .experience-label br {
-    display: none;
-  }
-  .experience-row {
-    gap: 15px;
-  }
-  .experience-row h3 {
-    font-size: 16px;
-  }
-  .experience-row > span {
-    font-size: 8px;
-  }
-  .experience-row small {
-    max-width: 240px;
-  }
   .contact-section {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1742,10 +1667,6 @@ section[id] {
   margin: 0;
   font-weight: 600;
 }
-.experience-title {
-  font-size: 22px;
-  letter-spacing: -0.03em;
-}
 .section-heading h2,
 .about-section h2,
 .contact-intro h2,
@@ -1761,11 +1682,6 @@ section[id] {
 .toolbox p {
   margin-top: 0;
 }
-.toolbox-note {
-  display: block;
-  line-height: 1.8;
-  max-width: 360px;
-}
 
 /* Navy identity and interactive depth. */
 body {
@@ -1779,14 +1695,11 @@ em {
 .section-label,
 .project-category,
 .case-link,
-.experience-label,
-.experience-row > span,
 .back-link,
 .case-fact-title,
 .contact-availability,
 .contact-form-wrap form label,
-.form-status,
-.toolbox-note {
+.form-status {
   font-family: var(--mono);
 }
 .brand-dot,
