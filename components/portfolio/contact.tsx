@@ -33,10 +33,13 @@ export default function Contact() {
     <section className="contact-section" id="contact">
       <div className="contact-intro">
         <h2>
-          Have a product to build
-          <br />
-          or a platform to <em>rebuild?</em>
-          <span className="lime-dot">↗</span>
+          Have a product to build{" "}
+          <br className="contact-break" />
+          or a platform to{" "}
+          <span className="heading-end">
+            <em>rebuild?</em>
+            <span className="lime-dot">↗</span>
+          </span>
         </h2>
         <p>
           Tell me about the product or platform you have in mind. I’m interested

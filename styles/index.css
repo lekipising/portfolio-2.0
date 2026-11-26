@@ -881,6 +881,9 @@ section[id] {
 .contact-intro h2 em {
   color: var(--lime);
 }
+.heading-end {
+  white-space: nowrap;
+}
 .lime-dot {
   display: inline-grid;
   place-items: center;
@@ -1512,6 +1515,9 @@ section[id] {
   }
   .contact-intro h2 {
     font-size: 43px;
+  }
+  .contact-break {
+    display: none;
   }
   .contact-intro > p {
     margin-top: 22px;
